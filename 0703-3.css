@@ -1,0 +1,23 @@
+* {margin: 0; padding: 0; box-sizing: border-box;}
+
+body> div {max-width: 1000px; margin: auto; border: 3px solid red;}
+
+/*header*/
+h1 {display: none;}
+
+header {display: flex; border: 2px solid orange; margin: 10px 5px; padding: 10px;}
+header> a {flex: 1; border: 1px solid green; text-align: center;}
+header> nav {flex:4; border: 1px solid green; text-align: center;}
+nav> a {display: inline-block; border: 2px solid lightgreen; border-radius: 10px; background-color: aliceblue; margin: 5px;}
+
+/*main*/
+main {display: flex; height: 60vh;}
+main> div {flex: 2;}
+main section {border: 1px dashed tomato; height: 33%;} /*비율로 맞추는 기능은 없다고 함*/
+
+main> aside {flex: 1; border: 1px solid saddlebrown;}
+
+/*footer*/
+footer {padding: 10px; text-align: center; background-color: lightgray;}
+
+

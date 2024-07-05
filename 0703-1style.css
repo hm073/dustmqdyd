@@ -1,0 +1,33 @@
+
+* {margin: 0; padding:0; box-sizing: border-box;}
+div {max-width: 400px; height: 500px; margin: auto; position: relative; overflow: hidden;}
+img {width: 100%;}
+
+img:not(:first-of-type) {position: absolute; left: 0; top: 0;}
+
+[src="images/1/1-1.png"] {animation:show 1s 0.5s both;}
+[src="images/1/1-2.png"] {animation:down 2s 0.8s both;}
+[src="images/1/1-3.png"] {animation:big 2s 1s both;}
+[src="images/1/1-4.png"] {animation:toLeft 2.5s 1.5s both;}
+[src="images/1/1-5.png"] {animation:show 3s 2s both;}
+
+
+@keyframes show {
+    from {opacity: 0;}
+    to   {opacity: 1;}
+}
+
+@keyframes down {
+    from {top: -150px; opacity: 0;}
+    to   {top: 0; opacity: 1;}
+}
+
+@keyframes big {
+    from {transform: scaleX(0);}
+    to   {transform: scaleX(1);}
+}
+
+@keyframes toLeft {
+    from {left: -200px; opacity: 0;}
+    to   {left: 0; opacity: 1;}
+}

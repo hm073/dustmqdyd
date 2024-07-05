@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>반응형 연습</title>
+    <style>
+        body> div {border: 3px solid red; margin:auto; max-width: 800px;}
+
+        header {background-color: antiquewhite;}
+        h1,h2,h3,p {margin: 0;}
+
+        nav {border: 2px solid blue; margin: 10px 0; padding: 10px; text-align: center;}
+        nav a {padding: 5px 10px; border: 1px solid gray; border-radius: 10px; background: black; text-decoration: none; color: white; font-weight: bold; transition: all 0.7s; display: inline-block;}
+        nav a:not(:last-child) {margin-right: 10px;}
+        nav a:hover {background: azure; color: black; transform: scale(1.2); box-shadow: 0 0 5px skyblue;}
+        
+        nav+div {display: flex; height: 60vh; border: 2px dotted tomato;}
+        main {flex: 2;}
+        section {background-color: beige; height: 50%;}
+        article {background-color: burlywood; height: 50%;}
+        aside {background-color: blueviolet; flex: 1; transition: transform 1s;}
+        aside:hover {transform: rotate(-10deg); border-radius: 20px; box-shadow: 2px 2px 5px red;}
+
+        footer {padding: 20px; text-align: center; background-color: lightcoral;}
+
+        /*반응형 (0~450px 넓이부터 style이 적용됨)*/
+        @media(max-width:450px) {
+            nav a {display: block; margin-bottom: 5px;}
+            nav a:not(:last-child) {margin-right: 0;}
+            nav+div {flex-direction: column;}
+
+            section {color: purple; background: gold; text-align: center;}
+            article {text-align: center;}
+            aside {text-align: center;}
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <header>
+            <h1>상단구역</h1>
+        </header>
+        <nav>
+            <a href="#">메뉴1</a>
+            <a href="#">메뉴2</a>
+            <a href="#">메뉴3</a>
+            <a href="#">메뉴4</a>
+            <a href="#">메뉴5</a>
+        </nav>
+        <div>
+            <main>
+                <section>
+                    <h2>정보구역-1</h2>
+                </section>
+                <article>
+                    <h2>정보구역-2</h2>
+                </article>
+            </main>
+            <aside>
+                <h3>부가정보</h3>
+            </aside>
+        </div>
+        <footer>
+            <p>하단정보</p>
+        </footer>
+    </div>
+</body>
+</html>

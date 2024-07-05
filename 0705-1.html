@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>covid</title>
+
+    <style>
+        * {margin: 0; padding: 0; box-sizing: border-box;}
+        h1 {display: none;}
+
+        section {
+            max-width: 1000px; margin: auto; margin-top: 5%; overflow: hidden;
+            position: relative;
+        }
+        img {display: block;}
+        img:not(:first-of-type) {position: absolute;}
+
+        [src*="bg4"] {width: 100%;}
+        [src*="4-1"] {
+            top: 20%; left:0; width: 55%;
+            animation: rt_s 2.5s both;
+        }
+        [src*="4-2"] {
+            top: 0; left:0; width: 65%;
+            animation: scale 1s 1s both;
+        }
+        [src*="4-3"] {
+            bottom: 0; left:0; width: 30%;
+            animation: toUp 1s 1.5s both;
+        }
+        [src*="4-4"] {
+            top: 0; right: 0; width: 30%;
+            animation: toLeft 1s 2s both;
+        }
+        [src*="4-5"] {
+            bottom: -5%; right: 0%; width: 50%;
+            animation: toLeft 1s 2s both;
+        }
+        [src*="4-6"] {
+            top: 50%; right: 0; width: 25%;
+            animation: scale 1s 2.5s both;
+        }
+        [src*="4-7"] {
+            top: 62%; right: 0; width: 25%;
+            animation: scale 1s 2.5s both;
+        }
+        [src*="4-8"] {
+            top: 74%; right: 0; width: 25%;
+            animation: scale 1s 2.5s both;
+        }
+        [src*="4-9"] {
+            top: 0; right: 0; width: 20%;
+            animation: toLeft 1s 2.5s both;
+        }
+        [src="images/0705-4/4-10.png"] {
+            top: 15%; left: 55%; width: 30%;
+            animation: rt_s 1s 2s both;
+        }
+        [src="images/0705-4/4-11.png"] {
+            top: initial; bottom: 0%; left: 25%; width: 40%;
+            animation: toUp 1s 2s both;
+        }
+
+        /* 애니메이션 반응형 */
+        @keyframes rt_s {
+            0% {transform: rotate(-720deg) scale(0);}
+            100%   {transform: rotate(0deg) scale(1);}
+        }
+
+        @keyframes scale {
+            from {transform: scaleX(0);}
+            to   {transform: scaleX(1);}
+        }
+
+        @keyframes toUp {
+            from {transform: translateY(100%);}
+            to   {tramsform: translateY(0);}
+        }
+
+        @keyframes toLeft {
+            from {transform: translateX(100%);}
+            to   {transform: translateX(0);}
+        }
+    </style>
+</head>
+<body>
+    <section>
+        <h1>코비드 극복하기</h1>
+        <img src="images/0705-4/bg4.jpg" alt="배경">
+        <img src="images/0705-4/4-1.png" alt="마스크">
+        <img src="images/0705-4/4-2.png" alt="지혜로운 방법">
+        <img src="images/0705-4/4-3.png" alt="이겨내요">
+        <img src="images/0705-4/4-4.png" alt="손소독제와 마스크">
+        <img src="images/0705-4/4-5.png" alt="손소독제와 손">
+        <img src="images/0705-4/4-6.png" alt="뉴에티켓">
+        <img src="images/0705-4/4-7.png" alt="팩트체크">
+        <img src="images/0705-4/4-8.png" alt="치유레터">
+        <img src="images/0705-4/4-9.png" alt="충격 효과 이펙트">
+        <img src="images/0705-4/4-10.png" alt="네트워크 검색 이펙트">
+        <img src="images/0705-4/4-11.png" alt="코비드19사이트주소">
+    </section>
+</body>
+</html>

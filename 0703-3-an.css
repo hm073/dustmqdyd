@@ -1,0 +1,17 @@
+* {margin: 0; padding: 0; box-sizing: border-box;}
+
+body> div {max-width: 1000px; margin: auto; border: 3px solid red;}
+
+h1 {display: none;}
+
+header {display: flex; padding: 10px;}
+header>a {flex: 1; border: 2px  solid orange;}
+header>nav {flex: 4; border: 2px solid yellow;}
+
+main {display: flex; height: 60vh;}
+main>div {flex: 2; border: 3px solid pink;}
+main>aside {flex: 1; border: 3px solid lightcoral;}
+
+main section {height: 33%; border: 1px dashed tomato;}
+
+footer {padding: 10px; background: #ddd;}
