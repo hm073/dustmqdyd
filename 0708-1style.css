@@ -1,0 +1,21 @@
+h1 {display: none;}
+
+section {max-width: 1100px; margin: auto; background-color: black; position: relative; overflow: hidden;}
+section img {transition: 0.5s;}
+section:hover img {filter: hue-rotate(70deg) blur(5px); transform: scale(1.1);}
+
+img {display: block;}
+
+[alt="girl"] {top: 0; width: 50%; position: relative; margin: 0 0 0 auto; animation: toLeft_1 2s both;}
+[alt="splash"] {top: 0; margin-left: 4%; width: 78%; position: absolute; animation: toLeft_2 2s 0.5s both;}
+
+@keyframes toLeft_1 {
+    from {margin-right: -100px; opacity: 0;}
+    to   {margin-right: 0; opacity: 1;}
+}
+
+@keyframes toLeft_2 {
+    from {left: 100px; opacity: 0;}
+    to   {left: 0; opacity: 1;}
+}
+/* splash 이미지의 경우 margin을 쓰지 않았기 때문에 toLeft 애니메이션을 공통적으로 사용할 수 없었음 */

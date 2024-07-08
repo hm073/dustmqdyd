@@ -1,0 +1,42 @@
+(( splash water effect ))
+
+1. girl 이미지 열고
+   -Background 레이어이름을 더블클릭하여 이름 변경=>  girl
+
+2. 왼쪽툴바: Crop  클릭
+    -왼쪽방향으로 늘리고 
+    -위로 올려서 턱선까지만 보이도록 한다.
+    -엔터친다.	
+
+3. 퀵셀렉션툴로 > 얼굴~머리카락 선택 후
+   -옵션바:  (선택 및 마스크)'Select and Mask...'
+   -설정창 왼쪽 툴바: (가장자리 다듬기 브러시 도구) Refine Edge brush
+  -오른쪽 보기 : 오버레이 (빨간색)
+   -머라카락부분을 드래그
+   -(출력설정) Output Settings :   New Layer width Layer Mask
+    -OK
+
+4. girl 레이어를 선택> 눈켜고 검정색으로 Fill (Ctrl+Delete)
+
+
+>> 배경레이어로 전환하기위하여,
+
+8. 상단메뉴: Layer > New > background from Layer
+
+   - girl copy 레이어에서 레이어 이름 변경: girl
+
+9. 레이어패널 밑 아이콘들 중 4번째  조정레이어 아이콘 (Ajustment Layer) 클릭
+    -(색조/채도) Hue/Saturation :  0  / -45 / 0 하여 채도 감소시킴
+
+10. splash 이미지 불러들여서 > 왼쪽으로 조금 늘리고 > 윗쪽으로 약간 올릴때 부드럽게  조절되지 않는다면> 상단메뉴>  View > Snap  체크를 해제한 후 > 크기를 조절하면 부드럽게 조절된다.
+
+11. 레이어패널 밑 아이콘들 중 3번째 'Layer Mask'클릭
+
+12. 전경색을 검정색으로 설정하고 >  브러시 툴 선택 > 200 / 0 설정하여 오른쪽 끝부분 문지른 후 > 브러시 크기 축소하면서 자연스럽게 마스킹 함 
+
+13. 조정레이어아이콘 (Ajustment Layer) 클릭
+    -Solid Color... 
+    -#d9c2ae
+   -Blend Mode > Soft Light
+
+---  끝  ---
