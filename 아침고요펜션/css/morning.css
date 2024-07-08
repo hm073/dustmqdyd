@@ -1,6 +1,90 @@
 @charset "utf-8";
 
 * {margin: 0; padding: 0; box-sizing: border-box;}
+body {color: #666;}
 img {display: block; max-width: 100%;}
+/*  */
+a {display: block; color: black; text-decoration: none;}
 
 #layout {width:1100px; height: 1200px; margin: auto; border: 5px solid red;}
+
+/*상단*/
+header {height: 200px; display: flex;
+        align-items: flex-start; padding-top: 50px;
+        position: relative; z-index: 1;}
+        /*부모 레이어가 block이기 때문에 width는 따라감*/
+#logo {margin:0% 5% auto 5%;}
+header ul {flex:1; list-style: none; display:flex;
+            text-align: center; padding-top:1%;}
+header li {flex:1;}
+
+
+/* 메인메뉴 */
+.mainMenu {font-size: 1.2rem; font-weight: bold;
+            padding: 7px 0.7px;}
+   /* .mainMenu:hover {background: #004f8a; color: white;} 
+    메뉴 호버에 똑같은 코드가 있음*/
+
+/* 서브메뉴 */
+.subMenu {background: rgba(255, 255, 255, 0.85); 
+          box-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+          /*display: none;*/
+          height: 0; overflow: hidden;}
+.subMenu a {padding: 5px 0.7px;}
+.subMenu a:hover {background: #6a6a6a; color: white;}
+ /* 덩어리가 아니라 개별 a태크가 적용되어야 하기 때문에 submenu a:hover이라고 적은 것 */
+
+/* 메뉴호버 */
+header li .subMenu {transition: 0.3s;}
+header li:hover .mainMenu {background: #004f8a; color: white;}
+header li:hover .subMenu {/*display: block;*/
+                          height: 80%; padding: 10px 0;}
+
+
+
+/*슬라이드*/
+header+section {overflow: hidden; position: relative;
+        background-color: lightgoldenrodyellow;}
+h1 {position: absolute; z-index: 1; padding: 50px 100px;
+    top: 35%; left: 27%; box-shadow: 2px 2px 5px;
+    background: rgba(255, 255, 255, 0.85);
+    border-radius: 30px;
+    animation: big 1.5s both; transform: scale(0);}
+@keyframes big {
+    to {transform: scale(1);}
+}
+/* to만 적기 위해서는 h1에 from에 적어야 하는 내용이 적혀있어야 함  */
+
+#slide {display: flex; position: relative; left: 0;
+        /* animation: go1 1.5s 1.5s both, go2 1.5s 3.5s both, go1 1.5s 6.5s both, go3 1.5s 8s both;*/
+        animation: go4 10s 3s infinite /*alternate*/;}
+
+/*@keyframes go1 {
+    to {left: -100%;}
+}
+
+@keyframes go2 {
+    to {left: -200%;}
+}
+
+@keyframes go3 {
+    to {left: 0;}
+}*/
+
+@keyframes go4 {
+    0% {left: 0;}
+    25% {left: -100%;}
+    50% {left: -200%;}
+    75% {left: -100%;}
+    100% {left: 0;}
+}
+
+/*메인*/
+main {height: 500px;
+    background-color: lightblue;}
+
+/*하단*/
+footer {height: 150px;
+        background-color: #ddd;}
+
+        

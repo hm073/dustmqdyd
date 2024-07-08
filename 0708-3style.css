@@ -1,0 +1,28 @@
+@charset "utf-8";
+
+* {margin: 0; padding: 0; box-sizing: border-box;}
+a {display: block; color: black; text-decoration: none;}
+
+#layout {max-width: 1000px; margin: auto; height: 50vh;
+        border: 5px dashed red;}
+
+#logo {width: 200px; margin: 5% auto;}
+
+ul {list-style: none; display: flex; text-align: center;}
+li {flex: 1; border: 1px solid tomato;}
+/*flex:1해야지 전체를 1/n으로 나눠짐*/
+li:hover .mm {background-color: orange;}
+/* 리스트에 마우스를 올려놨을 때 클래스mm에 적용되는 효과 */
+
+li nav {height: 0; overflow: hidden;}
+li:hover nav {background: yellow; 
+              height: 150px; padding: 10px;
+              transition: 0.5s;}
+
+.mm {background: pink; padding: 8px; 
+    font-weight: bold; font-size: 1.2rem;}
+
+/* nav {height: 200px; padding: 10px;} */
+nav a {padding: 6px;}
+nav a:hover {background-color: white;}
+/* 링크 개별적으로 바탕색 */
