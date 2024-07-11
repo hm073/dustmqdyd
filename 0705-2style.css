@@ -3,8 +3,14 @@ h1 {display: none;}
 
 body>div {max-width:700px; margin: auto; border: 5px solid pink;}
 
-/*header*/
+/* header : #sns(nav)-div,a*/
 #sns {display: flex;}
 #sns>div {flex: 4;}
 #sns>a   {flex: 1; text-align: right; text-decoration: none;}
 header> section {display: flex; justify-content: center; align-items: center;}
+
+/* nav */
+
+/* main */
+
+/* footer */

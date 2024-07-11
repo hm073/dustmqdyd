@@ -1,0 +1,244 @@
+@charset "utf-8";
+
+* {margin: 0; padding: 0; box-sizing: border-box;}
+img {display: block;}
+
+#layout {
+    width:740px; height: 1100px; margin: auto;
+    overflow: hidden;
+    background-color: #1ea5a9;
+}
+
+/*****************************************************/
+/*상단*/
+header {
+    position: relative; height: 545px;
+}
+[alt="선생님"] {
+    position: absolute; top: 90px; right: 0; z-index: 1;
+}
+[alt="말풍선"] {position: absolute; top: -55px; right: -18px;}
+
+
+/* 홍보문구 */
+h1 {display: none;}
+header div:nth-of-type(1) {
+    position: absolute;
+    top: 28px; left: 130px;
+    text-align: center;
+    display: block;
+}
+header div:nth-of-type(1) b {
+    font-family: "Nanum Pen Script", cursive;
+    font-weight: 400;
+    font-style: normal;
+    color: #cefe5c; font-size: 67.7pt;
+}
+header div:nth-of-type(1) span {
+    font-family: "Gothic A1", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    color: #cefe5c; font-size: 30pt;
+}
+
+header div:nth-of-type(2) {
+    display: block;
+    position: absolute;
+    top: 130px; left: 40px;
+    font-family: "Do Hyeon", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    color: #fff; font-size: 97pt;
+    line-height: 90pt;
+    text-shadow: 1px 1px 5px #666;
+}
+
+/*데코 라이트*/
+[src="images/light1.png"] {
+    position: absolute; top: 85px; left: 30px;
+}
+[src="images/light2.png"] {
+    position: absolute; top: 120px; left: 13px;
+}
+[src="images/light3.png"] {
+    position: absolute; top: 200px; left: 440px;
+}
+
+/*3시간 4500원*/
+header div:nth-of-type(3) {
+    display: block;
+    position: absolute;
+    top: 390px; left: 60px;
+}
+    
+header div:nth-of-type(3) strong {
+    font-family: "Do Hyeon", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 30px; 
+}
+
+header div:nth-of-type(4) {
+    display: block;
+    position: absolute;
+    top: 370px; left: 140px;
+}
+header div:nth-of-type(4) span {
+    font-family: "Do Hyeon", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 87px; color: #cefe5c;
+    text-shadow: 2px 2px 5px #666;
+}
+header div:nth-of-type(4) b {
+    font-family: "Do Hyeon", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 45px; 
+}
+[src="images/deco1.png"] {
+    position: absolute; top: 430px; left: 70px;
+}
+
+[src="images/deco2.png"] {
+    position: absolute; z-index: 1;
+    top: 520px; left: 0; right: 0; margin: 0 auto;
+}
+
+
+/*********************************************/
+/* 메인 */
+main {
+    position: relative; z-index: 1;
+    font-family: "Do Hyeon", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+/*고객 감사 이벤트*/
+main h3 {
+    display: block; position: relative; z-index: 1;
+    font-size: 18pt; text-align: center;
+}
+
+main div {
+    display: block; position: relative;
+    top: 12px; left: 0; right: 0; text-align: center;
+}
+main div span:nth-of-type(1) {font-size: 20pt; color: #fff;}
+main div span:nth-of-type(2) {font-size: 30pt; color: #fff;}
+[src="images/deco3.png"] {display: inline-block; transform: translateY(-5px); margin: 0 5px;}
+main div span:nth-of-type(3) {font-size: 40pt; color: #cefe5c;}
+
+main>p {
+    display: block; position: relative;
+    top: 10px; text-align:center;
+    font-family: "Gothic A1", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 10pt;
+}
+main p b {color:white;}
+main p span {color: #cefe5c;}
+
+main ul {
+    display:block; position:relative;
+    top: 50px; left: 160px;
+    list-style-image: url("../images/dot.png");
+    font-family: "Gothic A1", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 10pt;
+}
+main ul span {color:#022b92;}
+
+
+/*******************************************************/
+/* 하단 */
+footer {
+    background-color: #313d49;
+    margin-top: 80px; height:300px;
+    position: relative;
+}
+/*더많은 추가할인혜택*/
+footer h4 {
+    text-align: center; padding: 30px 0 20px;
+    font-family: "Do Hyeon", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 26pt; color: #cefe5c;
+}
+
+/*추가 할인 혜택*/
+footer h4 em {
+    display:inline-block; line-height: 20%;
+    transform: translateY(5px);
+    font-style: normal; color:#fff;
+    transition: 0.5s;
+}
+
+footer h4 em i {
+    display:inline-block;
+    width:100%; height:2px;
+    background: #cefe5c;
+    animation: skdha 3s 1s both infinite;
+}
+@keyframes skdha {
+    from {transform-origin: 0% 50%; transform: scaleX(0);}
+    to   {transform: scaleX(1);}
+}
+
+/*위쪽 별 데코*/
+[src="images/light4.png"] {
+    position: absolute; top:7px; left:275px;
+    animation: tw 1.5s both infinite;
+}
+[src="images/light5.png"] {
+    position: absolute; top:13px; left:250px;
+    animation: tw 1.5s 1s both infinite;
+}
+@keyframes tw {
+    from {transform: scale(0) rotate(360deg);}
+    to   {transform: scale(1) rotate(0);}
+}
+
+/*지점별 혜택*/
+footer div {
+    display: flex; padding: 15px 55px;
+    font-family: "Do Hyeon", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+footer div section {
+    flex: 1; text-align: center;
+}
+
+footer div h5 {
+    background-color: #283442;
+    display: block; margin: 5px auto;
+    width: 190px; height: 28px;
+    border-radius: 5px; color: #cefe5c;
+    font-size: 14pt; line-height: 160%;
+}
+footer div p {
+    display:block; margin: 10px auto;
+    color: #fff;
+    }
+footer div span {display: block; color:#cefe5c;}
+
+footer section button {
+    background-color: #cefe5c; font-weight: bold;
+    display: inline-block; line-height: 150%;
+    border: none; border-radius: 5px;
+    font-family: "Do Hyeon", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    padding: 3px 30px; margin: 5px 0; color: #283442;
+}
+
+footer section button b {
+    display: inline-block; color: #283442;
+    font-size: 1.5rem;
+    transform: translate(17px, 3px);
+}
