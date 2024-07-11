@@ -1,0 +1,143 @@
+@charset "uft-8";
+
+/* 전체 적용하는 부분 */
+* {margin: 0; padding: 0; box-sizing: border-box;}
+
+#layout {
+    max-width: 1100px;
+    margin: 0 auto;
+    border: 5px solid red}
+h1 {display: none;}
+a {display:block; color: #666; text-decoration: none;}
+img {display: block; max-width: 100%;}
+
+
+/* 상단 */
+header {
+    display: flex; margin-top: 5%; align-items: start;
+    height: 140px;
+    position: relative; z-index: 1;
+}
+#logo {
+    flex: 1; display: block;
+    margin: 0 5%;
+}
+
+/* 메뉴 */
+/* 메뉴 전체 제어 */
+header ul {
+    flex: 4;
+    display: flex; justify-content: space-around;
+    text-align: center;
+    list-style: none;
+    margin: 1.5% 1% 0 0;
+}
+header li {flex: 1;}
+
+/* 메뉴 타이틀 */
+.menuT {
+    padding: 3%;
+    font-weight: bold; font-size: 1.2rem;
+}
+
+/* 서브 메뉴 */
+.menu {
+    height: 0; overflow: hidden;
+    padding: 3%;
+    transition: 0.5s;
+}
+.menu a {padding: 2% 0;}
+.menu a:hover {color: #fff; background-color: #85816c;}
+
+/* 메뉴 호버 */
+header li:hover .menuT {
+    border-radius: 2px;
+    background-color: #4f4e48; color: #fff;
+}
+header li:hover .menu {
+    height: 80%;
+    border-radius: 2px;
+    box-shadow: 0 1px 2px #666;
+    background-color: rgba(255, 255, 255, 0.8);
+}
+
+/************************************************************/
+/* 슬라이드 */
+#layout> section {
+    overflow: hidden;
+    position: relative;
+}
+
+
+#slide {
+    display: flex; position: relative;
+    animation: tL 8s both infinite alternate;
+}
+
+@keyframes tL {
+    0% {transform: translateX(0);}
+    50% {transform: translateX(-100%);}
+    100%   {transform: translateX(-200%);}
+}
+
+/* 제일 컨트리 클럽에 오신 것을 환영합니다. */
+#layout> section h2 {
+    position: absolute; z-index: 1;
+    padding: 3% 7%; text-align: center;
+    background-color: rgba(255, 255, 255, 0.7);
+    border-radius: 20px;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/************************************************************/
+/* 메인 */
+main {
+    display: flex;
+    margin-top: 5%; padding: 0 3% 5%;
+}
+main section {padding: 2%;}
+main section:not(:last-of-type) {margin-right: 2%;}
+.sT {
+    display: block; font-weight: bold;
+    padding-left: 2%;
+    margin-bottom: 5%; padding-bottom: 2%;
+    border-bottom: 1px solid #4f4e48;
+}
+
+/* 공지사항 */
+#notice {flex: 1;}
+#notice ol {list-style: none;}
+#notice li {margin-bottom: 5%;}
+#notice li span {float: right;}
+
+/* 협력사 콘텐츠 */
+#partner {
+    flex: 1;
+    border: 5px solid red
+}
+
+#parC {
+    display: flex;
+    margin-top: 10%;
+}
+#parC h3 {
+    flex: 0.5;
+    width: 120px; height: 120px;
+    border: 5px solid red;
+    background-color: #bc9b6a;
+}
+#parC ul {
+    flex: 1;
+    border: 5px solid red
+}
+
+/* 아이콘 */
+#icon h2 {display: none;}
+#icon {
+    flex: 0.5;
+    border: 5px solid red
+}
+
+/************************************************************/
+/* 하단 */
