@@ -112,32 +112,53 @@ main section:not(:last-of-type) {margin-right: 2%;}
 #notice li span {float: right;}
 
 /* 협력사 콘텐츠 */
-#partner {
-    flex: 1;
-    border: 5px solid red
-}
+#partner {flex: 1;}
 
 #parC {
     display: flex;
     margin-top: 10%;
 }
 #parC h3 {
-    flex: 0.5;
     width: 120px; height: 120px;
-    border: 5px solid red;
     background-color: #bc9b6a;
+    padding-top:10%; text-align: center;
+    font-size: 0.9rem;
+    border-radius: 50%;
 }
 #parC ul {
-    flex: 1;
-    border: 5px solid red
+    list-style-position: inside; letter-spacing: -1.5pt;
+    margin-left: 5%; 
 }
+#parC ul {list-style-position: inside;}
+#parC li {margin: 3% 0;}
 
 /* 아이콘 */
 #icon h2 {display: none;}
 #icon {
     flex: 0.5;
-    border: 5px solid red
+    padding-top: 6%;
+}
+#icon button {
+    padding: 12px 0 15px 20px;
+    width: 200px;
+    font-weight: bold;
+    display: flex; align-items: center;
+    border: none;
 }
 
 /************************************************************/
 /* 하단 */
+footer {
+    height: 15vh; width: auto;
+    padding: 3%;
+    background-color: #eee;
+}
+footer ul {
+    display: flex;
+    list-style: none; line-height: 160%;
+}
+footer li:nth-of-type(1) {flex:0.7;}
+footer li:nth-of-type(1) {flex:1;}
+footer li:nth-of-type(1) {flex:0.8;}
+footer li:not(:last-of-type) {margin-right:4%;}
+footer a {display: inline;}
