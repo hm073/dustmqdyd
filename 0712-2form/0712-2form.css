@@ -1,0 +1,82 @@
+@charset "utf-8";
+
+* {margin: 0; padding: 0; box-sizing: border-box;}
+section {
+    max-width: 400px; margin: auto;
+    border: 5px solid skyblue;
+    background-color: lightcyan; border-radius: 10px;
+    padding: 10px;
+}
+h1 {padding-bottom: 10px;}
+label {margin-right: 20px;}
+input {margin-top: 15px ;}
+
+/* 폼태그가 선택되어졌을 때 해당되는 가상선택자
+radio버튼의 경우 크기 정도 밖에 변하지 않는 듯 */
+input:checked {height: 15px; width: 15px;}
+[type="text"] {
+    background-color: palegreen;
+    border: 2px dashed tomato;
+    border-radius: 5px; padding: 3px;
+}
+/* 글상자가 포커스 되었을 때 */
+input:focus   {
+    background-color: yellow; color: blue;
+    font-weight: bold;
+}
+
+/* 글상자가 포커스 되었다가 해제되었을 때   -> 스크립트blur
+스크립트로만 존재*/
+
+
+[type="number"] {width: 150px; height: 30px;}
+
+/* 입력 범위 이외의 경우 다른 효과가 나옴
+(유효하지않음-영문입력의 경우도 작동) */
+[type="number"]:invalid {color: red;}
+
+/* 숫자가 범위 밖이다 (min과 max가 입력되어야지만 작동됨-숫자만 작동) */
+[type="number"]:out-of-range {background-color: aqua;}
+
+/* 입력 범위 이외의 경우 다른 효과가 나옴(유효함) */
+[type="number"]:valid {color: orange; background-color: yellowgreen;}
+ /*valid를 쓰면 focus와 충돌이 나는 듯함*/
+
+/* 필수입력항목 */
+:required {border: 2px dotted red;} /*required는 필수입력*/
+ 
+/* 필수가 아닌 입력항목 */
+:optional {border: 2px dashed blueviolet;}
+
+/* 입력불가능한 폼
+(readonly 글상자의 내용을 고칠 수 없고 그냥 볼 수만 있음)
+>로그인 후의 수정불가능한 항목 등에 쓰임 */
+input:read-only {background-color: #444; color: white;}
+
+/* 전체 */
+body {background-color: gold} /*콘텐츠까지만*/
+:root {background-color: seashell;} /*콘텐츠 벗어난 범위까지 전부*/
+
+
+/* 해당 범위의 첫번째 문자 하나 */
+h1::first-letter {font-size: 2rem; font-weight: bold; background-color: gold; color:blueviolet}
+
+/* 해당 범위 안에 첫번째 줄 */
+h1::first-line {color:aquamarine;}
+
+label:lang(en) {background-color: #444;}
+
+/* 해당 범위 안에 형제들 중에서 짝수에 해당할 때
+child의 경우 여러개 of-type의 경우 한개만 잡힘*/
+input:nth-child(even) {background-color: red;}
+
+/* 해당 범위 안에 한 개의 자식만 가진 요소 
+>body 안에 p>p와 div>p,s 가 있을 때 p만 해당*/
+:only-child {background-color: blueviolet;}
+
+/* 해담 범위 안에 한 번만 쓰인 요소
+>body 안에 p div div가 잇을 때 p 만 해당*/
+:only-of-type {color: wight}
+
+/* 해당 범위 안에 자식이 없는 모든 요소 */
+:empty {border:3px solid green;}

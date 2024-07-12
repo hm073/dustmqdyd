@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>탭으로 구성 연습</title>
+    <link rel="stylesheet" href="0712-3style.css">
+</head>
+<body>
+    <section id="ng">
+        <h2><a href="#notice">공지사항</a></h2>
+        <h2><a href="#gallery">갤러리</a></h2>
+        <div id="content">
+            <ol id="notice">
+                <li>1111</li>
+                <li>2222</li>
+                <li>3333</li>
+                <li>4444</li>
+                <li>5555</li>
+            </ol>
+            <div id="gallery">
+                <a href="#">1111</a>
+                <a href="#">2222</a>
+                <a href="#">3333</a>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        //alert(document.getElementById('notice')) //경고창 표시
+        //document.getElementById('notice').style.background = 'red';
+        //문자열의 경우 반드시 ''나 "" 필수로 넣어야 함
+
+        //notice,gallery라는 변수가 선언됨
+        const notice = document.getElementById('notice')
+        const gallery = document.getElementById('gallery')
+
+        //x,y라는 변수가 선언됨(h2에 있는 공지사항과 갤러리)
+        const x = document.querySelector('[href="#notice"]');
+        const y = document.querySelector('[href="#gallery"]');
+
+        //xx라는 변수가 선언됨
+        const xx = () => {
+            //alert("공지사항 버튼이 클릭됨");
+            notice.style.zIndex = 1;
+            gallery.style.zIndex = 0;
+            //notice.style.background = 'red';
+        }
+        const yy = () => {
+            gallery.style.zIndex = 1;
+            notice.style.zIndex = 0;
+            //gallery.style.background = 'orange';
+        }
+        
+
+        //x라는 변수에서 'click'이라는 이벤트를 감지하면, xx라는 변수를 가져온다(get)..
+        x.addEventListener('click', xx );
+        y.addEventListener('click', yy );
+    </script>
+</body>
+</html>

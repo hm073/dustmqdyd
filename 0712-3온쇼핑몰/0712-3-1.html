@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ON 쇼핑몰에서 공지사항/갤러리</title>
+    <link rel="stylesheet" href="0712-3-1style.css">
+    
+</head>
+<body>
+    <section id="notigel">
+        <h2><a href="#notice">공지사항</a></h2>
+        <h2><a href="#gallery">갤러리</a></h2>
+        <div id="notice">       
+            <ol>
+                <li>11111111111</li>
+                <li>22222222222</li>
+                <li>3333333333333</li>
+                <li>444444444</li>
+                <li>5555555555</li>
+            </ol>
+        </div>
+        <div id="gallery">            
+            <div>
+                <a href="#">이미지</a>
+                <a href="#">이미지</a>
+                <a href="#">이미지</a>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        //notice라는 변수가 선언 됨.
+        const notice = document.getElementById('notice');
+
+        //gallery라는 변수가 선언 됨.
+        const gallery = document.getElementById('gallery');
+
+        //x1라는 변수가 선언됨 (h2들중 첫번째요소)
+        const x1 = document.querySelector('h2:first-of-type'); 
+        //x2라는 변수가 선언됨 (h2에 있는 <a>공지사항</a>)
+        const x2 = x1.children[0]; //children 속성은 collection이다. 배열 [0,1,2,...]
+        //document.write( x2 );
+        
+
+        //y1라는 변수가 선언됨 (h2에 있는 <a>갤러리</a>)
+        const y1 = document.querySelector('h2:last-of-type'); 
+        //y2라는 변수가 선언됨 (h2에 있는 <a>갤러리</a>)
+        const y2 = y1.children[0]; //children 속성은 collection이다. 배열 [0,1,2,...]
+        //document.write( y2 );
+        
+        //xx라는 변수가 선언됨
+        const xx = () => {
+            //alert("공지사항 버튼이 클릭됨");
+            notice.style.zIndex = 1;
+            gallery.style.zIndex = 0;            
+            x1.style.background=  'gold';
+            y1.style.background= 'gray';       
+        }
+
+        //yy라는 변수가 선언되었고, 거기에는 값으로 익명함수가 들어있다.
+        const yy = () => {
+            //alert("갤러리 버튼이 클릭됨");
+            gallery.style.zIndex = 1;
+            notice.style.zIndex = 0; 
+            x1.style.background= 'gray';
+            y1.style.background= 'aqua';            
+        }
+        
+
+        //x라는 변수에서 'click'이라는 이벤트를 감지하게 된다면, xx라는 변수를 get;        
+        x2.addEventListener( 'click' , xx  );
+
+        //y라는 변수에서 'click'이라는 이벤트를 감지하게 된다면, yy라는 변수를 get;
+        y2.addEventListener( 'click' , yy  );
+    </script>
+</body>
+</html>

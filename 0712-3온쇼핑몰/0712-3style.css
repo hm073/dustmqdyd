@@ -1,0 +1,51 @@
+@charset "utf-8";
+
+* {margin: 0; padding: 0; box-sizing: border-box;}
+
+#ng {
+    max-width: 400px; margin: auto; border: 3px solid red;
+}
+
+h2 {display: inline-block; background-color: aliceblue;}
+h2:first-of-type {background-color: gold;}
+h2:last-of-type {background-color: yellow;}
+#content {position: relative;}
+
+#notice {
+    background-color: gold;
+    position: relative;
+    list-style-position: inside;
+}
+
+#gallery {
+    background-color: yellow;
+    position:absolute; top: 0; left: 0;
+    width: 100%; height: 100%;
+    /* z-index: 1; */
+}
+
+/*:target {z-index: 1;}*/
+/*백그라운드 컬러를 넣었을 때 원래 창색이 지정되어 있으면 안 됐다가
+색이 지정되지 않으면 바뀌는 걸 보면 좀 더 힘이 약함*/
+
+
+/* 공지와 갤러리가 겹쳐져 있기 때문에 css에서는 z-index 변환으로만 링크가 작동함
+지금은 공지사항이 위인 상태 */
+
+
+
+/*자바 스크립트에서는..?
+공지사항을 클릭하면: #notice가 z-index:1;이 되고 배경이 빨간색이 되어야 함
+하지만 자바에서는 -(하이픈)을 쓸 수 없음
+그래서 zIndex 와 같이 표현
+ 예) font-weight:bold -> fontWeight:"bold"
+
+ x.addEventListener()
+ x에 이벤트를 추가하겠다 (이벤트 이름, 함수)
+
+
+이름이 있는 함수 const xx = funciton() {실행문};
+익명함수 funcion () {실행문};
+
+변수선언이 미리 되어야함!
+>그래야 찾아감
