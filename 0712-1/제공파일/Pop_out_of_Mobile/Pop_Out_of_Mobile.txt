@@ -1,0 +1,42 @@
+<< Pop Out Mobile >>
+
+-이미지: mobile_phone, water
+
+
+-전체 요점-
+폰이미지 열고,
+흰색 사각도형 : 내부그림자. darker color
+water : 레이어마스크작업후  Multifly
+water 복사하여: screen
+color Lookup : HorrorBlue     또는   Futuristic bleak  (차가운 냉소적인 미래주의)    opacity: 50%
+
+
+=================================================
+
+--작업순서--
+
+1) Background  :    폰 이미지 열고 
+
+2)   Shape 1   :   전경색을 흰색 설정 > 펜툴 클릭 > 옵션: Shape설정 >  액정 화면모양 위에 겹치는 사각 모양 형성
+
+2-1) 레이어 스타일 대화상자에서 > Inner Shadow에서 >   75%, 120도, 0, 31, 21 > OK 
+
+3) Shape 1 :   레이어 블랜드모드: Darker Color
+
+4) water :    물이미지 불러들여서 액정위에 위치.
+
+5) ctrl+ T 하여  크기와 위치를 맞추고,
+
+5-1)  레이어마스크 씌워서  물 바깥 주변을 지우는데... 물 튀기는 부분은 지우지 말것
+
+5-2) water : 레이어블랜드모드: multiply
+
+6) ctrl + J 하여 물 레이어를 복사: 
+6-1)  복사 된 water  레이어:     레이어 블랜딩: Screen 한 후 
+6-2)  바로 밑에 있는   물레이어에 클리핑 마스크 한다.
+
+7)   Color Lookup: (색상검색)  레이어 패널 맨 밑 아이콘들중 4번째 아이콘 클릭하여 > Color Lookup > Horror Blue..3DL한 후 >> 레이어블랜드모드: Lighten하여  엔틱한 푸른빛이 감도는 분위기를 조성 하거나... 아니면... Futuristic bleak  (차가운 냉소적인 미래주의)
+
+--- 끝 ---
+
+
