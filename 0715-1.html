@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트연습</title>
+    <script>
+        document.addEventListener("DOMContentLoaded", function(){
+            /*//1. input인식하기
+            const x = document.querySelector("[placeholder *= 'cm']");
+            //2. button인식하기
+            const y = document.getElementsByTagName("button")[0];
+            //alert (y);
+              //const yy = [10, 20, "라인", "컴퓨터"]; //array 배열:값이 두개이상 필요할 때 쓰임
+              //alert (yy[2]); //경고창에 '라인'이 뜸. 각 아이템의 번지수는 0부터이고 이것을 인덱스 번호라고 부른다
+            //3. input에 입력한 값을 저장하여 활용하기
+            let val = 0;
+
+
+            //alert (x);
+            x.addEventListener("change", (e) => {
+                val = e.target.value;
+            });
+
+            y.addEventListener("click", () => {
+                alert (val);*/
+            
+            //1. input 인식하기
+            const x = document.querySelector("[placeholder *= 'cm']");
+            //2. button인식하기
+            const y = document.getElementsByTagName("button")[0];
+            //결과값 보이는 곳
+            const z = document.querySelector("[placeholder *= '결과값']");
+
+            //값 입력 후 버튼 클릭하면 계산하여 결과 표시됨. (요소.value는 입력한 글자이다.)
+            y.addEventListener("click", () => {
+                z.value = x.value / 100;
+            });
+
+            let xx = "333";
+            alert(typeof xx);
+        });
+    </script>
+</head>
+<body>
+    <input type="number" placeholder="cm 숫자를 입력하세요"><br>
+    <button type="button">m로 환산하기</button><br>
+    <input type="number" placeholder="결과값">
+</body>
+</html>

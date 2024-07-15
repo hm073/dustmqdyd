@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트연습</title>
+    <script>
+        document.addEventListener("DOMContentLoaded", function(){
+
+            let n1 = 20;
+            let n2 = 10;
+            let s1 = n1+n2;
+            let s2 = n1-n2;
+            let s3 = n1*n2;
+            let s4 = n1/n2;
+
+            //벡틱 문자
+            document.write( `${s1}<br>${s2}<br>${s3}<br>${s4}` );
+
+            let eo = 2;
+            let re = eo % 2; //eo를 숫자 2로 나눈 나머지 값
+            let co;
+
+            //(a===b) a와 b는 value와 type이 모두 같다.
+            if( re === 0 ) {
+                co = `${eo}는 짝수입니다.`;
+            } else {
+                co = `${eo}는 홀수입니다.`;
+            }
+            console.log(co);
+
+            let inc = 0;
+            let add = 0;
+
+            ++inc;
+            console.log(inc);
+
+            inc++;
+            console.log(inc);
+
+            add = ++inc;
+            console.log(`${add} .... ${inc}`); //3...3
+            
+            add = inc++;
+            console.log(`${add} .... ${inc}`); //4...4
+
+        });
+    </script>
+</head>
+<body>
+    <p></p>
+</body>
+</html>

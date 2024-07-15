@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트연습</title>
+    <script>
+        document.addEventListener("DOMContentLoaded", function(){
+
+            let x = 35;
+            let y = ++x;
+
+            const $p = document.getElementsByTagName('p'); //tagname 쿼리셀렉터와는 다른 고전적인 방법, 약간 속도가 빠르다
+                //외국은 태그 이름을 변수명으로 하고 싶을 때 $표시를 사용하더라고..
+
+            $p[0].innerHTML = y; //.innerHTML 속성 콘텐츠를 의미한다
+
+            const fruits = ["딸기", "사과", "바나나"];
+            $p[1].innerHTML = fruits;
+            $p[2].innerHTML = fruits[0];
+
+        });
+    </script>
+</head>
+<body>
+    <p></p>
+    <p></p>
+    <p></p>
+    <p></p>
+</body>
+</html>

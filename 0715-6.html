@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트연습</title>
+    <script>
+        document.addEventListener("DOMContentLoaded", function(){
+
+            //const $p = document.getElementsByTagName('p'); //[object HTMLCollection] >collection은 forEach를 쓸 수 없음
+            const $p = document.querySelectorAll('p');     //[object NodeList]
+            const $b = document.getElementsByTagName('button');
+            const fruits = ["딸기", "사과", "바나나", "키위"]; //index = 0,1,2,3
+
+
+            /*function xx() {                 //함수 이름을 불러야 안에 내용이 실행됨
+                alert(fruits);
+            }
+
+            $b[0].addEventListener("click", () => {xx()}); //addEventListener 안에서는 익명함수만 됨(화살표 함수)*/
+            $b[0].addEventListener("click", () => {        //고전적으로는 function()를 쓰는데 6버전에서는 () => 로 대체됨
+                $p.forEach( (x,y,z) => {
+                    x.innerText = fruits[y];
+                });
+            });
+
+        });
+    </script>
+</head>
+<body>
+    <button type="button">실행하기</button>
+    <p></p>
+    <p></p>
+    <p></p>
+    <p></p>
+</body>
+</html>
