@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>왼쪽 방향을 향하여 자동 슬라이드</title>
+    <style>
+        * {margin: 0; padding: 0; box-sizing: border-box;}
+
+        #layout {max-width: 900px; height: 500px; margin: auto; border: 5px solid red;}
+
+        #slide {display: flex; width: 300%; position: relative; left: 0;}
+        #slide div {border: 1px solid blue; height: 300px; width: 100%;
+            background-color: aliceblue; font-size: 10rem;}
+    </style>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+
+            //setyimeout(함수 , 지체시간 1200-> 1.2초) 딱 한번만 호출됨
+            //setTimeout(() => {alert('하이');}, 1200);
+
+            const s1 = document.getElementById('slide');
+
+            const toLeft = () => {
+                s1.style.transition = 'left 1.5s';   //지정요소.스타일.css속성 = '값'
+                s1.style.left = '-100%';
+                
+                setTimeout(() => x() , 1500);
+                x = () => {
+                    s1.style.left = 0;             //0과 -900이 루프돌아야 움직이고 안 그러면 -900에서 멈춰있음
+                    s1.style.transition = 'none';  //transition즉 시간차 없이 동시에 일어나야 되서 none
+                    s1.append(s1.firstElementChild); //지정요소 끝에 추가됨
+                };
+            };
+
+            setInterval( toLeft , 2000); 
+            //함수란 안에 실행해야되는 함수(toLeft)가 하나뿐이면 {}를 생략해도 되나 ;도 같이 생략해야 오류가 안 남.
+            //setinterval 무한히 호출됨
+            //이벤트는 항상 함수 호출 밑에 있어야 작동이 잘 됨
+            //원래 () => {toLeft();} 라고 함수에 쓰여야 하지만 이벤트가 밑으로 오면서 위쪽을 변수로 쓸 수 있게 됨
+            //그래서 변수명으로만 써도 괜찮아짐
+
+        }); // 전체끝
+    </script>
+</head>
+<body>
+    <div id="layout">
+        <section id="slideArea">
+            <h1>슬라이드</h1>
+            <div id="slide">
+                <div>1</div>
+                <div>2</div>
+                <div>3</div>
+            </div>
+        </section>
+    </div>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>오른쪽 방향을 향하여 자동 슬라이드</title>
+    <style>
+        * {margin: 0; padding: 0; box-sizing: border-box;}
+        #layout {max-width: 900px; height: 500px; margin: auto; border: 5px solid red;
+        overflow: hidden;}
+        #slide {display: flex; width: 300%; position: relative; left: -200;} /*0=>-200*/
+        #slide div {border: 1px solid blue; height: 300px; width: 100%;
+            background-color: aliceblue; font-size: 10rem;}
+    </style>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+
+
+            const s1 = document.getElementById('slide');
+
+            const toRight = () => {
+                s1.style.transition = 'left 1.5s';
+                s1.style.left = '-100%';
+                
+                setTimeout(() => x() , 1500);
+                x = () => {
+                    s1.style.left = '-200%';         //0 => -200
+                    s1.style.transition = 'none';  
+                    s1.prepend(s1.lastElementChild); //prepend:시작부분에 삽입
+                };
+            };
+
+            setInterval( toRight , 2000); 
+
+        }); // 전체끝
+    </script>
+</head>
+<body>
+    <div id="layout">
+        <section id="slideArea">
+            <h1>슬라이드</h1>
+            <div id="slide">
+                <div>1</div>
+                <div>2</div>
+                <div>3</div>
+            </div>
+        </section>
+    </div>
+</body>
+</html>

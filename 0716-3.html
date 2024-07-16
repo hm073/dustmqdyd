@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>왼쪽에서 자동이동 슬라이드 구현하기 미션</title>
+    <style>
+     * {margin: 0; padding: 0; box-sizing: border-box;}
+
+    #layout {max-width: 900px; height: 500px; margin: auto; overflow: hidden;}
+
+    #slide {display: flex; width: 300%; position: relative; left: 0;}
+    img {height: 500px; width: 100%;}
+
+    h1 {display: none;}
+    </style>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+
+            const s1 = document.getElementById('slide');
+
+            const iw = window.innerWidth; //브라우저 넓이 ~
+            const img = Array.from(document.getElementsByTagName('img'));
+
+            img.forEach( i => {
+                i.style.width= iw +'px';
+            })                            //여기까지 반응형을 위한 부분(작동 안 되는 느낌)
+            
+            const toLeft = () => {
+                s1.style.transition = 'left 1.5s';
+                s1.style.left = '-100%';
+
+                setTimeout( () => x(), 1500);
+                x = () => {
+                    s1.style.left = 0;
+                    s1.style.transition = 'none';
+                    s1.append(s1.firstElementChild);
+                };
+            };
+
+            setInterval( toLeft, 2000);
+
+        }); // 전체종료
+    </script>
+</head>
+<body>
+    <div id="layout">
+        <section>
+            <h1>왼쪽으로 슬라이드</h1>
+            <div id="slide">
+                <img src="images/6/dog-1561018_1920.jpg" alt="개">
+                <img src="images/6/parrot-1192975_1920.jpg" alt="앵무새">
+                <img src="images/6/the-cat-3763803_1920.jpg" alt="고양이">
+            </div>
+        </section>
+    </div>
+</body>
+</html>
