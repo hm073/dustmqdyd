@@ -57,13 +57,16 @@
                     //슬라이드가 꺼졌다면~ 아래를 작동한다는 의미
                     x1 = e.touches[0].clientX;
                 
-                    area.addEventListener("touchend", e => {
+                    area.addEventListener("touchend", zz = e => {
 
                         x2 = e.changedTouches[0].clientX;
 
                         if ( x1 > x2 ) {
                             toLeft(); //함수형 변수라서 ()를 적어야 함
                         }
+
+                        area.removeEventListener("touchend", zz); //이벤트리스너 제거
+                        
                     });
                 };
 
