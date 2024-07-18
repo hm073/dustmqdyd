@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>터치 이벤트 감지하기</title>
+    <script>
+        document.addEventListener("DOMContentLoaded", ()=>{
+
+            const x = document.getElementsByTagName("p"); //collection
+            const y = document.getElementsByTagName("h2"); //collection
+
+            const z = () => {
+                y[0].innerText = "라인 컴퓨터";
+            }
+
+            x[0].addEventListener("touchstart", z);
+
+        });//프로그램 종료
+    </script>
+    <style>
+        #touch {max-width: 700px; margin: auto; border: 3px solid pink;}
+        p:nth-of-type(1) {padding:50px; border: 3px dashed brown; background-color: aqua;}
+        /*array쪽에서는 1이 0 이지만 여기선 그냥 1이 1*/
+        h2 {padding: 10px; color: red; text-align: center; font-size: 2rem; text-shadow: 0 0 10px goldenrod;}
+    </style>
+</head>
+<body>
+    <section id="touch">
+        <h1>DOM touchstart Event</h1>
+        <p>이곳을 터치하면 :라인컴퓨터: 라는 메세지가 아래부분에 나타납니다.</p>
+        <h2></h2>
+        <p><strong>★주의사항★</strong> 터치 가능한 디바이스에서만 터치가 반응함!</p>
+    </section>
+</body>
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>어느 방향으로 터치했는지 알아내기</title>
+    <style>
+        #touch {
+            max-width: 800px;
+            margin: auto;
+            border: 3px double blue; /*이중선 double은 3px 이상이여야 함*/
+            background-color: aquamarine;
+        }
+        h2 {
+            font-size: 2rem;
+            color: brown;
+            text-align: center;
+            text-shadow: 0 0 5px gold;
+        }
+    </style>
+    <script>
+        document.addEventListener("DOMContentLoaded",()=>{
+
+            const area = document.getElementById("touch"); //터치하는 곳
+            const h2 = document.getElementsByTagName("h2");  //글자 나오는 곳
+
+            let x1;  //변수 선언만, 값은 나중에 하겠다
+            let x2;  //값을 누락시킬 수 있는 건 let만 가능하고 const는 안됨(엄격함)
+            let pos; //어느 위치임?
+
+            //터치를 시작했을 때의 x좌표 (clientX)를 x1에 저장할 것
+            area.addEventListener("touchstart" , e => {
+                //이벤트를 감지하는 매개변수가 하나뿐이면 ()생략 가능
+                
+                x1 = e.touches[0].clientX;
+                //슬라이드하면 터치가 계속되는데 가장 처음 터치한 그 지점을 잡아내기 위해 [0]
+                //그리고 x좌표만 가져올거다 해서 clientX 인 듯
+
+                x1 = Math.round(x1); //소수점 아래를 반올림
+
+            });
+
+            //터치를 떼었을 때의 x좌표 (clientX)를 x2에 저장할 것
+            area.addEventListener("touchend" , e => {
+
+                x2 = e.changedTouches[0].clientX;
+                //손을 떼자마자 감지하기 위해서 [0]
+
+                x2 = Math.trunc(x2); //소수점 아래를 지움(새로생긴기능!)
+
+                if( x1 > x2 ){
+                    pos = "왼쪽 방향으로 터치했습니다."
+                }
+                else if( x1 < x2 ){
+                    pos = "오른쪽 방향으로 터치했습니다."
+                }
+                else {
+                    pos = "터치 방향을 알 수 없습니다."
+                }
+
+                h2[0].innerText = `터치 시작점은 ${x1}이고, 터치 끝점은 ${x2} 이므로 ${pos}`
+
+            });
+
+        });//프로그램 전체 종료
+    </script>
+</head>
+<body>
+    <section id="touch">
+        <h1>터치방향 알아내기</h1>
+        <p>
+            이곳을 왼쪽 또는 오른쪽 방향으로 터치하시오.<br>
+            단 터치 가능한 디바이스로 실행하시오.
+        </p>
+        <P>
+            <strong>★주의사항★</strong>
+            터치 가능한 디바이스에서만 반응함.
+        </P>
+        <h2></h2>
+    </section>
+</body>
+</html>
