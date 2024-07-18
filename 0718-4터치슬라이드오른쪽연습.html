@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>오른쪽 방향을 향하여 자동 슬라이드</title>
+    <style>
+        * {margin: 0; padding: 0; box-sizing: border-box;}
+        #layout {max-width: 900px; height: 500px; margin: auto; border: 5px solid red;
+        overflow: hidden;}
+        #slide {display: flex; width: 300%; position: relative; left: -200%;} /*0=>-200 position설정을 안 해도 에러가 안나니까 주의*/
+        #slide div {border: 1px solid blue; height: 300px; width: 100%;
+            background-color: aliceblue; font-size: 10rem;}
+    </style>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+
+            const area = document.getElementById('slideArea');
+            const s1 = document.getElementById('slide');
+
+            let x1;
+            let x2;
+            let pos;
+            let zz;    //zz라는 변수 선언, 값은 없음(const는 값없는 거 안됨)
+            let ss = false;  //슬라이드를 껐다는 의미로 만든 변수 = (!ss) 와 같음
+
+            const toRight = () => {
+                s1.style.transition = 'left 1.5s';
+                s1.style.left = '-100%';
+                
+                setTimeout(() => x() , 1500);
+                x = () => {
+                    s1.style.left = '-200%';         //0 => -200
+                    s1.style.transition = 'none';  
+                    s1.prepend(s1.lastElementChild); //prepend:시작부분에 삽입
+                };
+            };
+
+            //setInterval( toRight , 2000); 
+
+            area.addEventListener("touchstart", e => {
+                //이중 터치 방지를 위해 (!ss)는 ss가 false라면, 의 의미
+                //즉 ss가 false일 때만 실행됨. 슬라이드가 꺼져 있을 때만 실행
+                if( !ss ) x1 = e.touches[0].clientX; //x1~clientX까지 중괄호인데 생략함
+
+                area.addEventListener("touchend", zz = e =>{
+                    x2 = e.changedTouches[0].clientX;
+
+                    if( x1 < x2 ) toRight();
+                        //원래 {}가 있어야하지만 실행되어야 하는게 한 개 뿐이면 생략가능
+                        //참고로 변수형 함수, 함수인데 변수로 되어 있음, 선언함수 호출이랑 똑같이 씀
+                    
+                    area.removeEventListener("touchend", zz );
+                        //코드 블럭 안에서만 잠깐 이벤트가 죽고, 블럭 밖으로 가면 다시 살아남
+                        //이중터치 방지
+                });
+            });
+
+        }); // 전체끝
+    </script>
+</head>
+<body>
+    <div id="layout">
+        <section id="slideArea">
+            <h1>슬라이드</h1>
+            <div id="slide">
+                <div>1</div>
+                <div>2</div>
+                <div>3</div>
+            </div>
+        </section>
+    </div>
+</body>
+</html>
