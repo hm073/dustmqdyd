@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>로딩 스크립트</title>
+  <style>
+    .donut-loader {
+    width: 150px;
+    height: 150px;
+    border: 25px solid #ccc;
+    border-radius: 50%;
+    margin: 100px auto;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    }
+
+    .donut-loader::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    border: 25px solid red;
+    border-radius: 50%;
+    animation: ani 1s 1s both infinite;
+    }
+
+    @keyframes ani {
+        from {opacity: 0; transform: rotate(0); transform-origin: top;}
+        to   {opacity: 1; transform: rotate(360deg); transform-origin: top-left;}
+    }
+  </style>
+  <script>
+    document.addEventListener("DOMContentLoaded", ()=>{
+
+    });//end
+  </script>
+</head>
+<body>
+  <div class="donut-loader"></div>
+</body>
+</html>

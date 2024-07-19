@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #gugudan {
+            max-width: 1200px; margin: auto;
+        }
+        h1 {text-align: center;}
+        table {width: 100%;}
+        table, td {border: 5px inset aquamarine; border-collapse: collapse;}
+        td {padding: 10px; text-align: center;}
+        td:first-child {background-color: aqua; width: 7%; font-weight: bold; font-size: 1.1rem;}
+    </style>
+    <script>
+        document.addEventListener("DOMContentLoaded",()=>{
+
+            const $table = document.querySelector("#gugudan table");
+
+            for(let i=2; i<=9; i++){
+                const $tr = document.createElement("tr");
+                let $td = `<td>${i}단</td>`;
+
+                for (let j = 1; j<=9; j++) {
+                    $td += `<td>${i} X ${j} = ${i*j}</td>`;
+                }
+
+                $table.appendChild($tr);
+                $tr.innerHTML = $td;
+            }
+
+        });//end
+    </script>
+</head>
+<body>
+    <section id="gugudan">
+        <h1>구구단</h1>
+        <table>
+        </table>
+    </section>
+</body>
+</html>

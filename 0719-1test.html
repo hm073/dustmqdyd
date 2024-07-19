@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>flex에 대한 간단 미션</title>
+    <style> 
+        .flex-container { 
+        flex-flow: row wrap;
+        font-weight: bold;
+        text-align: center;
+        }
+
+        .flex-container > * {
+        padding: 10px;
+        }
+
+        #r {
+        display:flex;
+        padding: 0;
+        height: 30vh;
+        }
+
+        .main {
+        background: cornflowerblue;
+        flex: 3;
+        display:flex; justify-content: center; align-items: center;
+        }
+        .main b {color: red;}
+
+        .header {background: coral;}
+        .footer {background: lightgreen;}
+        .aside1 {background: moccasin; flex:1;
+                display:flex; justify-content: center; align-items: center;}
+        .aside2 {background: violet; flex:1;
+                display:flex; justify-content: center; align-items: center;}
+                
+        @media (max-width:600px) {
+            #r {flex-direction: column;}
+        }
+    </style>
+</head>
+<body>
+
+<div class="flex-container">
+  <header class="header">Header</header>
+  <div id=r>
+    <aside class="aside aside1">Aside 1</aside>
+    <article class="main">Lorem <b>ipsum</b></article>
+    <aside class="aside aside2">Aside 2</aside>
+  </div>
+  <footer class="footer">Footer</footer>
+</div>
+
+</body>
+</html>
