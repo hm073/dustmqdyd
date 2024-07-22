@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>flex 미션</title>
+    <style>
+        * {margin: 0; padding: 0; box-sizing: border-box;}
+
+        #layout {max-width: 800px; margin: auto; border: 5px solid red;}
+
+        header {background-color: aquamarine; text-align: center; height: 20vh;}
+        #m {background-color: antiquewhite; display: flex; flex-direction: column;}
+        main {background-color: lightblue; flex: 3; height: 30vh;
+            display: flex; justify-content: center; align-items: center;
+            padding: 8%;}
+        .s {flex: 1; display: flex; justify-content: center; align-items: center;
+            padding: 5%;}
+        footer {background-color: aqua; text-align: center; height: 20vh;}
+
+        @media (min-width: 821px) {
+            #m {flex-direction: row;}
+        }
+    </style>
+</head>
+<body>
+    <div id="layout">
+        <header>
+            <h1>미션</h1>
+        </header>
+        <div id="m">
+            <aside class="s s1">사이드1</aside>
+            <main>메인</main>
+            <aside class="s s2">사이드2</aside>
+        </div>
+        <footer>하단설명</footer>
+    </div>
+</body>
+</html>

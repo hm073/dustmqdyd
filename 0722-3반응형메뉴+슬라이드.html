@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>반응형 메뉴</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
+    <style>
+        * {margin: 0; padding: 0; box-sizing: border-box;}
+        body {margin: 10px;}
+        #layout {
+            max-width: 900px;
+            margin: auto;
+            border: 5px solid red;
+        }
+        h1 {display: none;}
+        header {
+            display: flex;
+            align-items: flex-start;
+        }
+        ul {
+            background-color: pink;
+            flex: 1;
+            list-style: none;
+            text-align: center;
+            line-height: 200%;
+            height: 0;
+            overflow: hidden;
+            transition: 1.2s;
+        }
+
+        .material-symbols-outlined {
+            font-variation-settings:
+            'FILL' 0,
+            'wght' 600,
+            'GRAD' 0,
+            'opsz' 24;
+            font-size: 2rem;
+        }
+        /****************************************************/
+
+        #slideArea {overflow: hidden; position: relative;}
+        #slideArea h2 {
+            position: absolute; z-index: 1;
+            background-color: rgba(225, 225, 255, 0.85);
+            padding: 15px 35px;
+            font-size: 1rem;
+            top: 50%; left: 50%; transform: translate(-50%, -50%);
+            border-radius: 10px; box-shadow: 0 0 5px gray;
+        }
+        #slide {display: flex; /*width:300%;*/ position: relative;}
+        #slide img {display: block; width: 100%;}
+
+
+        /*****************데스크탑,타블렛류*******************/
+
+        @media (min-width: 800px) {
+            ul {height: auto; display: flex;}
+            ul li {flex: 1;}
+            .material-symbols-outlined {display: none;}
+            #slideArea h2 {
+            position: absolute; z-index: 1;
+            background-color: rgba(225, 225, 255, 0.85);
+            padding: 20px 100px;
+            top: 50%; left: 50%; transform: translate(-50%, -50%);
+            border-radius: 10px; box-shadow: 0 0 5px gray;
+        }
+        }
+
+        
+
+    </style>
+    <script>
+        document.addEventListener("DOMContentLoaded", ()=>{
+
+            const $btn = document.getElementsByTagName("button")[0];
+            const menu = document.getElementsByTagName("ul")[0];
+
+            let i = 0; //let은 재할당 가능
+
+            const nav = ()=>{
+                if(i == 0) {
+                    //무엇을.어떻게
+                    menu.style.height = "200px";
+                    $btn.innerText = "close";
+                    i++;
+                } else {
+                    menu.style.height = 0; //0만 생으로 넣어도 됨
+                    $btn.innerText = "menu";
+                    i--;
+                }
+
+                
+            };
+
+            $btn.addEventListener("click", nav);
+
+            /**********************/
+            const slide = document.getElementById("slide");
+
+            const ss = () => {
+                slide.style.transition = "left 1.5s";
+                slide.style.left = "-100%";
+                //콜백함수(위쪽 프로그램 2개가 실행이 끝난 후 작동되어야 하니까)
+                setTimeout( po ,1500); //(함수, 지체시간)
+            }
+            
+            const po = () => {
+                slide.append(slide.firstElementChild);//해당요소 뒤에 있는 콘텐츠
+                slide.style.left = 0;
+                slide.style.transition = 'none';
+            }
+
+            setInterval( ss , 2500 ); //(함수-함수형 변수, 지체시간)
+
+        }); //end
+    </script>
+</head>
+<body>
+    <section id="layout">
+        <h1>특정 요소 텍스트 가져오기</h1>
+        <header>
+            <ul id="menu">
+                <li><a href="#">메뉴1</a></li>
+                <li><a href="#">메뉴2</a></li>
+                <li><a href="#">메뉴3</a></li>
+                <li><a href="#">메뉴4</a></li>
+                <li><a href="#">메뉴5</a></li>
+            </ul>
+            <button type="button" class="material-symbols-outlined">menu</button>
+        </header>
+        <section id="slideArea">
+            <h2>라인컴퓨터아트학원에<br>오신 것을 환영합니다.</h2>
+            <div id="slide">
+                <img src="images/6/dog-1561018_1920.jpg" alt="개">
+                <img src="images/6/parrot-1192975_1920.jpg" alt="새">
+                <img src="images/6/the-cat-3763803_1920.jpg" alt="고양이">
+            </div>
+        </section>
+    </section>
+</body>
+</html>
