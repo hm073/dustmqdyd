@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Water Bulb</title>
+    <style>
+        img {display: block; width: 100%;}
+        div {max-width: 800px; margin: auto; border: 5px dotted red;}
+        header {background-color: aqua; text-align: center; padding: 20px;}
+        h1,h2 {margin: 0;}
+
+        main {display: flex;}
+        section:first-of-type {display: flex; justify-content: center; align-items: center; flex:1; background-color: cornflowerblue;}
+
+        section:last-of-type {flex:3; position:relative; overflow: hidden;}
+        section:last-of-type h2 {display: none;}
+        img:last-of-type {position:absolute; animation: down 1.5s both  infinite;}
+        /* infinite 를 사용하면 무한 반복 시킬 수 있음 */
+        @keyframes down {
+            0% {top: -200px; opacity: 0;}
+            100%   {top: 0; opacity: 1;}
+            /* 선택자에 0~100%를 입력하면 애니메이션을 추가할 수 있음, 그렇지 않으면 from(시작점) to(끝점) 사용 */
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <header>
+            <h1>Water bulb</h1>
+        </header>
+        <main>
+            <section>
+                <h2>animation</h2>
+            </section>
+            <section>
+                <h2>전구이미지</h2>
+                <img src="images/bg.jpg" alt="전구배경">
+                <img src="images/bulb.png" alt="전구이미지">
+            </section>
+        </main>
+    </div>
+</body>
+</html>

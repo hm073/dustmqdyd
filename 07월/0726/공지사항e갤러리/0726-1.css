@@ -1,0 +1,70 @@
+@charset "utf-8";
+
+#layout {
+    max-width: 400px; 
+    margin: auto; 
+    border: 5px solid pink;
+    position: relative;
+    margin-top: 50px;
+}
+#layout img {display: block; max-width: 100%;}
+#layout h2 {
+    display: inline-block;
+    background-color: #ddd;
+    position: relative;
+    z-index: 1;
+}
+#layout h2.yellow {
+    background-color: yellow;
+}
+
+/*공지사항*/
+#notice ol {line-height: 180%; /*폰트 크기에 영향을 받음*/}
+#notice li span {float: right;} /*span의 부모의 크기에 영향을 받음, 그 크기의 오른쪽으로 간다*/
+#notice a {position: relative; z-index: 1;}
+
+
+/*갤러리*/
+#gallery {
+    position: absolute;
+    /* background-color: rgba(255,255,0); */
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+}
+#gallery h2 {
+    margin-left: 100px;
+}
+#gallery >div {display: none;}
+#gallery div div {
+    display: flex;
+    justify-content: center;
+    /* display: none; */
+}
+#gallery div img {
+    flex:1;
+}
+
+/****/
+#black {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    background-color: black;
+    height: 100%;
+    z-index: 1;
+    display: none;
+}
+#black.show {
+    z-index: 1; display: block;
+}
+#popup {
+    background-color: white;
+    width: 500px;
+    padding: 50px 50px 80px;
+    margin: auto;
+    margin-top: 10vh;
+    border-radius: 30px;
+}
+#popup button {float: right;}

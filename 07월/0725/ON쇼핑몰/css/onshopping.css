@@ -1,0 +1,241 @@
+@charset "utf-8";
+
+* {margin: 0; padding: 0; box-sizing: border-box;}
+
+#layout {
+    max-width: 1200px;  /*블록요소에만 먹음*/
+    margin: auto;
+    height: 700px;
+}
+
+h1 {display: none;}
+
+
+
+/*************상단영역***************/
+header {
+    display: flex;
+    height: 100px;
+    padding-top: 20px;
+}
+header> a {
+    margin-left: 20px;
+}
+header ul {
+    flex: 1;
+    display: flex;
+    list-style: none;
+    margin-left: 200px;
+    z-index: 1;
+}
+header ul a {
+    display: block;
+    text-decoration: none; /*링크 밑줄 삭제*/
+    color: black;
+    text-align: center; /*메인메뉴, 서브메뉴*/
+    line-height: 200%;
+    font-weight: bold;
+}
+header li {
+    flex: 1;
+}
+
+
+
+/*메인메뉴*/
+.mainMenu {
+    padding: 10px;
+    font-size: 1.1rem;
+}
+.mainMenu:hover {
+    background-color: #350a28;
+    color: white;
+}
+
+/*서브메뉴*/
+.subMenu {
+    background-color: white;
+    /* padding: 10px 0; */
+    /* box-shadow: 0 2px 2px rgba(0, 0, 0, 0.5); */
+    height: 0; /*150px*/
+    overflow: hidden;
+    transition: all 0.7s;
+}
+.subMenu a {
+    color: #4b7b3d;
+}
+.subMenu a:hover {
+    background-color: #4b7b3d;
+    color: white;
+}
+
+/*메인 전체 영역에 hover하면 자손들 중 서브가 내려옴*/
+header ul:hover .subMenu {
+    height: 150px;
+    padding: 10px 0;
+    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.5);
+}
+
+
+
+/*************아래에서 위로 올라가는 슬라이드***************/
+#slideArea {
+    height: 300px;
+    overflow: hidden;
+    /*border-right: 10px solid blue; 슬라이드 높이 표시 나중에 지움*/
+}
+#slide {
+    position: relative;
+    top: 0;         /*기준점이 필요해서 적는 파트*/
+    height: 900px;  /*시험은 반응형이 아니라서 픽스*/
+}
+#slide img {width: 100%; height: 100%; display: block;}
+#slide section {
+    position: relative; /*h2의 기준이 되기 위함*/
+    height: 300px;
+}
+#slide h2 {
+    position: absolute;
+    width: 100%;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    padding: 30px;
+    background-color: rgba(255, 255, 255, 0.85);
+    /*가이드: 0.75보다 더 연한 투명도를 가진 배경 위 글씨는 가독성이 떨어짐*/
+}
+
+
+
+/*************메인영역***************/
+main {
+    display: flex;
+    height: 200px;
+    padding: 30px 0;
+    /* background-color: yellowgreen; */
+}
+main a {text-decoration: none; color: black;}
+main img {
+    display: block;
+    max-width: 100%;
+}
+
+/*공지사항 갤러리*/
+#notigall {
+    flex: 1.1;
+    margin-right: 70px;
+    position: relative;
+}
+#notigall h2{
+    display: inline-block;
+    font-size: 1.05rem;
+    border: 1px solid #999;
+    border-bottom: 0;
+    background-color: #ddd;
+    padding: 2px 10px 0;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    position: relative;
+    z-index: 1;
+}
+
+#notigall h2.hit {background-color: #fff;}
+
+/* #notice> h2.hit {
+    background-color: #fff;
+}
+#gallery> h2.hit {
+    background-color: #999;
+} */
+
+/* #notice {background-color: rgba(0, 0, 225, 0.5);} */
+#notice ol {
+    list-style: none;
+    line-height: 180%;
+    border-top: 1px solid #999;
+    padding: 8px;
+}
+#notice a {z-index: 1; position:relative;}
+#notice span {float: right;} /*a와 무관하게 독립적으로 오른쪽으로 보내기 위함*/
+#notice li a:hover {
+    text-decoration: underline;
+    color: #4b7b3d;
+}
+
+#gallery {
+    /* background-color: rgba(225, 0, 0, 0.5); */
+    position: absolute;
+    top: 0;
+    width: 100%; height: 100%;
+}
+#gallery h2 {
+    margin-left: 90px;
+}
+#gallery div {
+    display: flex;
+    justify-content: center;
+    display: none;
+    border-top: 1px solid #999;
+    padding: 10px;
+}
+#gallery div a {
+    margin: 5px;
+}
+
+/*배너*/
+#banner {
+    flex: 1;
+    margin-right: 70px;
+    overflow: hidden;
+}
+#banner h2 {display: none;}
+
+/*바로가기*/
+#quick {
+    flex: 1;
+    overflow: hidden;
+}
+#quick h2 {display: none;}
+
+
+
+/*************하단영역***************/
+footer {
+    height: 100px;
+    background-color: gray;
+}
+
+
+/*************팝업***************/
+#black {
+    background-color: rgba(0, 0, 0, 0.5);
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    z-index: -1;
+    transition: all 0.5s;
+}
+#black.show {opacity: 1; z-index: 1;}
+
+#popup {
+    background-color: white;
+    width: 600px;
+    padding: 50px 50px 60px;
+    margin-top: 20vh;
+    margin-left: calc((100% - 600px) / 2); /*부호의 앞과 뒤에 최소 1칸 이상 띄어야 적용됨*/
+    border-radius: 20px;
+    box-shadow: 0 0 5px black;
+    line-height: 180%;
+}
+#popup h3 {
+    padding-bottom: 15px;
+}
+#popup p {
+    padding-bottom: 20px;
+}
+#popup button {
+    float: right;
+    padding: 4px 10px;
+}

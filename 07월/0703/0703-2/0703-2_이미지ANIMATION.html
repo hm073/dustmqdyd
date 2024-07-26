@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>청결 위생관리</title>
+    <style>
+        * {margin: 0; padding: 0; box-sizing: border-box;}
+        section {max-width: 600px; margin: auto; position: relative; overflow: hidden;}
+        h1 {display: none;}
+        img {width: 100%; display: block;}
+        img:not(:first-of-type) {position: absolute; top: 0; left: 0;}
+
+        img:nth-of-type(2) {animation: up 1s both;}
+        img:nth-of-type(3) {animation: side 1.5s 0.3s both;}
+        img:nth-of-type(4) {animation: zigzag 3s 1s both infinite alternate;}
+        img:nth-of-type(5) {animation: rotate 3s 1.5s both infinite;}
+        img:nth-of-type(6) {animation: zz 2s both 3 alternate;}
+
+        @keyframes up {
+            0%   {bottom: -100px; top: initial; opacity: 0;}
+            100% {bottom: 0; top: initial; opacity: 1;}
+        }
+
+        @keyframes side {
+            0%   {left: -100px; opacity: 0;}
+            100% {left: 0; opacity: 1;}
+        }
+
+        @keyframes zigzag {
+            0%   {top: -100px; left: initial; right: -100px; transform: rotate(10deg);}
+            30%  {top: -50px; left: initial; right: -70px; transform: rotate(-10deg);}
+            70%  {top: -70px; left: initial; right: -20px; transform: rotate(15deg);}
+            100% {top: 0px; left: initial; right: 0px;}
+        }
+
+        @keyframes rotate {
+            from {transform: rotate(360deg); opacity: 0; scale: 0;}
+            to {transform: rotate(0); opacity: 1; scale: 1;}
+        }
+
+        @keyframes zz {
+            from {left: 50px; }
+            to {left: 0;}
+        }
+    </style>
+</head>
+<body>
+    <section>
+        <h1>청결 위생관리 애니메이션</h1>
+        <img src="images/bg2.jpg" alt="배경">
+        <img src="images/2-1.png" alt="꽃병">
+        <img src="images/2-2.png" alt="꽃">
+        <img src="images/2-3.png" alt="나비">
+        <img src="images/2-4.png" alt="모래시계">
+        <img src="images/2-5.png" alt="청결위생관리">
+    </section>
+</body>
+</html>
