@@ -1,0 +1,26 @@
+<< FIRE >>
+
+- 불이미지
+
+1) 새문서 WEB>  1280*730픽셀> 아트보드  끄고 >  배경검정Fill
+
+2) 흰색.대문자 FIRE;  폰트체 Bebas Neue Rgular. 600pt> FIRE >     
+    - 이미지화  Rasterize Type 
+
+3) 레이어스타일>    
+    -Color Ovrlay:  Normal,   #cd7e2e,   100%
+    -Satin:  Multifly,  #872d0f,  100%,   90도,  10px,15px
+    -Inner Glow:    Color Dodge,   100%,0,   #e5c23B,     0%,10px
+    -Outer Glow:   Screen, 100%, 0,  #f70300,     0%, 12px
+
+
+4) 지우개툴: 부드러운 250px로 FIRE 글자 윗부분 지우고> 
+    -필터: Distort>ZigZag..> 4, 4, Pond Ripple하여 흔들어줌.
+
+5) fire(불)이미지 불러들여 글자에 겹쳐서> Channel패널의 Green썸네일창을 Ctrl클릭하여 밝은부분을 셀렉션하여> 레이어패널로와서> Ctrl+J 한후> 밑의  fire 이미지 눈끄고
+
+6) 복사된 불이미지 (Layer2)를  'RE'위에 겹침> 레이어블랜드 Screen한후>  이동도구로 > alt +드래그하면서  'FI' 위로 이동후> 반시계방향 90도 회전 하여> 약간축소. > 지우개툴 170픽셀 크기정도로 불필요한 부분 지운다.
+
+7) 이동툴로 > alt +드래그 ( 불 이미지를 복사이동) > 비어 있는 부분에 불이미지 연출
+
+     -----끝 -----

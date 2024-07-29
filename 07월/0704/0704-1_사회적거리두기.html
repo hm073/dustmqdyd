@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>social</title>
+    <style>
+        * {margin: 0; padding: 0; box-sizing: border-box;}
+
+        h1 {display: none;}
+
+        section {max-width: 800px; margin: auto; border: 3px solid red; position: relative; overflow: hidden;}
+        img {width: 100%; display: block;}
+        img:not(:first-of-type) {position: absolute; top:0; left: 0;}
+
+        [src="images/3-1.png"] {animation: up 1s 0.5s both;}
+        [alt="코로나"] {animation: right 1s 1s both;}
+        [src*="3-3"] {animation: down 1s 1.5s both;}
+        [src*="3-4"] {animation: rotate 2s 2s both infinite; width: 40%; top: initial !important; bottom: 0px; margin-left: 8%; margin-bottom:5%;}
+        [src*="3-5"] {animation: scale 1s 2.5s both infinite; width: 40%; margin: 54% auto auto 58%;}
+         /* 개체의 넓이 높이를 제외한 공간은 margin */
+        [src*="3-6"] {animation: scale 1s 3s both; height: 30%; width: auto; margin:20% auto auto 5%;}
+        [src*="3-7"] {animation: scale 1s 3s both; height: 30%; width: auto; margin:20% auto auto 40%}
+        [src*="3-8"] {animation: scale 1s 3s both; height: 30%; width: auto; margin:40% auto auto 60%}
+
+        @keyframes up {
+            from {opacity: 0; top:initial; bottom:-50px;}
+            to   {opacity: 1; top:initial; bottom: 0;}
+        }
+
+        @keyframes right {
+            from {opacity: 0; left: initial; left: 100px;} /*또는 right: -100px 해도 됨*/
+            to   {opacity: 1; left: initial; left: 0;}
+        }
+
+        @keyframes down {
+            from {opacity: 0; top: initial; bottom: 100px;} /*또는 top: -100px 해도 됨*/
+            to   {opacity: 1; top: initial; bottom: 0;}
+        }
+
+        @keyframes rotate {
+            0%   {transform: rotate(360deg); scale: 0;} /*transform 안에 sclae을 넣으면 적용 안됨?*/
+            100% {transform: rotate(0); scale: 1;}
+        }
+
+        @keyframes scale {
+            0%   {transform: scale(0);}
+            100% {transform: scale(1);}
+        }
+    </style>
+</head>
+<body>
+    <section>
+        <h1>사회적 거리두기</h1>
+        <img src="images/bg3.jpg" alt="배경">
+        <img src="images/3-1.png" alt="2미터 거리두기">
+        <img src="images/3-2.png" alt="코로나">
+        <img src="images/3-3.png" alt="1,2,3단계 거리두기">
+        <img src="images/3-4.png" alt="이 주 더 연장">
+        <img src="images/3-5.png" alt="distancing">
+        <img src="images/3-6.png" alt="남자1">
+        <img src="images/3-7.png" alt="여자1">
+        <img src="images/3-8.png" alt="여자2">
+    </section>
+</body>
+</html>

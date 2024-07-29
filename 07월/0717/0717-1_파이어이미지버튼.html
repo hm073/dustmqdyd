@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FIRE</title>
+    <style>
+        #fire {background-color: black; max-width: 1280px; margin: auto;
+        padding: 55px 0; text-align: center; position: relative; overflow: hidden;}
+        
+        #fire form {text-align: center;}
+        #fire form button {
+            font-size: 2rem; width: 80px; padding: 5px; border-radius: 15px;
+            margin: 10px;
+        }
+        #fire img {opacity: 0;}
+        
+        [alt="fire"] {
+            position: absolute; top:0; left: 0;
+            animation: zz 0.4s both infinite alternate;
+            display: none;
+        }
+        @keyframes zz {
+            0% {transform: skew(1deg); transform-origin: bottom;}
+            50% {transform: skew(0); transform-origin: bottom;}
+            100%   {transform: skew(-1deg); transform-origin: bottom;}
+        }
+
+        /*[alt="f"] {animation: up 2s both infinite; transition: 0.3s;}
+        [alt="i"] {animation: up 1.7s 0.3s both infinite; transition: 0.3s;}
+        [alt="r"] {animation: up 1.4s 0.6s both infinite; transition: 0.3s;}
+        [alt="e"] {animation: up 1.1s 0.9s both infinite; transition: 0.3s;}
+
+        @keyframes up {
+            from {transform: scale(0); opacity: 0; transform-origin: bottom;}
+            to {transform: scale(1); opacity: 1; transform-origin: bottom;}
+        }*/
+    </style>
+    <script>
+        document.addEventListener("DOMContentLoaded", ()=>{
+
+            const btn = Array.from(document.getElementsByTagName('button')); 
+                    //Array.from안에 들어가면 콜렉션이 노드리스트화됨 
+            const text = document.querySelectorAll('[src *= "png"]');
+
+            btn.forEach( ( x, y ) => {
+                x.addEventListener('click', ()=>{
+                    text[y].style.opacity = 1;
+                });
+            } );
+
+            /*const btn_f = document.getElementsByTagName('button')[0];
+            const text_f = document.querySelector('[alt="f"]');
+
+            const show_f = () => {
+                text_f.style.opacity = 1
+            }
+
+            btn_f.addEventListener('click',show_f);  //미리 적으면.. 변수 해석을 못하는 듯
+
+            const btn_i = document.getElementsByTagName('button')[1];
+            const text_i = document.querySelector('[alt="i"]');
+
+            const show_i = () => {
+                text_i.style.opacity = 1
+            }
+
+            btn_i.addEventListener('click',show_i); //
+
+            const btn_r = document.getElementsByTagName('button')[2];
+            const text_r = document.querySelector('[alt="r"]');
+
+            const show_r = () => {
+                text_r.style.opacity = 1
+            }
+
+            btn_r.addEventListener('click',show_r); //
+
+            const btn_e = document.getElementsByTagName('button')[3];
+            const text_e = document.querySelector('[alt="e"]');
+
+            const show_e = () => {
+                text_e.style.opacity = 1
+            }
+
+            btn_e.addEventListener('click',show_e); //*/
+
+        });//전체 끝
+    </script>
+</head>
+<body>
+    <section id="fire">
+        <h1>fire animation</h1>
+        <form action="button">
+            <button type="button">F</button>
+            <button type="button">I</button>
+            <button type="button">R</button>
+            <button type="button">E</button>
+        </form>
+        <div>
+            <img src="images/f.png" alt="f">
+            <img src="images/i.png" alt="i">
+            <img src="images/r.png" alt="r">
+            <img src="images/e.png" alt="e">
+        </div>
+        <img src="images/fire.png" alt="fire">
+    </section>
+</body>
+</html>

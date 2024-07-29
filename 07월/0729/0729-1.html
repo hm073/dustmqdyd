@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>공지사항/갤러리 전환하고, 팝업창 보이기/감추기</title>
+    <script src="0729-1.js"></script>
+    <style>
+        * {margin: 0; padding: 0; box-sizing: border-box;}
+        #layout {
+            max-width: 400px;
+            margin: auto;
+            border: 5px solid red;
+            position: relative;
+            overflow: hidden;
+        }
+        #layout h2 {
+            position: relative;
+            z-index: 1;
+            display: inline-block;
+        }
+        #layout h2.active {background-color: red;}
+
+        /* 공지 */
+        /* #notice {
+            
+        } */
+        #notice ul {
+            list-style-position: inside;
+            padding: 10px;
+            background-color: gold;
+        }
+
+        /* 갤러리 */
+        #gallery {
+            position: absolute;
+            top: 0; left: 0;
+        }
+        #gallery h2 {
+            margin-left: 110px;
+        }
+        
+        #gallery div {
+            background-color: skyblue;
+            display: none;
+        }
+        
+        #black {
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%;
+            height: 100vh;
+            background-color: black;
+            z-index: 1;
+            display: none;
+        }
+        #popup {
+            background-color: white;
+            max-width: 600px;
+            margin: auto;
+            margin-top: 100px;
+            padding: 50px;
+            padding-bottom: 100px;
+            border-radius: 50px;
+        }
+        #popup button {
+            padding: 5px 10px;
+            border-radius: 5px;
+            float: right;
+        }
+
+    </style>
+</head>
+<body>
+    <div id="layout">
+        <section id="notice">
+            <h2 class="active"><a href="#">공지사항</a></h2>
+            <ul>
+                <li><a href="#">1111</a></li>
+                <li><a href="#">22222</a></li>
+                <li><a href="#">333333</a></li>
+                <li><a href="#">4444444</a></li>
+            </ul>
+        </section>
+        <section id="gallery">
+            <h2><a href="#">갤러리</a></h2>
+            <div>
+                <a href="#"><img src="images/icon1.jpg" alt="갤러리1"></a>
+                <a href="#"><img src="images/icon2.jpg" alt="갤러리2"></a>
+                <a href="#"><img src="images/icon3.jpg" alt="갤러리3"></a>
+            </div>
+        </section>
+    </div>
+    <div id="black">
+        <section id="popup">
+            <h3>팝업</h3>
+            <p>법률은 특별한 규정이 없는 한 공포한 날로부터 20일을 경과함으로써 효력을 발생한다. 학교교육 및 평생교육을 포함한 교육제도와 그 운영, 교육재정 및 교원의 지위에 관한 기본적인 사항은 법률로 정한다. 모든 국민은 통신의 비밀을 침해받지 아니한다. 국토와 자원은 국가의 보호를 받으며, 국가는 그 균형있는 개발과 이용을 위하여 필요한 계획을 수립한다.</p>
+            <button type="button">닫기</button>
+        </section>
+    </div>
+</body>
+</html>

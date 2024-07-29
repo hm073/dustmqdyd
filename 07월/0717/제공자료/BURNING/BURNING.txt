@@ -1,0 +1,47 @@
+<< BURNING >>
+
+- 사용이미지없음
+
+1) 기본색상으로설정(전경:흰색/ 배경:검정)
+
+2) 새문서: web > 800*700픽셀  > 아트보드 끄고 > 
+    배경색을  검정으로 설정하고> 새문서 생성.
+
+3) 전경색:흰색, 폰트체 Verdana, Bold, 130픽셀>   대문자 BURNING  타이핑 하여  > 
+  - Ctrl+J (레이어 복사)> 복사한 글자의  눈을 꺼둔다.
+
+4)   아래의 원본글자  > 90도 회전>엔터친다.
+
+5) Filter> Stylize > Wind...>설정창뜨면 Rasterize>★Wind★, Front the Left 설정> OK 한후 >  Alt+Ctrl+F 를  세번 실행후 > 원래상태로 다시회전 (90 CCW)>  가운데로 이동하고> 엔터친다.
+
+6) Filter> Blur> ★Gaussian Blur...★> 3픽셀
+  
+7) alt+ctrl+shift+e  한다. ( 현재까지의 디자인을 새레이어에 복사하는 기능)   
+  
+   -Filter > Liquify > 브러시크기 60픽셀> S 모양으로 왜곡
+
+  - 조정레이어아이콘> Hue/Saturation> Colorize 체크하고> 
+     40, 100, 0 > 레이어블랜드모드: Normal
+
+  - 조정레이어아이콘> Hue/Saturation> 
+     -20, 100, 40 > 레이어블랜드모드:  Overlay
+
+8) 레이어에 눈을 꺼 놓은     [T]  BURNING copy  레이어의 눈을 켜고 잘 겹쳐보이게 이동한다.
+
+9) 레이어 패널 맨 밑의 아이콘 중 왼쪽 두번째 아이콘인  레이어 스타일 아이콘 (fx) 클릭.
+
+10) Gradient Overlay > Normal , 100% > 그라디언트 색을   #ffFF00, #a0410d   로 설정 (노란색 ~ 어두운 오렌지색) > Angle -90도 
+  > 왼쪽 스타일들 중에서
+
+11) Drop Shadow선택하고> Multifly > #f46814, 60%, 90도, 3,3,10 설정하고나서 이번에는 
+  >  Inner Shadow를 선택하여 > Normal >  #ed1c24 > 75% > 90도>  5, 0 20% 설정> OK를 한다.
+
+12) Ctrl+Alt+Shift+E 히여 디자인전체를 새레이어에 복사
+
+13) 상하반전하여> 아래로이동후> 블랜드모드 Sreen 하고> perspective (원근감)으로 아래로갈수록 넓어지는 모양으로 변형.
+
+14) 레이어마스크 씌워서> 그라디언트툴> 블랙/화이트색선택> 옵션바:  Reverse 체크하고 > 화면위~아래로 길게 드래그하여 아래로갈수록 흐릿하게.
+
+15) 이미지 > 이미지 썸네일을 클릭하여> Filter>Blur>Gaussian blur> 1
+
+===끝===
