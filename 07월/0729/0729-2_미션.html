@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>for문과 forEach 미션</title>
+</head>
+<body>
+    <section id="lineCom">
+        <h2>라인컴퓨터아트학원</h2>
+        <ul>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+    </section>
+    <script>
+        // const line = ["라","인","컴","퓨","터"];
+        // const gkr = ["아","트","학","원"];
+        // const li = document.querySelectorAll("ul li");
+
+        // li.forEach( (i, j) => {
+        //     i.innerText = line[j];
+        // });
+
+        // for(let i = 0; i < 5; i++) {
+        //     li[i].innerText = gkr[i];
+        // }       for문으로 아트학원을 쓰면 forEach에 덮어씌어져서 아트학원만 나옴
+
+        const h2 = document.getElementsByTagName("h2")[0];
+        const li = document.querySelectorAll("ul li");
+        const t = Array.from( h2.innerText );   // <<이게 중요 array를 쓰는 방법 알아보기
+        
+        // for(let i=0; i<5; i++) {
+        //     li[i].innerText = t[i]
+        // }
+        li.forEach( (i,j)=>{
+            i.innerText = t[j]
+        })
+    </script>
+</body>
+</html>

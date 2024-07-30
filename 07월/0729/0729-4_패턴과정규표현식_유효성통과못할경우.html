@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>html의 pattern속성과 정규표현식</title>
+    <style>
+        form {line-height: 160%;}
+        input:invalid {background: red;}
+        input:invalid+span::before {color:red; font-size: 0.8rem; margin-left: 10px;}
+        #en:invalid+span::before {content:"영문만 입력가능!";}
+        #ko:invalid+span::before {content:"한글(자음+모음)만 입력가능!";}
+        #ek:invalid+span::before {content:"영문/한글 입력가능!";}
+        #enu:invalid+span::before {content:"영문 출발 숫자 입력가능!";}
+        [type="number"]:invalid+span::before {content:"10~29까지 입력가능!";}
+    </style>
+    <script>
+        document.addEventListener("DOMContentLoaded", ()=>{
+
+            const en = document.getElementById("en");
+            const ko = document.getElementById("ko");
+            const ek = document.getElementById("ek");
+            const enu = document.getElementById("enu");
+            // alert(`${en}\n${ko}`);
+            const num = document.querySelector('[type="number"]');
+            const btn = document.getElementsByTagName("button")[0];
+            const p = document.getElementsByTagName("p")[0];
+            // alert(`${num}\n${btn}\n${p}`);
+
+            const values = Array.from(document.getElementsByTagName("input"));
+            // alert(values);
+
+            let t='';
+            const val = () => {
+                let t_ok = "통과";
+                    values.forEach( i =>{
+                        //유효성 검증 메소드: 객체.checkValiddity()
+                        if(/* 유효성을 통과하지 못했다 */ ! i.checkValidity()){
+                            /* 실행문 */ t_ok = "통과안됨";
+                            alert(t_ok);
+                            i.focus(); //객체.focus() 해당 객체가 포커스된다.
+                        }
+                        if(/*유효성을 통과했을 때*/ t_ok == "통과") {
+                            //1.p에 글자가 들어간다
+                            values.forEach((i)=>{
+                                t += `${i.value}<br>`;
+                                p.children[2].innerHTML = t;
+                                //2.input에 쓰인 글자가 지워진다
+                                i.value='';
+                            });
+                        }
+                    });
+                
+                // values.forEach((i)=>{ //i=모든 input
+                // // 객체.innerText는 해당 객체가 쌍을 이룰 경우에만 쓸 수 있다. 하지만 input태그는 쌍이 아니기 때문에 쓸 수 없다.
+                // t += `${i.value}<br>`;
+                // i.value=''; //입력된 내용은 t로 보내고 공백표시
+                // });
+                // p.innerHTML = t;
+            };
+
+            btn.addEventListener("click", val);
+        });
+    </script>
+</head>
+<body>
+    <form>
+        <input type="text" placeholder="영문만 입력" pattern="[A-Za-z]+" id="en"><span></span><br>
+        <input type="text" placeholder="한글만 입력" pattern="[가-하]*" id="ko"><span></span><br>
+        <input type="text" placeholder="영문/한글 입력" pattern="[A-Za-z가-힣]+" id="ek"><span></span><br> <!-- ㄱ-ㅎ을 추가하면 자음만 쓰는 것도 가능 -->
+        <input type="text" placeholder="영문으로 출발하여 숫자도 가능" pattern="[A-Za-z][A-Za-z0-9]*" id="enu"><span></span><br> <!-- +로 쓰면 영어, 숫자 둘 다 한번 이상 써야함 -->
+        <input type="number" placeholder="청소년 나이 입력" min="10" max="29"><span></span><br>
+        <button type="button">확인</button>
+    </form>
+    <p>
+        <b>입력된 내용:</b><br>
+        <span></span>
+    </p>
+</body>
+</html>
