@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FADE 방식의 슬라이드</title>
+    <script>
+        document.addEventListener("DOMContentLoaded",()=>{
+
+            const imgs = document.querySelectorAll("#slide img");
+            let z = 1;
+            const slide = () => {
+                imgs.forEach( i => { i.style.opacity = 0;} );
+                //개체.속성 을 쓰려면 개체가 한 개여야 함. 바로 적용되는 것이기 때문
+                imgs[z].style.opacity = 1;
+                z++;
+                if (z == 5) z=0;
+            }
+
+            setInterval( slide, 2000 );
+        });//end
+    </script>
+    <style>
+        #layout {
+            max-width: 800px; margin: auto; border: 5px solid red;
+        }
+
+        #slide {
+            position: relative;
+        }
+        #slide h2 {display: none; }
+        #slide img {
+            position: absolute;
+            top: 0; left: 0;
+            opacity: 0;
+            transition: opacity 1s;
+        }
+        #slide img:first-of-type {
+            position: relative;
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+    <div id="layout">
+        <section id="slide">
+            <h2>슬라이드 부분</h2>
+            <img src="images/1.jpg" alt="1">
+            <img src="images/2.jpg" alt="2">
+            <img src="images/3.jpg" alt="3">
+            <img src="images/4.jpg" alt="4">
+            <img src="images/5.jpg" alt="5">
+        </section>
+    </div>
+</body>
+</html>

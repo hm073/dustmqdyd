@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>CSS로 북마크시 부드럽게 스크롤 이동</title>
+<style>
+* {margin:0; box-sizing:border-box;}
+::-webkit-scrollbar { width: 0px;}
+
+nav {position:fixed; right:0; padding:10px 20px; border-radius:10px; background-color: red; top:50vh;}
+nav a {margin-left:50px; display:inline-block; border:5px solid tomato; padding:5px 10px; color:yellow;}
+
+#smoothScroll {height:100vh; overflow:auto;  scroll-behavior:smooth;}
+
+#smoothScroll>section {padding:10px; height:100%;   }
+#smoothScroll>section:nth-child(3n+1) {background:gold;}
+#smoothScroll>section:nth-child(3n+2) {background:skyblue;}
+#smoothScroll>section:nth-child(3n) {background:pink;}
+</style>
+</head>
+<body id="top">
+<nav style="padding:20px;"> 
+	<a href="#s3">아래로이동</a>
+	<a href="#s1">맨위로 이동</a>
+</nav>
+<div id="smoothScroll">
+	<section id="s1">
+		<h1>1111111</h1>
+	</section>
+	<section>
+		<h1>222222</h1>
+	</section>
+	<section id="s3">
+		<h1>3333333</h1>
+	</section>
+	<section>
+		<h1>444444</h1>
+	</section>
+	<section>
+		<h1>5555555</h1>
+	</section>
+	<section>
+		<h1>6666666</h1>
+	</section>
+</div>
+</body>

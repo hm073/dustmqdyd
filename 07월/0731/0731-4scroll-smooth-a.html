@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>fade 방식의 슬라이드</title>
+    <style>  
+        ::-webkit-scrollbar {width:0;}
+
+        #layout {
+            border:5px solid red; height:200vh; position:relative;
+            height:100vh; overflow: auto;  scroll-behavior: smooth; 
+        }
+        #area {           
+            height:300vh; background:linear-gradient(skyblue,orange);
+        }
+        /* fixed 하면 부모인 #layout 밖으로 나와버린다 */
+        #posY {
+            text-align: center; background: aquamarine; padding:20px;
+            position:fixed; z-index: 1; left:25%;
+        }
+
+        #slide {
+            position: relative; padding-top:200px;
+        }
+        #slide h2 {display: none;}
+        #slide img {
+            position:absolute; top:0; left:0; opacity: 0; transition: opacity 1s;    
+        }
+        #slide img:first-of-type {
+            position: relative; opacity:1;
+        }
+
+        #p1 {
+            position: relative; background: skyblue; padding:50px; margin-top:400px;
+            transform: translateX(-50vw); transition: transform 0.5s;
+        }
+        #up {
+            padding: 10px 20px; background: red; border-radius: 5px;
+            position:fixed; right:0;  top:80vh;
+        }
+
+    </style>
+</head>
+<body>
+    <div id="layout">
+        <div id="area">
+            <section id="posY">
+                <h2>스크롤 Y좌표 표시되는 곳</h2>
+                <p>1111111</p>
+            </section>
+            <section id="slide">
+                <h2>슬라이드부분</h2>
+                <img src="images/1.jpg" alt="1">
+                <img src="images/2.jpg" alt="2">
+                <img src="images/3.jpg" alt="3">
+                <img src="images/4.jpg" alt="4">
+                <img src="images/5.jpg" alt="5">
+            </section>
+            <section id="p1">
+                <h2>포트폴리오 - 1</h2>
+            </section>
+            <a href="#area" id="up">▲ 위로</a>
+        </div>
+    </div>
+</body>
+</html>
