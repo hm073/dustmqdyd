@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>오버플로우 이해</title>
+    <style>
+        /*::-webkit-scrollbar {width:0;} 스크롤의 넓이를 0*/
+        #layout {
+            width: 600px; height: 500px; margin: auto; border: 10px solid black;
+            overflow: auto; /*overflow: scroll은 무조건 스크롤이 생김(X,Y둘다 생김)*/
+            /*overflow-x:hidden y:auto라고 해도 x스크롤을 없앨 수 있음*/
+            scroll-behavior: smooth; /*스크롤바가 있는 곳에 써야 함->영역이 작은 곳*/
+        }
+        section {
+            height: 3000px; background: linear-gradient(red,green,blue);
+        }
+        h1 {margin: 0;}
+        #top {position: fixed; bottom: 100px; right: 100px;}
+    </style>
+</head>
+<body>
+    <div id="layout">
+        <section id="long">
+            <h1>긴 내용이 있는 곳</h1>
+        </section>
+        <section id="a1">
+            <h2>여기에 멈춰야 함</h2>
+        </section>
+        <a href="#long" id="top">top</a>
+    </div>
+</body>
+</html>

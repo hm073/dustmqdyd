@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>삼항연산자</title>
+    <!-- <style>
+        #popup {
+            position: fixed; width: 400px; height: 300px;
+            background-color: aqua; top: 100px; left: 400px;
+            display: none;
+        }
+        #popup button {
+            position: absolute;
+            bottom: 50px;
+            right: 50px;
+            padding: 10px 20px;
+        }
+    </style> -->
+</head>
+<body>
+    <div id="layout">
+        <h1>삼항연산자(클릭하면 팝업)</h1>
+        <p></p>
+    </div>
+    <!-- <section id="popup">
+        <h2>팝업부분</h2>
+        <button type="button">닫기</button>
+    </section> -->
+    <script>
+        let x = 15;
+        let y = 8;
+        // const xy = (비교문/조건) ? "true일 때 구문" : "false일 때 구문"
+        const xy = (x < y) ? "맞습니다" : "다시 한 번 생각해보세요";
+        document.getElementsByTagName("p")[0].innerText = xy;
+        /*********************/
+        x = 23;
+        y = 9;
+        const xxyy = (x > y) ? true : false;
+        document.getElementsByTagName("p")[0].innerHTML += `<br> ${xxyy}`;
+        /*********************/
+        const p = document.getElementsByTagName("p");
+        const hope = 23 > 13;
+
+        const spring = () => p[0].innerHTML += `<br>봄이 오고 있어요!`
+        const winter = () => p[0].innerHTML += `<br>아직은 좀 춥습니다..!`
+
+        hope ? spring() : winter(); //함수형 변수여서 ()필수
+
+        /***/
+        // const h1 = document.getElementsByTagName("h1")[0];
+        // const pop = document.getElementById("popup");
+        // const btn = document.querySelector("popup button")
+
+        
+        // const open = () => {
+        //     pop.style.displas = "block";
+        //     popup = false;
+        // }
+        // const close = () => {
+        //     pop.style.displas = "none";
+        //     popup = true;
+        // }
+        // let popup = true;
+        // const arr = [h1, btn];
+        
+        // arr.forEach(i => {
+        //     i.addEventListener("click", () => {
+        //         popup ? open() : close();
+        //     });
+        // });
+
+        // // h1.addEventListener("click", () => {
+        // //     popup ? open(): close();
+        // // });
+    </script>
+</body>
+</html>

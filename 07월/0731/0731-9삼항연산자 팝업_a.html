@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>삼항연산자</title>
+    <style>
+        #popup {
+            position:fixed; width:400px; height:300px;
+            background-color: red; top: 100px; left:40%;   display:none;
+        }
+        #popup button {
+            position:absolute; bottom:50px; right:50px; padding:10px 20px;
+        }
+    </style>
+</head>
+<body>
+    <div id="layout">
+        <h1>삼항연산자(이부분을 클릭하면 팝업이 나타난다)</h1>
+    </div>
+    <section id = "popup">
+        <h2>팝업부분</h2>
+        <button type="button">닫기</button>
+    </section>
+    <script>
+        const h1 = document.getElementsByTagName("h1")[0];
+        const pop = document.getElementById("popup");
+        const btn = document.querySelector("#popup button");
+        const p = document.getElementsByTagName("p");
+
+        const open = () => { 
+            pop.style.display = "block";
+            popup = false;
+        }
+        const close = () => { 
+            pop.style.display = "none";
+            popup = true;
+        }
+
+        let popup = true;
+        const arr = [ h1, btn ];
+        arr.forEach( i => {
+           i.addEventListener("click" , ()=> {
+                popup ? open() : close();
+            });
+        })
+           
+    </script>
+</body>
+</html>

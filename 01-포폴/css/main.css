@@ -1,22 +1,69 @@
 
 * {margin: 0; padding: 0; box-sizing: border-box;}
-#layout {max-width: 900px;}
+#layout {max-width: 1300px; margin: auto;}
 
 /*************헤더*************/
 header {
     text-align: center;
 }
+header div {
+    padding: 5px 0 8px;
+    display: flex;
+    justify-content: flex-end;
+}
+header div a {
+    margin-right: 1%;
+    text-decoration: none;
+    color: black;
+}
+h1 {display: none;}
 
 /*************메뉴*************/
-ul {
+/*메인*/
+header .menu {
     list-style: none;
     display: flex;
+    background-color: aliceblue;
+    padding: 15px;
+    position: relative;
+    z-index: 1;
 }
-li {
+
+header .menu li {
     flex: 1;
     text-align: center;
 }
+header .menu li:not(:last-of-type) {
+    border-right: 1px solid #666;
+}
+
+header .menu li .mm {
+    color: black;
+    text-decoration: none;
+}
+
+/*서브*/
+header .menu li:hover .sm {
+    /* margin-top: 10px; */
+    padding-top: 5px;
+    border-top: 0.5px solid #ddd;
+    max-height: fit-content;
+    position: absolute;
+}
+header .menu .sm {
+    max-height: 0;
+    overflow: hidden;
+    flex-direction: column;
+    display: flex;
+    transition: 0.3s;
+}
+header .menu .sm a {
+    margin: 5px;
+    color: black;
+    text-decoration: none;
+}
 
 /*************슬라이드*************/
+/* size 1300*400 */
 /*************메인*************/
 /*************푸터*************/

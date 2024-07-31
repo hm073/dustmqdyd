@@ -1,0 +1,237 @@
+@charset "utf-8";
+
+* {margin: 0; padding: 0; box-sizing: border-box;}
+img {max-width: 100%;}
+/**/
+#layout {
+    max-width: 1200px; margin: auto;
+}
+
+/*헤더*/
+header {
+    height: 100px;
+    display: flex;
+    padding-top: 10px;
+    position: relative;
+    z-index: 2;
+}
+
+header a#logo {
+    display: block;
+    width: 200px;
+    margin-right: 200px;
+}
+header ul {
+    flex: 1;
+    list-style: none;
+    display: flex;
+    margin-top: 15px;
+    margin-right: 30px;
+}
+
+/*메인메뉴*/
+header ul li {
+    flex: 1;
+    text-align: center;
+    line-height: 180%;
+}
+header ul li:hover nav.sm {
+    height: auto;
+      /*px을 지정하면 그만큼 모두 적용됨, 100%를 하면 mm쪽 높이 100%가 됨
+      auto로 하지 않으면 하나하나 지정해야 함*/
+    padding: 10px 0;
+    opacity: 1;
+}
+a.mm {
+    padding: 5px;
+    display: block;
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    font-size: 1.05rem;
+}
+a.mm:hover {
+    background-color: #4298cc;
+    color: white;
+}
+
+/*서브메뉴*/
+nav.sm {
+    background-color: white;
+    /* padding: 10px 0; */
+    box-shadow: 0 2px 2px rgba(0,0,0,0.3);
+    height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: all 0.5s;
+}
+nav.sm a {
+    display: block;
+    text-decoration: none;
+    color: black;
+}
+nav.sm a:hover {
+    background-color: #893700;
+    color: white;
+}
+
+
+
+
+/*슬라이드*/
+#slideArea {
+    height: 300px;
+    position: relative;
+    overflow: hidden;
+}
+
+#slideArea h1 {
+    position: absolute;
+    background-color: rgba(255, 255, 255, 0.85);
+    padding: 50px 100px;
+    border-radius: 50px;
+    top: 50%; left: 50%; transform: translate(-50%, -50%);
+    box-shadow: 0 0 10px black;
+    z-index: 1;
+}
+
+#slide {
+    height: 900px;
+    position: relative;
+    top: -300px;
+}
+#slide img {
+    width: 100%;
+    height: 300px;
+    display: block;
+}
+
+
+
+
+/*메인*/
+main {
+    padding-top: 30px;
+}
+
+#noti_info {
+    display: flex;
+}
+#noti_info h2 {
+    color: #555;
+    font-size: 1.5rem;
+    padding-bottom: 10px;
+    border-bottom: 1px dashed #666;
+    margin-bottom: 10px;
+}
+
+/*공지*/
+#notice {
+    flex: 1;
+    margin: 15px;
+}
+#notice h2 {text-align: center; margin-bottom: 15px;}
+#notice ol {
+    list-style: none;
+    line-height: 180%;
+}
+#notice a {
+    text-decoration: none;
+    color: black;
+    margin-left: 15px;
+}
+#notice a:hover {color: #4298cc; text-decoration: underline;}
+#notice li:first-child{
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.03rem;
+}
+#notice span {
+    float: right;
+    margin-right: 10px;
+}
+#notice li:first-child span {padding-right: 22px;}
+#notice li:nth-child(even) {background-color: #ddd;}
+
+/*정보나눔*/
+#info {
+    flex: 0.85;
+    text-align: center;
+    margin: 15px;
+}
+#info h2 {margin-bottom: 40px;}
+
+/*배너*/
+#banner h2 {display: none;}
+#banner {
+    margin-top: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+#banner a {
+    text-align: center;
+    text-decoration: none;
+    margin: 0 20px 40px ;
+}
+#banner b {
+    background-color: #ddd;
+    border-radius: 10px;
+    padding: 5px 20px;
+    color: white;
+    text-shadow: 0 0 1px #666;
+}
+#banner img {
+    display: block;
+    margin-bottom: 10px;
+}
+
+
+
+/*푸터*/
+footer {
+    background-color: #4298cc;
+    color: #ddd;
+    display: flex;
+    padding: 30px;
+    line-height: 160%;
+    align-items: center;
+}
+footer a {
+    text-decoration: none;
+    margin-right: 20px;
+    color: #ddd;
+    /* display: block; */
+}
+footer p {
+    flex:1;
+}
+
+
+
+/********/
+#black {
+    position: fixed;  /*fix를 쓰면 블록레벨의 기능이 다 없어짐*/
+    width: 100%; height: 100vh;
+    top: 0; left: 0;
+    background-color: black;
+    display: none;
+    z-index: 2;
+}
+#popup {
+    background-color: white;
+    padding: 50px 50px 80px;
+    width: 600px;
+    margin: auto;
+    margin-top: 100px;
+      /*margin:auto 다음에 margin-top하지 않으면 auto가 없어진다고 합니다*/
+    line-height: 180%;
+    border-radius: 30px;
+}
+#popup h3 {padding-bottom: 10px;}
+button {
+    float: right;
+    margin: 20px 0;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
