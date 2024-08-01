@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>로컬스토리지</title>
+</head>
+<body>
+    <h1>window.localStorage</h1>
+    <p>
+        window.localStorage는 객체.속성 이다.
+        여기서 윈도우(window)는 내장객체이며, 생략가능하다.
+        그래서 속성이름(localStorage)만 사용할 수 있다.
+    </p>
+    <p id="ki"></p>
+
+    <button type="button">카운트</button>
+    <p id="count"></p>
+
+    <!------>
+    <script>
+        const ki = document.getElementById("ki");
+        const x = localStorage.getItem("먹고싶은과일");
+
+        ki.innerText = x;
+        
+        /*********/
+
+        const btn = document.getElementsByTagName("button")[0];
+        const count = document.getElementById("count");
+        
+        let cc = 0; //맨처음 한 번 설정
+        cc = localStorage.getItem("카운트"); //그후부터는 로컬스토리지에 저장되어 있는 숫자를 받아오는 것
+        count.innerText = cc; //받아온 숫자를 표시
+
+        const num = () => {
+            
+            cc++;
+            localStorage.setItem("카운트", cc);
+            count.innerText = cc;
+
+        }
+
+        btn.addEventListener("click", num);
+    </script>
+</body>
+</html>

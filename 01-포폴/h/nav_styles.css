@@ -1,0 +1,88 @@
+/* Basic styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar {
+    background-color: #333;
+}
+
+.menu {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex; /* Arrange menu items horizontally */
+}
+
+.menu-item {
+    position: relative;
+}
+
+.menu > .menu-item > a {
+    display: block;
+    color: white;
+    text-decoration: none;
+    padding: 15px;
+    background-color: #333;
+    white-space: nowrap; /* Prevent text from wrapping */
+}
+
+.menu > .menu-item > a:hover {
+    background-color: #555;
+}
+
+/* Initially hide all submenus */
+.submenu {
+    display: none;
+    list-style-type: none;
+    position: absolute;
+    top: 100%; /* Align submenu below the parent menu item */
+    left: 0;
+    background-color: #444;
+    padding: 0;
+    margin: 0;
+    white-space: nowrap; /* Prevent text from wrapping */
+}
+
+/* Display submenu items vertically */
+.submenu li {
+    display: block; /* Arrange submenu items vertically */
+}
+
+.submenu li a {
+    color: white;
+    padding: 10px;
+    text-decoration: none;
+    display: block;
+}
+
+.submenu li a:hover {
+    background-color: #666;
+}
+
+/* Show submenu when hovering over the specific parent menu item */
+/* .menu-item-1:hover .submenu-1,
+.menu-item-1:hover .submenu-2,
+.menu-item-1:hover .submenu-3 {
+    display: block; Show all submenus when hovering over Menu 1 
+} */
+.menu-item-1:hover ~ .menu-item .submenu {
+    display: block; /* Show all submenus when hovering over Menu 1 */
+}
+
+.menu-item-2:hover .submenu-2 {
+    display: block; /* Show only submenu-2 when hovering over Menu 2 */
+    display: block; /* Show submenu-2 */
+}
+
+.menu-item-3:hover .submenu-3 {
+    display: block; /* Show only submenu-3 when hovering over Menu 3 */
+    display: block; /* Show submenu-3 */
+}
+
+/* Optional: Hide all submenus when hovering outside the menu items */
+/* .navbar:hover .submenu {
+    display: none;
+} */

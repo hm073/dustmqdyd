@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JSON.stringify()메소드</title>
+</head>
+<body>
+    <h1>JSON.stringify()메소드</h1>
+    <p>오브젝트(Object)를 가져와서 텍스트(text)로 만들어준다.</p>
+    <p id="json">00</p>
+    <ol>
+        <li>딸기</li>
+        <li>사과</li>
+        <li>포도</li>
+    </ol>
+    <!----->
+    <script>
+        const p_json = document.getElementById("json");
+        const m = {name:"홍길동", age: 25, city: "안산"}; //object
+        const info = JSON.stringify(m);//가져와서 text로 저장함
+
+        p_json.innerHTML += `<br>${ info }<br>${ m }`;
+
+        /***/
+        const ol_li = Array.from(document.getElementsByTagName("li"));
+        const fruits = JSON.stringify(ol_li); //배열은 처리 못하고 오브젝트만 처리함
+        //alert(fruits); //[{} {} {}]로 나옴
+
+        /***/
+        const ol = document.getElementsByTagName("ol")[0];
+        const x = JSON.stringify(ol);
+        //alert(ol); //[object HTMLOListElement]
+
+        /***/
+        //alert(JSON.stringify(ol_li[0])); //{}
+
+        /***/
+        //alert(JSON.stringify(ol_li[0].innerText)); //"딸기"
+
+        
+        /***/
+        const ki = JSON.stringify(ol_li[0].innerText);
+        const count = localStorage.getItem("카운트");
+        
+        localStorage.setItem( "먹고싶은과일", ki ); //"딸기"
+        
+        p_json.innerHTML += `<br>${JSON.stringify(ol_li[0].innerText)}<br>${count}`;
+        
+
+    </script>
+</body>
+</html>
