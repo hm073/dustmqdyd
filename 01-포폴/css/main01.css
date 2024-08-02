@@ -1,0 +1,90 @@
+
+* {margin: 0; padding: 0; box-sizing: border-box;}
+#layout {max-width: 1300px; margin: auto;}
+
+
+/*************헤더*************/
+header { /*헤더 전체*/
+    text-align: center;
+}
+header div { /*회원가입, 로그인 블록*/
+    padding: 5px 0 8px;
+    display: flex;
+    justify-content: flex-end;
+}
+header div a { /*회원가입, 로그인 a*/
+    margin-right: 1%; 
+    text-decoration: none;
+    color: black;
+}
+h1 {display: none;} /*제목 가리기*/
+
+/*************메뉴*************/
+/*메인*/
+header .menu { /*메인 메뉴 전체*/
+    list-style: none;
+    display: flex;
+    background-color: aliceblue;
+    padding: 15px;
+    position: relative;
+    z-index: 1;
+}
+
+header .menu li { /*메인 메뉴 li = 메인, 서브*/
+    flex: 1;
+    text-align: center;
+}
+header .menu a {margin: 0;} /*메뉴의 a 밖여백0*/
+header .menu li:not(:last-of-type) {
+    border-right: 1px solid #666;
+}
+
+header .menu li .mm {
+    color: black;
+    text-decoration: none;
+}
+
+/*서브*/
+header .menu .sm {
+    height: 0;
+    overflow: hidden;
+    flex-direction: column;
+    display: flex;
+    transition: all 0.3s;
+    position: absolute;
+    background-color: blue;
+    width: 25%;
+}
+header .menu li:hover .sm {
+    margin-top: 10px;
+    height: auto;
+}
+header .menu .sm a {
+    margin: 5px;
+    color: black;
+    text-decoration: none;
+}
+
+/*************슬라이드*************/
+/* size 1300*500 */
+.slide {
+    width: 1300px;
+    height: 500px;
+}
+/*************메인*************/
+main {
+    background-color: antiquewhite;
+}
+main div {display: flex; flex-direction: column;}
+main section {
+    height: 500px;
+    width: 500px;
+    border: 4px solid red;
+    flex: 1;
+}
+main aside {
+    height: 1000px;
+    width: 500px;
+    border: 4px solid blue;
+}
+/*************푸터*************/
