@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>공지사항, 갤러리 전환효과 복습</title>
+    <style>
+        #layout {
+            max-width: 300px;
+            margin: auto;
+            /* border: 5px solid tomato; */
+            position: relative;
+        }
+        h2 {
+            display: inline-block;
+            background-color: #c4c4c3;
+            font: 1.2rem;
+            padding: 5px 10px;
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+            margin: 0;
+            transform: translateY(11px);
+            position: relative;
+            z-index: 1;
+        }
+
+        h2.hit {background-color: skyblue; transform: translateY(0); padding-bottom: 16px;}
+        h2.hit a {color: white; text-shadow: 0 0 3px dodgerblue; /* padding: 3px 0; */}
+        h2 a {color: #919191; text-decoration: none;}
+
+        #notice ol {
+            background-color: skyblue;
+            margin: 0;
+            padding: 20px;
+            line-height: 180%;
+            list-style-position: inside;
+        }
+        #notice span {float: right;}
+
+        #gallery {
+            position: absolute;
+            width: 100%;
+            top: 0; left: 0;
+            height: 100%;
+        }
+        #gallery h2 {margin-left: 115px;}
+        #gallery div {text-align: center; display: none; padding: 20px 0; background-color: skyblue;}
+    </style>
+    <script>
+        document.addEventListener("DOMContentLoaded",()=>{
+
+            const h2 = document.querySelectorAll("#layout h2") //nodeList
+
+            const x = i => {
+                //모든 h2를 인식해와서 클릭하지 않은 h2에 뭔가 넣어야 함
+                h2.forEach(j => { 
+                    j.classList.remove("hit"); //모든 h2에서 .hit를 제거하기
+                    j.nextElementSibling.style.display = "none"; //모든 h2의 다음 형제요소가 안 보임
+                });
+                /* if(! i.matches(".hit")) { //클릭한 h2에 .hit 추가하기 if문 상관없어서 삭제*/
+                    i.classList.add("hit"); //클릭한 h2에 .hit추가됨
+                    i.nextElementSibling.style.display = "block"; //클릭한 h2의 다음 형제요소가 보이게 됨
+            }
+
+            h2.forEach( i => {
+                i.children[0].addEventListener("click", ()=> x(i)); //화살표 함수는, 매개변수를 가져오려면 반드시 익명함수에 넣어야 함
+
+            });
+
+        });//end
+    </script>
+</head>
+<body>
+    <div id="layout">
+        <section id="notice">
+            <h2 class="hit"><a href="#">공지사항</a></h2> 
+            <!-- 프로그램 짜기는 h2에 class넣는 게 편해서.. 나중에 children으로 a태그에 걸어주면 됨 -->
+            <ol>
+                <li>
+                    <a href="#">111</a>
+                    <span>라인컴퓨터</span>
+                </li>
+                <li>
+                    <a href="#">222</a>
+                    <span>라인컴퓨터</span>
+                </li>
+                <li>
+                    <a href="#">333</a>
+                    <span>라인컴퓨터</span>
+                </li>
+                <li>
+                    <a href="#">444</a>
+                    <span>라인컴퓨터</span>
+                </li>
+                <li>
+                    <a href="#">555</a>
+                    <span>라인컴퓨터</span>
+                </li>
+            </ol>
+        </section>
+        
+        <section id="gallery">
+            <h2><a href="#">갤러리</a></h2>
+            <div>
+                <a href="#"><img src="images/icon1.jpg" alt="갤러리"></a>
+                <a href="#"><img src="images/icon2.jpg" alt="갤러리"></a>
+                <a href="#"><img src="images/icon3.jpg" alt="갤러리"></a>
+            </div>
+        </section>
+    </div>
+</body>
+</html>

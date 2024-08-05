@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>try_catch기초학습_js 오류 잡기</title>
+</head>
+<body>
+    <h1>try ~ catch</h1>
+    <p>try catch는 오류를 처리하기 위하여 사용한다.</p>
+    <p id="result"></p>
+    
+    <script>
+        const res = document.getElementById("result");
+
+        try {/* 실행문; */ alrt("어서오세요")}
+        catch (err /* 매개변수는 아무거나 써도 됨 */){
+            /* 오류처리 문; */
+            res.innerText = err.message /* 메세지라는 속성이름은 틀리면 안됨 */;
+        }
+    </script>
+</body>
+</html>

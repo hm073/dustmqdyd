@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>try_catch기초학습_js</title>
+</head>
+<body>
+    <div id="layout">
+        <h1>try catch</h1>
+        <p>목록태그에 있는 텍스트를 js에서 map()으로 가져오기</p>
+        <ul>
+            <li><a href="#">aaa</a></li>
+            <li><a href="#">bbb</a></li>
+            <li><a href="#">ccc</a></li>
+            <li><a href="#">ddd</a></li>
+            <li><a href="#">eee</a></li>
+            <!-- <li><a href="#">1</a></li>
+            <li><a href="#">2</a></li>
+            <li><a href="#">3</a></li>
+            <li><a href="#">4</a></li>
+            <li><a href="#">5</a></li> -->
+        </ul>
+        <p id="error">에러문구 표시되는 곳</p>
+    </div>
+    <!------------------------------------------------------>
+    <script>
+        const li = document.getElementsByTagName("li"); //collection
+        const error = document.getElementById("error");
+
+        try {
+            //실행문:실행문이 에러가 나면 catch이벤트가 발생됨
+            const text = [...li].map( i => j.children[0].innerText ); /* 요소들.map(); -> collection은 forEach를 써야 하지만 ...(스프레드 연산자)를 이용하면 같은 효과를 낼 수 잇음 */
+            error.innerHTML = text.join("♥");
+        }
+        catch(e) {
+            //에러 이벤트
+            error.innerHTML = e.message;
+        }
+    
+    </script>
+</body>
+</html>
