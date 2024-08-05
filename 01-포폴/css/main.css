@@ -16,7 +16,7 @@ header {
     background-color: aliceblue;
     text-align: center;
 }
-header> div {
+header> div span {
     float: right;
     background-color: blanchedalmond;
     padding: 5px;
