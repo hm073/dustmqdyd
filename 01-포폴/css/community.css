@@ -84,49 +84,35 @@ header> div span {
     background-color: antiquewhite;
 }
 
-
-
-/******슬라이드(slide)******/
-.slideArea {
-    position: relative;
-    overflow: hidden;
-}
-.slide {
-    display: flex; position: relative;
-    animation: tL 8s both infinite alternate;
-}
-
-@keyframes tL {
-    0% {transform: translateX(0);}
-    50% {transform: translateX(-100%);}
-    100%   {transform: translateX(-200%);}
-}
-
-/******메인(main)******/
+/**********************/
 main {
-    background-color: aqua;
-    padding-top: 50px;
+    max-width: 1000px;
+    margin: auto;
+    margin-top:10px; padding: 30px;
 }
-.main div {
+main h2 {
+    margin-bottom: 5px;
+}
+main>p {
+    display: block;
+    margin-bottom: 5px;
+}
+.main {
+    background-color: beige;
+    padding: 30px;
+    border-radius: 20px;
+    margin-top: 10px;
+}
+.main:not(:last-of-type) {margin-bottom: 20px;}
+
+.n1 {
     display: flex;
+    height: 200px;
 }
-.main div a {flex: 1;}
-.main div div {
+.n1 div {
     flex: 1;
+    margin-right: 50px;
 }
+.n1 p {flex: 2;}
 
-.m2 div {flex-direction: column;}
-
-.m4 {display: flex;}
-.m4 section {flex: 1;}
-
-
-/******푸터(footer)******/
-footer {
-    display: flex;
-    background-color: aquamarine;
-}
-footer div {
-    flex: 1;
-    padding: 10px;
-}
+.n2 {margin-top: 20px;}

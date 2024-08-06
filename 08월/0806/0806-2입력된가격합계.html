@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>입력된 가격 합계 구하기</title>
+</head>
+<body>
+    <div id="layout">
+        <ul>
+            <li>200원</li>
+            <li>300원</li>
+            <li>450원</li>
+        </ul>
+        <P id="sum">가격 합계</P>
+        <form>
+            <input type="number" min="100" max="200" id="n1" required>
+            +
+            <input type="number" min="100" max="200" id="n2" required>
+            <br><br><button type="button" id="sum2">더하기</button><br><br>
+            
+            <input type="number" placeholder="합계표시되는곳" id="n3">
+        </form>
+    </div>
+
+    <!------>
+    <script>
+        const li = Array.from(document.getElementsByTagName("li"));
+        const p = document.getElementById("sum");
+
+        let sum = 0;
+        li.forEach( i => {
+            sum += parseInt(i.innerText);
+             //출발점이 숫자면 구문을 분석하여 정수만 불러와라
+             //
+        })
+        p.innerHTML += `는<br>${sum}원입니다.`;
+        //홈페이지에서는 문자열 없이도 숫자도 string이므로 알아야 함
+
+
+        const n1 = document.getElementById("n1");
+        const n2 = document.getElementById("n2");
+        const n3 = document.getElementById("n3");
+        const sum2 = document.getElementById("sum2")
+
+        const y = () => {
+            const n11 = Number(n1.value);
+            //숫자(string형)를 넘버형으로 변환
+            const n21 = Number(n2.value);
+            const n31 = n11+n21;
+            n3.setAttribute("value", n31);
+        }
+        
+        sum2.addEventListener("click", y);
+    </script>
+</body>
+</html>

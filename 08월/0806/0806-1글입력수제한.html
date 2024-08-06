@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>글자 입력수가 지정수를 초과하면 ...(말줄임표) 나오기</title>
+</head>
+<body>
+    <div id="layout">
+        <input type="text" maxlength="10" placeholder="최대글자수10글자로 제한">
+        <!-- maxlength=10이면 최대 글자수 자체를 제한할 수 있음-->
+        <input type="text" id="p1"> <!-- 고객이 입력하는 내용은 콘텐츠가 아니라 value값(속성) -->
+        <button type="button" id="btn1">확인</button>
+        <p id="result"></p>
+
+    </div>
+
+    <!------>
+    <script>
+        const p1 = document.getElementById("p1");
+        const btn1 = document.getElementById("btn1");
+        const result = document.getElementById("result");
+
+        const x = () => { //함수형 변수는 반드시 const를 써야 하고 익명함수가 쓰여야 함
+            const p2 = p1.value; //p2는 서버에 값을 전달
+            const p3 = p2.length;
+            let p4; //홈페이지에 표시되는 부분
+            if (p3 > 10) p4 = p2.substr(0, 7) + "...";
+            else         p4 = p2;
+
+            result.innerText = p4;
+        }
+
+
+        //const x1 = "라인컴퓨터";
+        //const x2 = x1.substr(1, 2); //"인컴"
+        //alert(x1.substr(2)); "컴퓨터" 해당하는 번호부터 끝까지
+        //alert(x1.substr(-3)); "컴퓨터" 끝에서부터 3개
+
+        /* substr(매개변수(필수), 매개변수(옵션))*/
+
+
+        const x1 = "라인컴퓨터";
+        const x2 = x1.substr(1, 2);
+        //문자열.substr(시작 인덱스 번호, 가져올 글자개수);
+
+        const x3 = x1.substring(1, 2);
+        //문자열.substring(시작인덱스번호, 끝인덱스-1)
+
+        const x11 = "라,인,컴,퓨,터";
+        const x4 = x11.split(",");
+        //문자열.split(분리기호, 리미터(가져올 개수, 생략되면 전체를 다 가져옴)) = 분리기호로 나눠서 배열(array)로 저장
+        alert ( typeof x11 ) //string
+        alert ( typeof x4 ) //object(array는 typeof가 object다)
+
+        alert ( typeof p1 ) //object(DOM은 object다)
+
+        /*원래 js에서는 돔 없이 x12 = {hair:"yellow", area:"안산"}; 과 같이 속성:값으로 이루어졌다.*/
+        
+        const x13 = "라인 컴퓨터 아트학원";
+        const x5 = x13.split(" "); //공백을 기준으로 아이템으로 배경레 저장한다 ["라인", "컴퓨터", "아트학원"]
+        alert(x5[2])
+
+        const x6 = x13.slice(1, 6); //"인 컴퓨터" 지정하는 부분만큼 문자열을 가져온다
+        //문자열.slice(시작 인덱스,마지막 인덱스-1);로 분할
+
+
+
+        btn1.addEventListener("click", x);
+    </script>
+</body>
+</html>
