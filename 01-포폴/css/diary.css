@@ -83,3 +83,26 @@ header> div span {
 .subMenu a:hover {
     background-color: antiquewhite;
 }
+
+
+/**********************************/
+main {
+    background-color: bisque;
+    padding: 70px;
+}
+.main {
+    max-width: 900px;
+    margin: auto;
+    background-color: wheat;
+    margin-bottom: 70px;
+    padding: 30px;
+    border-radius: 20px;
+}
+
+/*pro*/
+.pro {
+    display: flex;
+}
+.pro>div {width: 180px; height: 250px; background-color: blue;}
+.pro section {padding: 15px;}
+.pro section>div {width: 500px; height: 30px; background-color: blueviolet;}

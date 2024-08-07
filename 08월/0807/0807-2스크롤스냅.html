@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>CSS로 부드럽게 스크롤하기</title>
+<style>
+* {margin:0; box-sizing:border-box;}
+#smoothScroll {height:100vh; overflow:auto; scroll-snap-type:y mandatory;}
+#smoothScroll>section {padding:10px; height:100%; scroll-snap-align:start;}
+#smoothScroll>section:nth-child(3n+1) {background:gold;}
+#smoothScroll>section:nth-child(3n+2) {background:skyblue;}
+#smoothScroll>section:nth-child(3n) {background:pink;}
+</style>
+</head>
+<body>
+<div id="smoothScroll">
+	<section>
+		<h1>섹션영역1</h1>
+	</section>
+	<section>
+		<h1>섹션영역2</h1>
+	</section>
+	<section>
+		<h1>섹션영역3</h1>
+	</section>
+	<section>
+		<h1>섹션영역4</h1>
+	</section>
+	<section>
+		<h1>섹션영역5</h1>
+	</section>
+	<section>
+		<h1>섹션영역6</h1>
+	</section>
+</div>
+</body>

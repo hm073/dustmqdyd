@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>스크롤 내릴 때와 올릴 때에 다른 이벤트 설정</title>
+    <style>
+        /*verder prefix를 사용하는 이유? css3 표준으로 확정되기 전 기능을 표현한다.*/
+        ::-webkit-scrollbar {width: 0;}
+        #layout {border: 5px solid red; overflow: hidden;}
+        p {
+            position: fixed; top: 20px; left: 20px;
+            background-color: white; box-shadow: 0 0 10px black;
+            padding: 20px; font-size: 2rem;
+        }
+        #layout div:nth-of-type(1) {
+            height: 1000px; background-color: yellow;
+            transform: translateX(-100vw);
+        }
+        #layout div:nth-of-type(2) {
+            height: 1000px; background-color: yellowgreen;
+            transform: translateX(100vw);
+        }
+        #layout div:nth-of-type(3) {
+            height: 1000px; background-color: green;
+            transform: translateX(-100vw);
+        }
+
+    </style>
+    <script>
+        document.addEventListener("DOMContentLoaded", ()=> {
+
+            let x = Math.trunc(window.scrollY); //윈도우의 스크롤 높이 (초기값)
+            const p = document.querySelector("#layout p");
+            const divs = document.querySelectorAll("#layout div"); //nodeList
+
+            const xxx = () => {
+                const y = Math.trunc(window.scrollY); //스크롤 내린 값
+                let z = y - x; //스크롤 내린 값에서 초기값을 뺀다
+                
+                if( y >= 300 && z > 0) { //스크롤 높이는 300이상이고 스크롤을 내렸다(z>0)
+                    divs[0].style.transform = "translateX(0)";        //실행문;
+                    divs[0].style.transition = "transform 1s";
+                }
+                if( y >= 1200 && z > 0) { //스크롤 높이는 300이상이고 스크롤을 내렸다(z>0)
+                    divs[1].style.transform = "translateX(0)";        //실행문;
+                    divs[1].style.transition = "transform 1s";
+                }
+                if( y >= 1900 && z > 0) { //스크롤 높이는 300이상이고 스크롤을 내렸다(z>0)
+                    divs[2].style.transform = "translateX(0)";        //실행문;
+                    divs[2].style.transition = "transform 1s";
+                }
+
+                if( y <= 300 && z < 0) { //스크롤 높이는 300이상이고 스크롤을 내렸다(z>0)
+                    divs[0].style.transform = "translateX(-100vw)";        //실행문;
+                    divs[0].style.transition = "transform 0.5s";
+                }
+                if( y <= 1200 && z < 0) { //스크롤 높이는 300이상이고 스크롤을 내렸다(z>0)
+                    divs[1].style.transform = "translateX(100vw)";        //실행문;
+                    divs[1].style.transition = "transform 0.5s";
+                }
+                if( y <= 1700 && z < 0) { //스크롤 높이는 300이상이고 스크롤을 내렸다(z>0)
+                    divs[2].style.transform = "translateX(-100vw)";        //실행문;
+                    divs[2].style.transition = "transform 0.5s";
+                }
+
+                x = y;
+
+                p.innerHTML = `현재 스크롤의 높이는 ${y}픽셀이며<br> 스크롤 내린 정도는 ${z}픽셀이다`;
+            }
+
+            window.addEventListener("scroll", xxx);
+        });//end
+    </script>
+</head>
+<body>
+    <div id="layout">
+        <div>11111111</div>
+        <div>22222222</div>
+        <div>33333333</div>
+        <p>스크롤 높이를 숫자로 표시</p>
+    </div>
+</body>
+</html>

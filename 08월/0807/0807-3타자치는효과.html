@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>한 글자씩 타자치는 효과 연출</title>
+</head>
+<body>
+    <p id="type"></p>
+
+    <!------------------->
+    <script>
+        const type = document.getElementById("type");
+        const x = "홍길동 홈페이지에 오신 것을 환영합니다.";
+        let i = 0;
+
+        const typing = () => {
+            if( i < x.length ) {
+                type.textContent += x[i];
+                  //innerText나 innerHTML 보다 속도가 빠르다고 함(대신 inner-보다 예전방식으로 스타일 표현이 잘안됨)
+                  //요즘은 램이 좋아서 속도차이를 별 체감할 수는 없긴 함
+                i++;
+                setTimeout( typing , 100 );
+            }
+        }
+        //typing(); 곧바로 나오게 함
+        setTimeout( typing , 1100 ); //안나왔다가 1.1초 후에 나오게 함
+    </script>
+</body>
+</html>
