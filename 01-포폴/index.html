@@ -1,111 +1,176 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>메인</title>
+    <title>홈</title>
+
     <link rel="stylesheet" href="css/main.css">
-    <script src="js/main.js"></script>
 </head>
 <body>
     <div id="layout">
         <header>
-            <h1>pet cycle</h1>
-            <div>
-                <span>
-                    <a href="회원가입.html">회원가입</a>
-                    <a href="로그인.html">로그인</a>
-                </span>
-            </div>
-            <div id="logo">
-                <a href="index.html"><img src="images/logo_m.jpg" alt="로고"></a>
-            </div>
-            <ul class="menu">
-                <li><a href="index.html" class="mainMenu">홈</a></li>
+            <!---로고 이미지 id:logo-->
+            <a href="index.html" id="logo"><img src="images/dlatl/logo.png" alt="logo"></a>
+            <!---메뉴(홈, 커뮤니티, 다이어리) id:menu-->
+            <ul id="menu">
                 <li>
-                    <a href="커뮤니티.html" class="mainMenu">커뮤니티</a>
-                    <nav class="subMenu">
-                        <a href="#">서브메뉴1</a>
-                        <a href="#">서브메뉴2</a>
-                        <a href="#">서브메뉴3</a>
-                    </nav>
+                    <a href="index.html">홈</a>
                 </li>
                 <li>
-                    <a href="다이어리.html" class="mainMenu">다이어리</a>
-                    <nav class="subMenu">
-                        <a href="#">서브메뉴1</a>
-                        <a href="#">서브메뉴2</a>
-                        <a href="#">서브메뉴3</a>
-                    </nav>
+                    <a href="커뮤니티.html">커뮤니티</a>
                 </li>
                 <li>
-                    <a href="개인페이지.html" class="mainMenu">개인페이지</a>
-                    <nav class="subMenu">
-                        <a href="#">서브메뉴1</a>
-                        <a href="#">서브메뉴2</a>
-                        <a href="#">서브메뉴3</a>
-                    </nav>
+                    <a href="다이어리.html">다이어리</a>
                 </li>
-                
             </ul>
+            <!---로그인과 개인페이지 id:login-->
+            <div id="login">
+                <a href="회원가입.html">회원가입</a>
+                <a href="로그인.html">로그인</a>
+                <a href="개인페이지.html">개인페이지</a>
+            </div>
         </header>
-        <div class="slideArea">
+        <!----슬라이드 id:slideArea  class:slide---->
+        <div id="slideArea">
             <div class="slide">
                 <img src="images/dlatl/slide1.jpg" alt="슬라이드1">
                 <img src="images/dlatl/slide2.jpg" alt="슬라이드2">
                 <img src="images/dlatl/slide3.jpg" alt="슬라이드3">
             </div>
         </div>
+        <!----메인(빠른 바로가기, 뉴스, 커뮤니티 베스트, 기부, 실종)-->
         <main>
-            <section class="main m1">
-                <h2>나의 반려동물</h2>
-                <ul class="img1">
-                    <li>
-                        <a href="#"><img src="images/dlatl/a1.jpg" alt="반려동물1"></a>
-                        <a href="#" class="name">반려동물 이름<br>
-                        기록하기</a>
-                    </li>
-                    <li>
-                        <a href="#"><img src="images/dlatl/a2.jpg" alt="반려동물2"></a>
-                        <a href="#" class="name">반려동물 이름<br>
-                        기록하기</a>
-                    </li>
-                    <li>
-                        <a href="#"><img src="images/dlatl/a3.jpg" alt="반려동물3"></a>
-                        <a href="#" class="name">반려동물 이름<br>
-                        기록하기</a>
-                    </li>
-                </ul>
-            </section>
-            <section class="main m2">
-                <h2>유용한 뉴스</h2>
-                <div>
-                    <div>1</div>
-                    <div>2</div>
-                    <div>3</div>
-                </div>
-            </section>
-            <section class="main m3">
-                <h2>베스트 컨텐츠</h2>
-                <div>
-                    <div>1</div>
-                    <div>2</div>
-                    <div>3</div>
-                </div>
-            </section>
-            <div class="m4">
-                <section>
-                    <h2>함께해요! 탭 기능 지금은 옆으로</h2>
-                    <div>기부</div>
-                    <div>공동구매</div>
+            <h1>반려동물의 생애를 하루하루 기록하는 다이어리 기록형 사이트</h1>
+            <!-- 빠른 바로가기 id:quick -->
+            <div id="quick">
+                <a href="추가등록.html">추가등록</a>
+                <a href="기록작성.html">기록작성</a>
+                <a href="정보수정.html">정보수정</a>
+            </div>
+
+            <!-- 유용한 소식, 뉴스 class:mainC news/images -->
+            <div>
+                <section class="mainC news">
+                    <div class="images">
+                        <a href="#"><img src="images/dlatl/news00.jpg" alt="유용한 정보"></a>
+                        <a href="#"><img src="images/dlatl/news00.jpg" alt="유용한 정보"></a>
+                        <a href="#"><img src="images/dlatl/news00.jpg" alt="유용한 정보"></a>
+                    </div>
+                    <div class="newsC">
+                        <h2>새로운 소식</h2>
+                        <ul>
+                            <li>
+                                <a href="#">유기동물에서 반려동물로, 변한 모습을 확인해보자</a>
+                            </li>
+                            <li>
+                                <a href="#">0000기업 2024년 강아지를 위한 사료 출시!!</a>
+                            </li>
+                        </ul>
+                    </div>
                 </section>
-                <section>
-                    <h2>도와주세요</h2>
-                    <div>잃어버린 동물 슬라이드</div>
-                    <p>설명</p>
+            </div>
+
+            <!-- 공동구매, 커뮤니티 베스트
+                id:jpCm
+                class:mainC jp // mainC cM cMbest cM1 cM2 cM3 -->
+            <div>
+                <div id="jpCm">
+                    <section class="mainC jP">
+                        <h3>공동구매 소식</h3>
+                        <a href="#">
+                            <img src="images/dlatl/p1.jpg">
+                        </a>
+                        <a href="#"><b>강아지를 위한 산책줄</b></a>
+                        <p>D-000 <span>2024-00-00 20:00까지</span><br>
+                        참여인원 <span>00/00</span></p>
+                    </section>
+                    <section class="mainC cM">
+                        <h3>커뮤니티 BEST</h3>
+                        <div class="cMbest cM1">
+                            <a href="#">
+                                <img src="images/dlatl/cm1.jpg">
+                            </a>
+                            <a href="#">우리 고양이한테 줬을 때 좋아했던 사료 베스트</a>
+                        </div>
+                        <div class="cMbest cM2">
+                            <a href="#">
+                                <img src="images/dlatl/cm1.jpg">
+                            </a>
+                            <a href="#">햄스터가 케이지 안에서 사라졌어요.</a>
+                        </div>
+                        <div class="cMbest cM3">
+                            <a href="#">
+                                <img src="images/dlatl/cm1.jpg">
+                            </a>
+                            <a href="#">햄스터 기를 때 주의사항 안내. 이런 쳇바퀴를 사면 끼어서 사고가 날 수 있으니 주의할 것!</a>
+                        </div>
+                    </section>
+                </div>
+            </div>
+
+            <!-- 기부 홍보 class:mainC cN -->
+            <div>
+                <div class="mainC cN">
+                    <section>
+                        <h3>함께해요</h3>
+                        <p><b>00보호소를 위한 헌옷나눔</b></p>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique, eos? Harum voluptates vero cons</p>
+                        <p>참여현황 <span>00%</span></p>
+                    </section>
+                    <div>
+                        <img src="images/dlatl/news00.jpg" alt="기부홍보용이미지">
+                    </div>
                 </section>
-            </section>
+            </div>
+
+            <!-- 실종 class:mainC dA / hp1 hp2 -->
+            <div>
+                <section class="mainC dA">
+                    <h3>찾아주세요!</h3>
+                    <div>
+                        <div class="hp1">
+                            <div>
+                                <img src="images/dlatl/a2.jpg" alt="실종동물사진">
+                            </div>
+                            <div>
+                                <p><b>동물 이름1</b></p>
+                                <p>
+                                    잃어버린 장소: 인천<br>
+                                    특징: 배쪽 털이 하얀색<br>
+                                    설명: 국민경제의 발전을 위한 중요정책의 수립에 관하여 대통령의 자문에 응하기 위하여 국민경제자문회의를 둘 수 있다.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="hp2">
+                            <div>
+                                <img src="images/dlatl/a2.jpg" alt="실종동물사진">
+                            </div>
+                            <div>
+                                <p><b>동물 이름2</b></p>
+                                <p>
+                                    잃어버린 장소: 서울<br>
+                                    특징: 머리쪽 털이 검은색<br>
+                                    설명: 국민경제의 발전을 위한 중요정책의 수립에 관하여 대통령의 자문에 응하기 위하여 국민경제자문회의를 둘 수 있다.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <!-- 바로가기 id:mm -->
+             <div>
+                <section id="mm">
+                    <a href="커뮤니티.html">커뮤니티</a>
+                    <a href="다이어리.html">다이어리</a>
+                    <a href="개인페이지.html">개인페이지</a>
+                    <a href="#">장례안내</a>
+                </section>
+             </div>
         </main>
+
+        <!---푸터-->
         <footer>
             <div>
                 회사소개
@@ -116,6 +181,8 @@
             <div>
                 빠른 서비스
                 반려동물 추가등록
+                개인정보 수정
+                장례 절차 안내
             </div>
             <div>QnA</div>
         </footer>
