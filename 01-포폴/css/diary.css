@@ -1,131 +1,56 @@
-@charset "utf-8";
+@charset "UTF-8";
 
 * {margin: 0; padding: 0; box-sizing: border-box;}
-img {display: block; max-width: 100%;}
-a {text-decoration: none; color: black;}
 h1 {display: none;}
+a  {text-decoration: none; color: black;}
+img {display: block;}
 
 #layout {
-   max-width: 1200px;
-   margin: auto;
+    max-width: 1200px;
+    margin: auto;
 }
 
-
-/******헤더(header)******/
+/**헤더(header)**/
 header {
-    background-color: aliceblue;
-    position: relative;
+    height: 120px;       /*로고 크기가 바뀌면 수정할 것*/
+    display: flex;
+    padding: 10px;
 }
-#logo {
-    display: flex; position: relative;
-    justify-content: center
+ /*로고*/
+#logo{
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
-header> div:first-of-type {
+
+ /*메뉴*/
+#menu {
+    flex: 4;
+    display: flex;
+    align-items: center;
+    list-style: none;
+    margin-left: 30px;
+}
+#menu li {
+    margin-right: 30px;
+    font-weight: bold;
+}
+#menu li:hover a {
+    color: burlywood;
+}
+
+ /*로그인 개인페이지*/
+#login {
+    flex: 2;
     display: flex;
     justify-content: end;
+    align-items: center;
 }
-header> div span {
-    background-color: blanchedalmond;
-    padding: 10px;
-}
-
-/*전체메뉴(.menu)*/
-.menu {
-    display: flex;
-    position: relative;
-    max-width: 900px;
-    list-style: none;
-    text-align: center;
-    background-color: bisque;
-    z-index: 1;
-    border-radius: 10px;
-    margin: 15px auto 0;
-}
-.menu li {
-    flex: 1;
-    position: relative;
-}
-.menu li:hover .subMenu {
-    height: 120px;
-    padding: 5px 0;
-}
-/*메인메뉴(.mainmenu)*/
-.mainMenu {
+#login a {
     display: block;
-    padding: 10px;
-    position: relative;
+    margin-left: 10px;
 }
-.mainMenu::before {
-    position:absolute;
-    content:"";
-    top:calc((100% - 50%) / 2);
-    right:0;
-    width:2px;
-    height:50%;
-    background-color: white;
-    /*문제가 있음*/
+#login a:hover {
+    color: burlywood;
 }
-
-/*서브메뉴(.submenu)*/
-.subMenu {
-    position: absolute;
-    width: 100%;
-    height: 0;
-    overflow: hidden;
-    background-color: whitesmoke;
-    transition: all 0.3s;
-}
-.subMenu a {
-    display: block;
-    margin: 3px 0;
-    padding: 5px;
-}
-.subMenu a:hover {
-    background-color: antiquewhite;
-}
-
-
-/**********************************/
-main {
-    background-color: aliceblue;
-    padding: 70px;
-}
-.main {
-    max-width: 900px;
-    margin: auto;
-    background-color: wheat;
-    margin-bottom: 70px;
-    padding: 30px;
-    border-radius: 20px;
-}
-
-/*pro*/
-.pro {
-    display: flex;
-}
-.pro>div {width: 180px; height: 250px;}
-.pro section {padding: 15px;}
-.pro section>div {width: 500px; height: 30px; background-color: blueviolet;}
-
-/* m1 */
-.m1 section {
-    padding: 15px;
-    display: flex;
-}
-.m1 section> div {flex: 4;}
-.m1 section> div> div {display: flex;}
-.m1 section> div h4 {margin-right: 100px;}
-.m1 section> div ol {
-    padding: 30px 15px;
-    list-style-position: inside;
-    line-height: 180%;
-}
-
-.m1 section> a { flex: 1; }
-
-
-/* m2 */
-.m2 section {padding: 15px;}
-
-/* m3 */
-.m3 section {padding: 15px;}
