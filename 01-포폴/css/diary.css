@@ -1,6 +1,7 @@
 @charset "UTF-8";
 
 * {margin: 0; padding: 0; box-sizing: border-box;}
+::-webkit-scrollbar{width: 0;}
 h1 {display: none;}
 a  {text-decoration: none; color: black;}
 img {display: block;}
@@ -54,3 +55,20 @@ header {
 #login a:hover {
     color: burlywood;
 }
+
+
+/************************************************************/
+/* 제목(title) */
+#title {
+    max-width: 1200px;
+    height: 150px;
+    margin: 0 auto 30px;
+    padding: 30px 50px;
+    display: flex;
+    align-items: flex-end;
+    background: linear-gradient(rgba(0,0,0,0), lightyellow);
+    border-bottom-left-radius: 30px;
+    border-bottom-right-radius: 30px;
+}
+
+/************************************************************/

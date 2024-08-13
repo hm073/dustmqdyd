@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>Progress Animation</title>
+<!-- 필요한 부분에 해당 스크립트 링크를 넣고 활용한다. -->
+<script src="skill.js"></script>
+<style>
+#skill {max-width:500px; border:1px solid red; margin:auto; padding:800px 0;}
+#skill label {display:inline-block; width:20%;}
+#skill progress {display:inline-block; width:70%; height:25px;}
+</style>
+</head>
+<body>
+    <section id="skill">
+        <h1>스크롤을 내리면 나의 SKILL이 순서대로 진행된다.</h1>
+        <label for="photoshop">포토샵</label>
+        <progress id="photoshop" value="0" max="100">90</progress><br>
+        <label for="illust">일러스트</label>
+        <progress id="illust" value="0" max="100">95</progress><br>
+        <label for="css">HTML/CSS</label>
+        <progress id="css" value="0" max="100">90</progress><br>
+        <label for="jquery">jQuery</label>
+        <progress id="jquery" value="0" max="100">85</progress><br>
+        <label for="vue">Vue.js</label>
+        <progress id="vue" value="0" max="100">70</progress><br>
+    </section>
+
+
+</body>
+</html>
