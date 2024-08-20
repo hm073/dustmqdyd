@@ -66,7 +66,7 @@ header {
     padding: 30px 50px;
     display: flex;
     align-items: flex-end;
-    background: linear-gradient(rgba(0,0,0,0), lightyellow);
+    background: linear-gradient(rgba(0,0,0,0), rgb(243, 240, 236));
     border-bottom-left-radius: 30px;
     border-bottom-right-radius: 30px;
 }
@@ -140,7 +140,7 @@ main {margin-bottom: 100px;}
 .m {
     max-width: 1000px;
     margin: 0 auto 50px;
-    background-color: antiquewhite;
+    background-color: rgb(243, 240, 236);
     border-radius: 20px;
     padding: 20px;
 }
@@ -164,7 +164,7 @@ main {margin-bottom: 100px;}
     max-width: 1000px;
     margin: 0 auto 25px;
     padding: 30px;
-    border: 3px solid burlywood;
+    border: 3px solid rgb(241, 217, 186);
     border-radius: 20px;
 }
 .main> h2 {
@@ -191,6 +191,7 @@ main {margin-bottom: 100px;}
 /* 커뮤니티 페이지(num) */
 #num {text-align: center;}
 #num a {margin: 10px 3px;}
+#num a:hover {color: burlywood;}
 
 /* 글쓰기 */
 main #plus {

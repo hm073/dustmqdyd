@@ -66,7 +66,7 @@ header {
     padding: 30px 50px;
     display: flex;
     align-items: flex-end;
-    background: linear-gradient(rgba(0,0,0,0), lightyellow);
+    background: linear-gradient(rgba(0,0,0,0), rgb(243, 240, 236));
     border-bottom-left-radius: 30px;
     border-bottom-right-radius: 30px;
 }
@@ -80,33 +80,44 @@ header {
     position: relative;
 }
 
-#mC h2 {
+/* 반려동물 프로필(pf, pf0) */
+.pf h2 {
     width:160px; text-align: center;
     padding: 5px 0;
-    border: 3px solid burlywood;
-    background-color: burlywood;
     border-top-right-radius: 15px;
     border-top-left-radius: 15px;
+    z-index: 1;
+    display: inline-block;
+    position: relative;
 }
 
-/* 반려동물 프로필(pf, pf0) */
+.pf1 h2 {
+    border: 3px solid rgb(241, 217, 186);
+    background-color: rgb(241, 217, 186);
+}
+.pf2 h2 {
+    border: 3px solid rgb(241, 217, 186);
+    border-bottom: 3px solid white;
+    background-color: white;
+}
+
+.a1 p {margin-bottom: 5px;}
+
 /* 프로필 내용 전체 박스(mm)*/
 .mm {
-    padding: 20px;
-    border: 3px solid burlywood;
+    padding: 25px 20px;
+    border: 3px solid rgb(241, 217, 186);
 }
 
 .aa {
     max-width: 1000px;
     margin: 0 auto 30px;
     padding: 50px;
-    background-color: antiquewhite;
+    background-color: rgb(243, 240, 236);
     border-radius: 30px;
 }
 .aa h3 {
-    display: inline-block;
-    position: relative;
-    z-index: 1;
+    margin-bottom: 15px;
 }
 
 /* 반려동물 프로필 내용(aa, a1) */
@@ -157,16 +168,28 @@ header {
     height: 500px;
     margin: auto;
 }
+.a3 ul {
+    margin: 20px 0;
+    padding-left: 10px;
+    list-style-position: inside;
+    line-height: 180%;
+}
 
 /* 반려동물 앨범(aa, a4) */
 .a4 div {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-around;
+    justify-content: space-evenly;
     align-items: center;
+}
+.a4 div img {
+    margin: 5px;
 }
 
 /* 반려동물 기타 사항(aa, a5) */
+.a5 p {
+    
+}
 
 /* .pf1 {display: none;} */
 .pf2 .mm {display: none;}
@@ -181,6 +204,7 @@ header {
 .pf2 h2 {
     margin-left: 160px;
     background-color: white;
+    font-size: 1.5rem;
 }
 
 
