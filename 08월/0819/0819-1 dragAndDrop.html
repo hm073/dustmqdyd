@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #div1, #div2 {
+          float: left;
+          width: 100px;
+          height: 35px;
+          margin: 10px;
+          padding: 10px;
+          border: 1px solid black;
+        }
+    </style>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+
+          const drag1 = document.getElementById("drag1"); //이동할 이미지
+          const div1 = document.getElementById("div1"); //처음영역
+          const div2 = document.getElementById("div2"); //옮길영역
+        
+          let data;
+          //ondragstart="drag(event)"
+          drag1.addEventListener("dragstart", (e) => {
+            e.dataTransfer.setData("z", e.target.id); //e.target.id를 ""라는 이름에 집어넣는다는 의미
+          });
+
+          const dragover = e => e.preventDefault(); //이미지를 드래그할 때
+        
+        //   function allowDrop(ev) {
+        //   ev.preventDefault();
+        // }
+          div1.addEventListener("dragover", e => {
+            e.preventDefault();
+          })
+        
+        // function drag(ev) {
+        //   ev.dataTransfer.setData("text", ev.target.id);
+        // }
+        
+        // function drop(ev) {
+        //   ev.preventDefault();
+        //   var data = ev.dataTransfer.getData("z");
+        //   ev.target.appendChild(document.getElementById(data));
+        // }
+
+        
+          div1.addEventListener("", (e)=>{});
+            e.preventDefault(); //클릭이동방지
+            data = e.dataTransfer.getData("z");
+            e.target.appendChild(document.getElementById("data"));
+          });
+
+          div1.addEventListener("dragover", e => dragover); //갖다주기위해 움직일 때
+          div2.addEventListener("dragover", e => dragover); //갖다놓기위해 움직일 때
+
+          div1.addEventListener("drop", e => drag); //갖다 주기위해 일어나다
+          div2.addEventListener("drop", e => drag); //갖다 놓기위해 앉다
+        
+    </script>
+</head>
+<body>
+    <div id="div1">
+    <img src="images/img_w3slogo.gif" draggable="true" id="drag1" width="88" height="31">
+    </div>
+
+    <div id="div2" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+
+    <!-- on : html의 속성
+    : 스크립트의 입장에서는 이벤트 핸들러 -->
+
+</body>
+</html>

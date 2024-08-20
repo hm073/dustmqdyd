@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<title>해피빈 사랑의 좀도리 운동</title>
+
+	<style>
+		* {margin: 0; padding: 0; box-sizing: border-box;}
+		body, html {font: 12pt/180% "나눔고딕";}
+		h1, h2 {width: 0; height: 0; overflow: hidden;}
+
+		/*밥그릇이동*/
+		#jom2 {background: #2b8bb3;}
+		#imgMove {width: 1333px; height: 765px; margin: auto; background: url("images/bg2.jpg") no-repeat center top / cover;}
+		#imgMove> div {width: 825px; margin: auto; display: flex; padding-top: 320px; align-items: center;}
+		#area {width: 667px; height: 388px; position: relative; background: url("images/bg3.gif") no-repeat; display: flex; justify-content: space-between; padding-top: 140px;}
+		.area { width: 220px; margin-top: -20px;}
+		#rice {display:block; padding-top: 30px; text-align: center;}
+		#pop {display: none; position: absolute; top: 0;}
+		.arr {opacity: 0;}
+	</style>
+</head>
+<body>
+	<h1>해피빈 사랑의 좀도리 운동</h1>
+	<section id="jom2">
+		<h2>사랑의 좀도리 운동 희망 나누기</h2>
+		<div id="imgMove">
+			<div>
+				<div class="arr">
+					<input type="image" src="images/arr_left.png" alt="왼쪽화살표" id="arrLeft">
+				</div>
+				<div id="area">
+					<div class="area">
+						<img src="images/rice.png" alt="밤공기" id="rice">
+					</div>
+					<div class="area"></div>					
+					<img src="images/pop1.png" alt="pop1" id="pop">
+				</div>				
+				<div class="arr">
+					<input type="image" src="images/arr_right.png" alt="오른쪽화살표" id="arrRight">
+				</div>
+			</div>
+		</div>
+	</section>
+</body>
+</html>

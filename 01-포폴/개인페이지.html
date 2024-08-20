@@ -4,56 +4,110 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>개인페이지</title>
+
     <link rel="stylesheet" href="css/personal.css">
 </head>
 <body>
     <div id="layout">
         <header>
-            <h1>pet cycle</h1>
-            <div>
-                <span>
-                    <a href="회원가입.html">회원가입</a>
-                    <a href="로그인.html">로그인</a>
-                </span>
-            </div>
-            <div id="logo">
-                <a href="index.html"><img src="images/logo_m.jpg" alt="로고"></a>
-            </div>
-            <ul class="menu">
-                <li><a href="index.html" class="mainMenu">홈</a></li>
+            <!---로고 이미지 id:logo-->
+            <a href="index.html" id="logo"><img src="images/dlatl/logo.png" alt="logo"></a>
+            <!---메뉴(홈, 커뮤니티, 다이어리) id:menu-->
+            <ul id="menu">
                 <li>
-                    <a href="커뮤니티.html" class="mainMenu">커뮤니티</a>
-                    <nav class="subMenu">
-                        <a href="#">서브메뉴1</a>
-                        <a href="#">서브메뉴2</a>
-                        <a href="#">서브메뉴3</a>
-                    </nav>
+                    <a href="index.html">홈</a>
                 </li>
                 <li>
-                    <a href="다이어리.html" class="mainMenu">다이어리</a>
-                    <nav class="subMenu">
-                        <a href="#">서브메뉴1</a>
-                        <a href="#">서브메뉴2</a>
-                        <a href="#">서브메뉴3</a>
-                    </nav>
+                    <a href="커뮤니티.html">커뮤니티</a>
                 </li>
                 <li>
-                    <a href="개인페이지.html" class="mainMenu">개인페이지</a>
-                    <nav class="subMenu">
-                        <a href="#">서브메뉴1</a>
-                        <a href="#">서브메뉴2</a>
-                        <a href="#">서브메뉴3</a>
-                    </nav>
+                    <a href="다이어리.html">다이어리</a>
                 </li>
-                <!-- <li><a href="#">4</a></li> -->
             </ul>
+            <!---로그인과 개인페이지 id:login-->
+            <div id="login">
+                <a href="회원가입.html">회원가입</a>
+                <a href="로그인.html">로그인</a>
+                <a href="개인페이지.html">개인페이지</a>
+            </div>
         </header>
 
-        <!---제목 커뮤니티 id:title-->
+        <!---제목 개인페이지 id:title-->
         <div id="title">
-            <h2>개인 페이지</h2>
+            <h2>개인페이지</h2>
         </div>
-        <main></main>
+
+        <main>
+            <!-- 메인 콘텐츠 id:mainC -->
+            <div id="mainC">
+                <!-- 프로필 class:pf pf0 -->
+                <section class="pf pf1">
+                    <h2 class="hit"><a href="#">반려동물1</a></h2>
+
+                    <div class="mm">
+                        <!-- 프로필 내용 class:aa a1 -->
+                        <div class="aa a1">
+                            <img src="images/dlatl/a1.jpg">
+                            <div>
+                                <h3>활동명</h3>
+                                <p>활동지역</p>
+                                <p>자기소개를 입력하세요</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 커뮤니티 글박스1 class:main, m1 -->
+                <section class="main m1">
+                    <h2>나의 반려동물</h2>
+                    <div class="n1">
+                        <div>
+                            <div>
+                                <img src="images/dlatl/p1.jpg" alt="삽입그림">
+                                반려동물 이름1
+                            </div>
+                            <div>
+                                <img src="images/dlatl/p1.jpg" alt="삽입그림">
+                                반려동물 이름1
+                            </div>
+                            <div>
+                                <img src="images/dlatl/p1.jpg" alt="삽입그림">
+                                반려동물 이름1
+                            </div>
+                            
+                        </div>
+                    </div>
+                    <div class="n2">
+                        <p><b>댓글</b></p>
+                        <p>댓글 어쩌구<br>
+                        댓글 어쩌구</p>
+                    </div>
+                </section>
+
+                <!-- 커뮤니티 글박스2 class:main, m2 -->
+                <section class="main m2">
+                    <h2>제목<span>2000-00-00 00:00</span></h2>
+                    <div class="n1">
+                        <p>대통령은 헌법과 법률이 정하는 바에 의하여 국군을 통수한다. 이 헌법은 1988년 2월 25일부터 시행한다. 다만, 이 헌법을 시행하기 위하여 필요한 법률의 제정·개정과 이 헌법에 의한 대통령 및 국회의원의 선거 기타 이 헌법시행에 관한 준비는 이 헌법시행 전에 할 수 있다. 대통령은 국가의 원수이며, 외국에 대하여 국가를 대표한다.</p>
+                    </div>
+                </section>
+
+                <!-- 커뮤니티 글박스3 class:main, m3 -->
+                <section class="main m3">
+                    <h2>제목<span>2000-00-00 00:00</span></h2>
+                    <div class="n1">
+                        <p>대통령은 헌법과 법률이 정하는 바에 의하여 국군을 통수한다. 이 헌법은 1988년 2월 25일부터 시행한다. 다만, 이 헌법을 시행하기 위하여 필요한 법률의 제정·개정과 이 헌법에 의한 대통령 및 국회의원의 선거 기타 이 헌법시행에 관한 준비는 이 헌법시행 전에 할 수 있다. 대통령은 국가의 원수이며, 외국에 대하여 국가를 대표한다.</p>
+                    </div>
+                </section>
+                
+                <!-- 커뮤니티 글박스4 class:main, m4 -->
+                <section class="main m4">
+                    <h2>제목<span>2000-00-00 00:00</span></h2>
+                    <div class="n1">
+                        <p>대통령은 헌법과 법률이 정하는 바에 의하여 국군을 통수한다. 이 헌법은 1988년 2월 25일부터 시행한다. 다만, 이 헌법을 시행하기 위하여 필요한 법률의 제정·개정과 이 헌법에 의한 대통령 및 국회의원의 선거 기타 이 헌법시행에 관한 준비는 이 헌법시행 전에 할 수 있다. 대통령은 국가의 원수이며, 외국에 대하여 국가를 대표한다.</p>
+                    </div>
+                </section>
+        </main>
     </div>
 </body>
 </html>
