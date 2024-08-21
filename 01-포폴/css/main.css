@@ -80,7 +80,7 @@ header {
 
 
 /**메인**/
-.main:nth-of-type(odd) {background-color: antiquewhite;}
+.main:nth-of-type(odd) {background-color: rgb(243, 240, 236);}
 
  /*바로가기*/
 #quick {
@@ -92,7 +92,7 @@ header {
     align-items: center;
     border-radius: 60px;
     background-color: white;
-    border: 4px solid burlywood;
+    border: 4px solid rgb(241, 217, 186);
 }
 #quick a {
     padding: 30px; margin: 10px;
@@ -129,7 +129,7 @@ header {
     list-style: none;
 }
 .news .newsC li {
-    background-color: antiquewhite;
+    background-color: rgb(243, 240, 236);
     margin-bottom: 5px;
 }
 .news .newsC a {margin-left: 160px;}

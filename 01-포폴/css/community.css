@@ -183,7 +183,10 @@ main {margin-bottom: 100px;}
     overflow: scroll;
 }
 .main .n1 .img div {margin: 5px;}
-.main .n2 {padding: 20px;}
+.main .n2 {
+    padding: 20px;
+    border-top: 1px solid rgb(241, 217, 186);
+}
 .main .n2 p:nth-of-type(1) {margin-bottom: 10px;}
 .main .n2 p:nth-of-type(2) {line-height: 160%;}
 
