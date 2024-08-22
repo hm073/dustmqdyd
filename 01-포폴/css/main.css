@@ -200,6 +200,7 @@ header {
 .dA .hp1 {
     display: flex;
     margin-right: 20px;
+    flex: 1;
 }
 .dA .hp1> div {flex: 1;}
 /* .dA .hp1> div:nth-of-type(2){
@@ -213,7 +214,10 @@ header {
     line-height: 150%;
 }
 
-.dA .hp2 {display: flex;}
+.dA .hp2 {
+    display: flex;
+    flex: 1;
+}
 .dA .hp2> div {flex: 1;}
 .dA .hp2> div:nth-of-type(2) p {
     margin-bottom: 5px;
