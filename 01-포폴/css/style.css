@@ -1,0 +1,25 @@
+@charset "UTF-8";
+* {margin: 0; padding: 0; box-sizing: border-box;}
+::-webkit-scrollbar{width: 0;}
+a  {text-decoration: none; color: black;}
+img {display: block;}
+
+#layout {
+    max-width: fit-content;
+    /* margin: auto; */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%);
+}
+/* #logo> a> img {margin: auto;} */
+/* table {margin: auto;} */
+
+body {position: relative;}
+
+h1 {margin-bottom: 50px;}
+table td {
+    text-align: center;
+    line-height: 160%;
+}
+table th {text-align: start;}

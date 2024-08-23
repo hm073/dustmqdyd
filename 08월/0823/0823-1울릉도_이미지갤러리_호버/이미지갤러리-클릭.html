@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>이미지 갤러리</title>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const btns = document.querySelectorAll("#small button");
+            const big1 = document.querySelector("#big img");
+
+            btns.forEach(i => {
+                i.addEventListener("mouseenter", () => {
+                    
+                    //1. 활성화 된 버튼의 상태를 비활성 시킴
+                    const act = document.getElementsByClassName("active")[0];
+                    const actImg = act.querySelector("img");
+                    const src2 = actImg.getAttribute("src");
+                    const newSrc = src2.replace("_active.jpg" , ".jpg");
+                    actImg.setAttribute("src" , newSrc);
+                    // act.classList.remove("active");
+                    act.removeAttribute("class");
+
+                    //2. 클릭한 버튼을 활성화 시킴
+                    const src1 = i.querySelector("img").getAttribute("src");
+                    i.classList.add("active");
+                    const src3 =src1.replace(".jpg" , "_active.jpg");
+                    i.querySelector("img").setAttribute("src" , src3);
+
+                    //3. 클릭한 버튼 이미지 url 끌어다가 조합하여 큰이미지 변경
+                    const big2 = src1.replace(".jpg","_big.jpg");
+                    big1.setAttribute("src", big2);
+
+
+                    // //1. 활성화 된 버튼의 상태를 비활성 시킴
+                    // const act = document.getElementsByClassName("active")[0];
+                    // const actImg = act.querySelector("img");
+                    // const src2 = actImg.getAttribute("src");
+                    // const newSrc = src2.replace("_active.jpg", ".jpg");
+                    // actImg.setAttribute("src", newSrc);
+                    // act.removeAttribute("class");
+
+                    // //2. 클릭한 버튼을 활성화 시킴
+                    // const src1 = i.querySelector("img").getAttribute("src");
+                    // i.classList.add("class");
+                    // const src3 = src1.replace(".jpg","_active.jpg");
+                    // i.querySelector("img").setAttribute("src",src3);
+
+                    // //3. 클릭한 버튼 이미지 url 끌어다가 조합하여 큰이미지 변경
+                    // const big2 =
+
+                });
+            });
+        }); //end
+    </script>
+    <style>
+        * {margin:0; padding:0; box-sizing:border-box;}
+
+        #gallery {width:760px; margin:auto; border:1px solid red; margin-top:50px;}
+        #gallery h2 {display:none;}
+        #gallery >div {display:flex; }
+        #gallery  button {border:none; background:transparent;}
+        #gallery  img    {max-width:100%; display:block;}
+
+        #small  {display:flex; flex-direction:column; justify-content:space-between;}
+    </style>
+</head>
+<body>
+
+<section id="gallery">
+    <h2>이미지 갤러리</h2>
+    <div>
+        <div id="big">
+            <a href="#"><img src="images/01_big.jpg" alt="울랄라 온수풀펜션"></a>
+        </div>
+        <div id="small">
+            <button type="button" class="active"><img src="images/01_active.jpg" alt="울랄라 온수풀펜션"></button>
+            <button type="button"><img src="images/02.jpg" alt="하이락 글램핑"></button>
+            <button type="button"><img src="images/03.jpg" alt="소노벨 비발디파크"></button>
+            <button type="button"><img src="images/04.jpg" alt="풍차마을 아이리스펜션"></button>
+            <button type="button"><img src="images/05.jpg" alt="바오하우스"></button>
+        </div>
+    </div>
+</section>
+</body>
+</html>
