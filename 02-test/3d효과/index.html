@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+       import * as THREE from "https://esm.sh/three@0.151.3"
+
+import { OrbitControls } from "https://esm.sh/three@0.151.3/addons/controls/OrbitControls.js"
+import { OutlineEffect } from "https://esm.sh/three@0.151.3/addons/effects/OutlineEffect.js"
+import { GLTFLoader } from "https://esm.sh/three@0.151.3/examples/jsm/loaders/GLTFLoader.js"
+
+const canvas = document.querySelector('.webgl')
+const scene = new THREE.Scene()
+const textureLoader = new THREE.TextureLoader()
+const sizes = {
+    width: window.innerWidth,
+    height: window.innerHeight
+}
+
+const loading = document.querySelector('#loader')
+
+// Base camera
+const camera = new THREE.PerspectiveCamera(10, sizes.width / sizes.height, 0.1, 500)
+camera.position.x = 8
+camera.position.y = 4
+camera.position.z = 15
+scene.add(camera)
+
+//Controls
+const controls = new OrbitControls(camera, canvas)
+controls.enableDamping = true
+controls.enableZoom = true
+controls.enablePan = true
+controls.minDistance = 18
+controls.maxDistance = 50
+controls.minPolarAngle = Math.PI / 5
+controls.maxPolarAngle = Math.PI / 2
+
+// Renderer
+const renderer = new THREE.WebGLRenderer({
+    canvas: canvas,
+    antialias: true,
+    alpha: true
+})
+
+renderer.setSize(sizes.width, sizes.height)
+renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2))
+renderer.outputEncoding = THREE.sRGBEncoding
+
+
+
+// Materials
+//const bakedTextureZZZ = textureLoader.load('https://rawcdn.githack.com/ricardoolivaalonso/ThreeJS-Room13/47b05e2db4e49eec33d63729e920894a906cb693/static/baked.jpg')
+
+const bakedTexture = textureLoader.load('https://rawcdn.githack.com/ricardoolivaalonso/ThreeJS-Room13/f6d2eeb487a3d1bcd9944e23621c21f60055b280/static/baked-alt.jpg')
+bakedTexture.flipY = false
+bakedTexture.encoding = THREE.sRGBEncoding
+
+
+const bakedMaterial = new THREE.MeshBasicMaterial({ 
+    map: bakedTexture,
+    side: THREE.DoubleSide
+})
+
+bakedMaterial.userData.outlineParameters = {
+	// thickness: 0.0025,
+	thickness: .003,
+	color: [0, 0, 0],
+	alpha: 1,
+	keepAlive: true,
+	visible: true
+}
+
+//Loader
+const loader = new GLTFLoader()
+loader.load('https://rawcdn.githack.com/ricardoolivaalonso/ThreeJS-Room13/47b05e2db4e49eec33d63729e920894a906cb693/static/model.glb',
+    (gltf) => {
+        const model = gltf.scene
+        model.traverse( child => child.material = bakedMaterial )
+        scene.add(model)
+		scene.position.set(0,.2,0)
+		loading.style.display = 'none'
+    },
+    ( xhr ) => {
+		console.log( ( xhr.loaded / xhr.total * 100 ) + '% loaded' )
+    }
+)
+
+// Animation
+const minPan = new THREE.Vector3( -5, -2, -5 )
+const maxPan = new THREE.Vector3( 5, 2, 5 )
+const effect = new OutlineEffect( renderer )
+
+const tick = () => {
+    controls.update()
+	controls.target.clamp( minPan, maxPan )
+    // renderer.render(scene, camera)
+	effect.render(scene, camera)
+    window.requestAnimationFrame(tick)
+}
+
+tick()
+
+
+window.addEventListener('resize', () =>
+{
+    sizes.width = window.innerWidth
+    sizes.height = window.innerHeight
+    camera.aspect = sizes.width / sizes.height
+    camera.updateProjectionMatrix()
+    renderer.setSize(sizes.width, sizes.height)
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2))
+})
+ 
+    </script>
+    <style>
+    *,
+*::after,
+*::before {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+    outline: none;
+    font-family: monospace;
+}
+
+body{
+    overflow: hidden;
+    background-color: #d2cfc8;
+	cursor: grab;
+	
+	/* https://css-irl.info/css-halftone-patterns/ */
+	--dotSize: 2px;
+	--bgSize: 25px;
+	--dotColor: #888;
+	--bgPosition: calc(var(--bgSize) / 2);
+	
+	 --stop1: 0.06rem;
+  	--stop2: 0.65rem;
+
+	background-image: radial-gradient( circle at center, var(--dotColor) var(--dotSize), transparent 0), radial-gradient(circle at center, var(--dotColor) var(--dotSize), transparent 0);
+	background-size: var(--bgSize) var(--bgSize);
+	background-position: 0 0, var(--bgPosition) var(--bgPosition);
+}
+
+.webgl, 
+#loader{
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+#loader{
+    display: grid;
+    place-content: center;
+    width: 100%;
+    height: 100%;
+    background-color: #FAEDCD;
+}
+    </style>
+</head>
+<body>
+    <canvas class="webgl"></canvas>
+
+    <div id="loader">
+    <h1>Loading</h1>
+</div>
+</body>
+</html>
