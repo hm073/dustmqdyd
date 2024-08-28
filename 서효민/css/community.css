@@ -191,7 +191,7 @@ main {margin-bottom: 100px;}
     max-width: 900px;
     margin: auto;
     padding-top: 15px;
-    overflow-x: scroll;
+    overflow: scroll;
 }
 .main .n1 .img div {margin: 5px;}
 .main .n2 {
