@@ -1,0 +1,60 @@
+@charset "UTF-8";
+
+* {margin: 0; padding: 0; box-sizing: border-box;}
+
+#layout {max-width: 500px; margin: auto;}
+a {text-decoration: none; color: black;}
+img {
+    max-width: 100%;
+    display: block;
+}
+
+/* 상단(헤더, header) */
+header {
+    max-width: 500px;
+    height: 15%;
+    margin: auto;
+    padding: 2%;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    background-color: #eee;
+}
+header h1 {flex: 1;}
+header button {
+    background-color: transparent;
+    border: none;
+}
+
+/* 메뉴 (nav, menu) */
+nav {
+    width: 100%;
+    max-width: 500px;
+    height: 0;
+    position: absolute;
+    box-shadow: 0 3px 3px black;
+    background-color: rgba(255, 255, 255, 0.85);
+    overflow: hidden;
+    transition: height 0.5s;
+}
+nav.show {
+    height: 80%;
+    padding: 2%;
+}
+nav ul {
+    width: 100%;
+    list-style-position: inside;
+    list-style-type: circle;
+}
+nav li {
+    padding: 4%;
+    border-bottom: 1px solid #bbb;
+}
+
+/* 내용 (content, section) */
+section {padding: 2%;}
+section h2 {margin-bottom: 3%;}
+section p {
+    line-height: 180%;
+    margin-bottom: 2%;
+}

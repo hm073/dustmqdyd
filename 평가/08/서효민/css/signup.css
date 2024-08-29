@@ -7,9 +7,8 @@ img {display: block;}
 #layout {
     max-width: fit-content;
     margin: auto;
+    position: relative;
 }
-
-body {position: relative;}
 
 h1 {margin-bottom: 50px;}
 
@@ -32,12 +31,14 @@ table th {
     text-align: start;
     line-height: 160%;
 }
-
-/* 회원가입 */
-.more {
-    text-align: center;
-    margin-bottom: 40px;
+table #pf {font-weight: bold;}
+table:last-of-type td>textarea {
+    border-radius: 10px;
+    border: 1px solid #ddd;
+    /* resize: none; */
 }
+
+/* 로그인 */
 form> button {
     width: 100%;
     padding: 7px;
@@ -45,3 +46,10 @@ form> button {
     border: none;
     background-color: antiquewhite;
 }
+
+/*폰트*/
+header, h1, h2, h3, #quick, #sign_u {
+    font-family: "Jua", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+  } /*동글한 글씨체*/  

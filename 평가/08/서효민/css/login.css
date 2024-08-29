@@ -7,8 +7,9 @@ img {display: block;}
 #layout {
     max-width: fit-content;
     margin: auto;
-    position: relative;
 }
+
+body {position: relative;}
 
 h1 {margin-bottom: 50px;}
 
@@ -31,14 +32,12 @@ table th {
     text-align: start;
     line-height: 160%;
 }
-table #pf {font-weight: bold;}
-table:last-of-type td>textarea {
-    border-radius: 10px;
-    border: 1px solid #ddd;
-    /* resize: none; */
-}
 
-/* 회원가입 */
+/* 회원가입 비밀번호찾기 */
+.more {
+    text-align: center;
+    margin-bottom: 40px;
+}
 form> button {
     width: 100%;
     padding: 7px;
@@ -46,3 +45,10 @@ form> button {
     border: none;
     background-color: antiquewhite;
 }
+
+/*폰트*/
+header, h1, h2, h3, #quick, #sign_i {
+    font-family: "Jua", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+  } /*동글한 글씨체*/  

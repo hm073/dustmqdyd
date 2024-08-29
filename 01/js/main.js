@@ -30,12 +30,12 @@ document.addEventListener("DOMContentLoaded", () => {
             i.style.transition = "left 1s";
             i.style.transform.translateX = "-100%";
 
-            setTimeout( () => x(), 1000)
-            x = () => {
-                i.style.Left = 0;
-                i.style.transition = 'none';
-                i.append(i.firstElementChild);
-            }
+            // setTimeout( () => x(), 1000)
+            // x = () => {
+            //     i.style.Left = 0;
+            //     i.style.transition = 'none';
+            //     i.append(i.firstElementChild);
+            // }
         })
 
         // setTimeout( () => x() , 1000)
