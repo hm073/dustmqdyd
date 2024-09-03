@@ -26,25 +26,30 @@ document.addEventListener("DOMContentLoaded", () => {
     const arrowSlide = Array.from(document.getElementsByClassName("pSlide"));
 
     const Left = () => {
-        arrowSlide.forEach( i =>{
+        arrowSlide.forEach( (i,j) =>{
             i.style.transition = "left 1s";
-            i.style.transform.translateX = "-100%";
+            i.style.transform = "translateX(-100%)"
+        // arrowSlide[0].style.transition = "left 1s";
+        // arrowSlide[0].style.transform = "translateX(1000px)"    
 
-            // setTimeout( () => x(), 1000)
-            // x = () => {
-            //     i.style.Left = 0;
-            //     i.style.transition = 'none';
-            //     i.append(i.firstElementChild);
-            // }
+        const first_E_right = () => {
+            arrowSlide.style.Left = 0;
+            arrowSlide.style.transition = 'none';
+            arrowSlide.append(i.firstElementChild);
+            // i.style.Left = 0;
+            // i.style.transition = 'none';
+            // i.append(i.firstElementChild);
+        };
+        setTimeout( first_E_right , 1000);
+            
         })
 
         // setTimeout( () => x() , 1000)
         // x = () => {
         //     arrowSlide.forEach( i => {
-        //         alert(i)
-        //         // i.style.Left = 0;
-        //         // i.style.transition = 'none';
-        //         // i.append(i.firstElementChild);
+        //         i.style.Left = 0;
+        //         i.style.transition = 'none';
+        //         i.append(i.firstElementChild);
         //     })
         // }
     }
