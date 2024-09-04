@@ -23,42 +23,22 @@ document.addEventListener("DOMContentLoaded", () => {
     const btnRight = document.getElementsByClassName("p3")[0];
 
     const arrowSlideArea = document.getElementsByClassName("p2")[0];
+    alert(arrowSlideArea)
     const arrowSlide = Array.from(document.getElementsByClassName("pSlide"));
 
-    const Left = () => {
-        // arrowSlide.forEach( (i,j) =>{
-            arrowSlide[0].style.transition = "transform 1s";
-            arrowSlide[0].style.transform = "translateX(-100%)"
-        // arrowSlide[0].style.transition = "left 1s";
-        // arrowSlide[0].style.transform = "translateX(1000px)"    
+    const left = () => {
+        arrowSlideArea.style.left = "-100%"
+        arrowSlideArea.style.transition = "left 0.1s"
 
-    
-            const first_E_right = () => {
-                arrowSlide[0].style.Left = 0;
-                arrowSlide[0].style.transition = 'none';
-                arrowSlideArea.append(arrowSlideArea.firstElementChild);
-                // j++;
-                // if (j == 3) j = 0;
-                // i.style.Left = 0;
-                // i.style.transition = 'none';
-                // i.append(i.firstElementChild);
-            };
-        setTimeout( first_E_right , 1001);
-            
-        // })
-
-        // setTimeout( () => x() , 1000)
-        // x = () => {
-        //     arrowSlide.forEach( i => {
-        //         i.style.Left = 0;
-        //         i.style.transition = 'none';
-        //         i.append(i.firstElementChild);
-        //     })
-        // }
+        setTimeout(z, 1001);
+        
+    };
+    const z = () => {
+        arrowSlide.sytle.left = 0;
+        arrowSlideArea.append(arrowSlideArea.firstElementChild);
     }
 
-    btnLeft.addEventListener("click", Left);
-    // btnRight.addEventListener("click", Right);
+    btnLeft.addEventListener("click", left);
 
     /* 팝업 */
     const cN_popup = document.querySelector(".cN a");

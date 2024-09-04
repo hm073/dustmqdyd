@@ -160,11 +160,13 @@ header {
     border: none;
 }
 #jpCm .p2 {
+    border: 3px solid red;
+    left: 0;
     width: 300px;
     margin: 0 5px;
     display: flex;
     position: relative;
-    overflow: hidden;
+    /* overflow: hidden; */
 }
 /* #jpCm .p0 .p2 .pSlide:first-of-type {position: relative} */
 /* #jpCm .p0 .p2 .pSlide:not(:first-of-type) {position: absolute;} */
@@ -201,6 +203,7 @@ header {
     max-width: 800px;
     margin: 0 auto 60px;
     display: flex;
+    position: relative;
 }
 .cN section {
     padding: 30px;
@@ -283,13 +286,18 @@ header, h1, h2, h3, #quick {
 
 /* 팝업 */
 #popup {
-    position: fixed;
-    max-width: 100vw;
-    max-height: 100vh;
-    background-color: black;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.85);
+    top: 0;
+    left: 0;
+    /* transform: translate(-50%, -50%); */
     display: none;
     /* scrollbar-width: none; 작동안됨 */
+}
+#popup img {
+    top: 50%;
+    left: 50%;
+    /* transform: translate(-50%, -50%); */
 }
