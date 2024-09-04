@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>포트폴리오 사이트</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Jua&display=swap" rel="stylesheet">
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+
+            const navBtn = document.querySelectorAll("nav button");
+            const gallery_a = document.querySelectorAll("#gallery a");
+            const popup = document.getElementById("popup");
+
+
+            /* 메뉴 버튼을 누르면 검은색으로 바뀜 */
+
+            navBtn.forEach(i => {
+                i.addEventListener("click", () => {
+                    navBtn.forEach(j => j.classList.remove("black"));
+                    //j = 클릭되지 않은 btn, 클릭된 btn 전부
+                    i.classList.add("black");
+                    //i = 클릭된 btn만 해당
+
+
+                    /* 버튼을 누르면 해당하는 이미지만 정렬됨 */
+                    const text = i.textContent;
+                    if(text === "모두보기") {
+                        gallery_a.forEach(z => {z.style.display = "block"});
+                    }
+
+                    else if(text === "이벤트/배너") {
+                        gallery_a.forEach(z => {z.style.display = "none"});
+                        const event = document.querySelectorAll("#gallery a.event")
+                        event.forEach(z => z.style.display = "block");
+                    }
+
+                    else if(text === "기획서ppt") {
+                        gallery_a.forEach(z => {z.style.display = "none"});
+                        const event = document.querySelectorAll("#gallery a.ppt")
+                        event.forEach(z => z.style.display = "block");
+                    }
+
+                    else if(text === "웹/앱페이지") {
+                        gallery_a.forEach(z => {z.style.display = "none"});
+                        const event = document.querySelectorAll("#gallery a.web")
+                        event.forEach(z => z.style.display = "block");
+                    }
+                });
+            });
+
+            /* 팝업 이미지 */
+            
+            gallery_a.forEach(i => {
+                i.addEventListener("click", () => {
+                    const img = i.querySelector("img");
+                    const alt_1 = img.getAttribute("alt");
+                    const src_1 = img.getAttribute("src");
+                    const src_2 = src_1.replace("small", "large");
+                    
+                    popup.style.opacity = 1;
+                    popup.style.zIndex = 1;
+                    
+                    const popup_img = popup.querySelector("img");
+                    popup_img.setAttribute("src", src_2);
+                    popup_img.setAttribute("alt", alt_1);
+                    // popup.querySelector("img").setAttribute("src", src_2);
+                    
+                    const h2 = document.querySelector("#popup h2");
+                    h2.textContent = alt_1;
+                });
+            });
+
+            /* 이미지를 누르면 팝업창 닫기 */
+            popup.querySelectorAll("button").forEach(i => {
+                i.addEventListener("click", () => {
+                    popup.style.opacity = 0;
+                    popup.style.zIndex = -1;
+                });
+            });
+
+            document.addEventListener("keydown", e => {
+                if(e.key === "Escape") {
+                    popup.style.opacity = 0;
+                    popup.style.zIndex = -1;
+                }
+            })
+
+        });//end
+    </script>
+
+    <style>
+        * {margin: 0; padding: 0; box-sizing: border-box;}
+        ::-webkit-scrollbar {width: 0;}
+        img {display: block; max-width: 100%;}
+        
+        #layout {max-width: 1200px; margin: auto; padding: 30px 0 0;}
+        h1 {
+            font-family: "Black Han Sans", sans-serif;
+            font-weight: 400;
+            font-style: normal;
+            padding-left: 3%;
+        }
+
+        nav {
+            padding: 20px 0 40px;
+            padding-left: 3%;
+        }
+        nav button {
+            font-family: "Jua", sans-serif;
+            font-weight: 400;
+            font-style: normal;
+            padding: 5px;
+            border: 3px solid black;
+            background-color: white;
+        }
+        /* nav button:focus {color: white; background: black;} */
+        nav button.black {color: white; background: black;}
+
+        #gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        #gallery div {
+            width: 30%;
+            min-width: 350px;
+            margin: 0 10px;
+        }
+        #gallery a {
+            margin: 10px;
+        }
+
+        #popup {
+            position: absolute;
+            width: 100%;
+            min-height: 100vh;
+            background-color: rgba(0, 0, 0, 0.85);
+            top: 0;
+            opacity: 0;
+            z-index: -1;
+            transition: opacity 0.5s;
+        }
+        #popup h2 {
+            font-family: "Jua", sans-serif;
+            font-weight: 400;
+            font-style: normal;
+            color: white;
+            text-align: center;
+            padding: 20px 0 30px;
+        }
+        #popup button {
+            display: block;
+            max-width: 1200px;
+            margin: auto;
+            border: none;
+        }
+
+    </style> 
+</head>
+<body>
+    <div id="layout">
+        <h1>홍길동의 포트폴리오</h1>
+        <nav>
+            <button type="button" class="black">모두보기</button>
+            <button type="button">이벤트/배너</button>
+            <button type="button">기획서ppt</button>
+            <button type="button">웹/앱페이지</button>
+        </nav>
+        <div id="gallery">
+            <div>
+                <a href="#" class="event"><img src="images/01-small.jpg" alt="01"></a>
+                <a href="#" class="event"><img src="images/02-small.jpg" alt="02"></a>
+                <a href="#" class="ppt"><img src="images/03-small.jpg" alt="03"></a>
+                <a href="#" class="web"><img src="images/11-small.jpg" alt="11"></a>
+            </div>
+            <div>
+                <a href="#" class="web"><img src="images/05-small.jpg" alt="05"></a>
+                <a href="#" class="ppt"><img src="images/06-small.jpg" alt="06"></a>
+                <a href="#" class="event"><img src="images/07-small.jpg" alt="07"></a>
+                <a href="#" class="ppt"><img src="images/08-small.jpg" alt="08"></a>
+            </div>
+            <div>
+                <a href="#" class="ppt"><img src="images/09-small.jpg" alt="09"></a>
+                <a href="#" class="ppt"><img src="images/10-small.jpg" alt="10"></a>
+                <a href="#" class="web"><img src="images/12-small.jpg" alt="12"></a>
+                <a href="#" class="event"><img src="images/04-small.jpg" alt="04"></a>
+            </div>
+        </div>
+    </div>
+    <div id="popup">
+        <section>
+            <h2>갤러리 제목</h2>
+            <button type="button">
+                <img src="images/01-large.jpg" alt="01">
+            </button>
+        </section>
+    </div>
+</body>
+</html>

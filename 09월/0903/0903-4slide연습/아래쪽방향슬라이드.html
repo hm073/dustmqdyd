@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>아래쪽 방향 슬라이드 연습</title>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+
+            const slide = document.getElementById("slide");
+
+            tobottom = () => {
+                slide.style.bottom = "-100%"
+                slide.style.transition = "bottom 0.1s"
+
+                setTimeout(z , 1001);
+            }
+            const z = () => {
+                slide.style.transition = "none";
+                slide.style.bottom = 0;
+                slide.prepend(slide.lastElementChild);
+            }
+            setInterval (tobottom, 2500);
+        }); //end
+    </script>
+    <style>
+        * {margin: 0; padding: 0; box-sizing: border-box;}
+        img {display: block; max-width: 100%;}
+
+        #layout {width: 900px; margin: auto;}
+        h2 {display: none;}
+        #slide-area {
+            position: relative;
+            overflow: hidden;
+            height: 390px;
+        }
+        #slide {
+            position: absolute;
+            bottom: 0;
+            height: 1170px;
+        }
+        #slide img {width: 900px; height: 390px;}
+
+    </style>
+</head>
+<body>
+    <div id="layout">
+        <section id="slide-area">
+            <h2>아래쪽방향 자동 슬라이드</h2>
+            <div id="slide">
+                <img src="images/slide3.jpg" alt="슬라이드3">
+                <img src="images/slide2.jpg" alt="슬라이드2">
+                <img src="images/slide1.jpg" alt="슬라이드1">
+            </div>
+        </section>
+    </div>
+</body>
+</html>

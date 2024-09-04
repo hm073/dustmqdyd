@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>페이드 슬라이드 연습</title>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+
+            const slideImg = document.querySelectorAll("#slide img");
+
+            let e = 1;
+            const fade = () => {
+                slideImg.forEach(i => {
+                    i.style.opacity = 0;
+                    i.style.transition = "all 0.5s";
+                });
+                slideImg[e].style.opacity = 1;
+                e++;
+                if (e == 3) e = 0;
+            }
+
+            setInterval(fade , 2000);
+
+        }); //end
+    </script>
+    <style>
+        * {margin: 0; padding: 0; box-sizing: border-box;}
+        img {display: block; max-width: 100%;}
+
+        #layout {width: 900px; margin: auto;}
+        h2 {display: none;}
+        #slide-area {
+            position: relative;
+            overflow: hidden;
+            height: 390px;
+        }
+        /* #slide {
+            position: absolute;
+            bottom: 0;
+            height: 1170px;
+        } */
+        #slide img:first-of-type {
+            width: 900px; 
+            height: 390px; 
+            position: relative; 
+            opacity: 1;
+        }
+        #slide img:not(:first-of-type) {
+            width: 900px; 
+            height: 390px; 
+            position: absolute; 
+            opacity: 0;
+            top: 0;
+        }
+
+    </style>
+</head>
+<body>
+    <div id="layout">
+        <section id="slide-area">
+            <h2>페이드 자동 슬라이드</h2>
+            <div id="slide">
+                <img src="images/slide1.jpg" alt="슬라이드1">
+                <img src="images/slide2.jpg" alt="슬라이드2">
+                <img src="images/slide3.jpg" alt="슬라이드3">
+            </div>
+        </section>
+    </div>
+</body>
+</html>
