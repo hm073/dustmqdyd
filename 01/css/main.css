@@ -139,7 +139,7 @@ header {
 .news .newsC a {margin-left: 160px;}
 
 
- /*공동구매, 커뮤니티*/
+ /*공동구매*/
 #jpCm {
     max-width: 900px;
     margin: 0 auto 60px;
@@ -158,31 +158,37 @@ header {
 #jpCm .p1, .p3 {
     background-color: transparent;
     border: none;
+    /* z-index: 1; */
+}
+#jpCm #ss {
+    width: 300px;
+    left: 0;
+    overflow: hidden;
+    /* border: 1px solid red; */
 }
 #jpCm .p2 {
-    border: 3px solid red;
     left: 0;
     width: 300px;
-    margin: 0 5px;
+    /* margin: 0 5px; */
     display: flex;
     position: relative;
-    /* overflow: hidden; */
 }
-/* #jpCm .p0 .p2 .pSlide:first-of-type {position: relative} */
-/* #jpCm .p0 .p2 .pSlide:not(:first-of-type) {position: absolute;} */
+/* #jpCm .ps .pSlide {left: 0;} */
 #jPCm .jP a {
     display: block;
     text-align: center;
 }
 
 .jP {
-    flex: 1;
-    padding-right: 18px;
+    /* flex: 1; */
+    margin-right: 18px;
 }
 .jP img {margin-bottom: 10px;}
 
+
+/* 커뮤니티 */
 .cM {
-    flex: 1.2;
+    /* flex: 1.5; */
     display: flex;
     flex-direction: column;
 }
@@ -286,7 +292,7 @@ header, h1, h2, h3, #quick {
 
 /* 팝업 */
 #popup {
-    position: absolute;
+    position: fixed;
     width: 100vw;
     height: 100vh;
     background-color: rgba(0, 0, 0, 0.85);
@@ -295,9 +301,9 @@ header, h1, h2, h3, #quick {
     /* transform: translate(-50%, -50%); */
     display: none;
     /* scrollbar-width: none; 작동안됨 */
+    text-align: center;
 }
 #popup img {
-    top: 50%;
-    left: 50%;
-    /* transform: translate(-50%, -50%); */
+    margin: auto;
+    padding: 50px;
 }

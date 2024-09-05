@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width">
+		<title>초콜렛 콜렉션</title>
+		<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+		<script src="js/chocolate.js"></script>
+		<link href="https://fonts.googleapis.com/css2?family=Bagel+Fat+One&family=Noto+Sans+KR:wght@200;300;400;500&display=swap" rel="stylesheet">
+		<link rel="stylesheet" href="css/chcolate.css">
+		<script>
+			document.addEventListener("DOMContentLoaded" , ()=> {
+
+				const section = document.querySelectorAll('main section');
+				const menu =    document.querySelectorAll('main nav a');
+
+				menu.forEach( i => {
+					i.addEventListener("click" , () => {
+
+						let txt = i.textContent;
+						
+                        let show;
+                        if      ( txt === "Premium"  )  show = 'premium';
+                        else if ( txt=== "Standard" )   show = "standard";
+                        else      txt = '';
+
+						section.forEach( j => {	
+							
+                            j.style.display = "none";
+                            if( j.classList.contains(show)  || txt=== '' )  j.style.display = "block";
+                            
+						}); 
+					});						
+				});
+
+			});//end................
+
+			//삼항연산자
+			/* document.addEventListener("DOMContentLoaded" , ()=> {
+
+				const section = document.querySelectorAll('main section');
+				const menu =    document.querySelectorAll('main nav a');
+
+				menu.forEach( i => {
+					i.addEventListener("click" , () => {
+
+						let txt = i.textContent;
+						let show = (txt === "Premium") ? 'premium' : (txt=== "Standard") ? "standard" : "";
+
+						section.forEach( j => {						
+							j.style.display = (show === "" ||  j.classList.contains(show) ) ? "block" : "none";					
+						}); 
+					});						
+				});
+
+			});//end................ */
+		</script>
+	</head>
+	<body>
+		<div id="layout">
+			<header>
+				<img src="images/top+bg+ani.gif" alt="출렁이는 초콜렛 물">
+				<section>
+					<h1>
+						<a href="index.html"><img src="images/logo.jpg" alt="로고"></a>
+					</h1>
+					<nav>
+						<a href="#">notice</a>
+						<a href="#">gallery</a>
+						<a href="#">blend</a>
+						<a href="#">about us</a>
+						<a href="#">contact us</a>
+					</nav>					
+				</section>
+			</header>
+			<main>
+				<nav>
+					<a href="#" class="act">All</a>
+					<a href="#">Premium</a>
+					<a href="#">Standard</a>
+				</nav>
+				<div>
+					<section class="standard">
+						<a href="#"><img src="images/blend_01.jpg" alt="ROYCE"></a>
+						<h2>ROYCE</h2>
+						<div>
+							<a href="#">WEB</a>
+							<a href="#">FACEBOOK</a>
+							<a href="#">INSTA</a>
+						</div>
+					</section>
+					<section class="standard">
+						<a href="#"><img src="images/blend_02.jpg" alt="FERRERO"></a>
+						<h2>FERRERO</h2>
+						<div>
+							<a href="#">WEB</a>
+							<a href="#">FACEBOOK</a>
+							<a href="#">INSTA</a>
+						</div>
+					</section>
+					<section class="standard">
+						<a href="#"><img src="images/blend_03.jpg" alt="GUYLIAN"></a>
+						<h2>GUYLIAN</h2>
+						<div>
+							<a href="#">WEB</a>
+							<a href="#">FACEBOOK</a>
+							<a href="#">INSTA</a>
+						</div>
+					</section>
+					<section class="premium">
+						<a href="#"><img src="images/blend_04.jpg" alt="NEUHAUS"></a>
+						<h2>NEUHAUS</h2>
+						<div>
+							<a href="#">WEB</a>
+							<a href="#">FACEBOOK</a>
+							<a href="#">INSTA</a>
+						</div>
+					</section>
+					<section class="premium">
+						<a href="#"><img src="images/blend_05.jpg" alt="LA MAISON"></a>
+						<h2>LA MAISON</h2>
+						<div>
+							<a href="#">WEB</a>
+							<a href="#">FACEBOOK</a>
+							<a href="#">INSTA</a>
+						</div>
+					</section>
+					<section class="standard">
+						<a href="#"><img src="images/blend_06.jpg" alt="GODIVA"></a>
+						<h2>GODIVA</h2>
+						<div>
+							<a href="#">WEB</a>
+							<a href="#">FACEBOOK</a>
+							<a href="#">INSTA</a>
+						</div>
+					</section>
+					<section class="standard">
+						<a href="#"><img src="images/blend_07.jpg" alt="VALRHONA"></a>
+						<h2>VALRHONA</h2>
+						<div>
+							<a href="#">WEB</a>
+							<a href="#">FACEBOOK</a>
+							<a href="#">INSTA</a>
+						</div>
+					</section>
+					<section class="premium">
+						<a href="#"><img src="images/blend_08.jpg" alt="LINDT"></a>
+						<h2>LINDT</h2>
+						<div>
+							<a href="#">WEB</a>
+							<a href="#">FACEBOOK</a>
+							<a href="#">INSTA</a>
+						</div>
+					</section>
+					<section class="standard">
+						<a href="#"><img src="images/blend_09.jpg" alt="GHIRARDELLI"></a>
+						<h2>GHIRARDELLI</h2>
+						<div>
+							<a href="#">WEB</a>
+							<a href="#">FACEBOOK</a>
+							<a href="#">INSTA</a>
+						</div>
+					</section>
+				</div>
+			</main>
+			<footer>
+				<img src="images/bottom+bg+ani.gif" alt="초콜렛 물 움직이는 애니;">
+			</footer>
+		</div>
+	</body>
+</html>

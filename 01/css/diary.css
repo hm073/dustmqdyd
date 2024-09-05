@@ -83,7 +83,7 @@ header {
 }
 
 /* 반려동물 프로필(pf, pf0) */
-.pf h2 {
+#pf h2 {
     width:160px; text-align: center;
     padding: 5px 0;
     border-top-right-radius: 15px;
@@ -91,21 +91,15 @@ header {
     z-index: 1;
     display: inline-block;
     position: relative;
+    border: 3px solid rgb(241, 217, 186);
+    border-bottom: 3px solid white;
+    background-color: white;
+    transform: translateY(1px);
 }
 
-.pf1 h2 {
+#pf .hit {
     border: 3px solid rgb(241, 217, 186);
     background-color: rgb(241, 217, 186);
-}
-.pf2 h2 {
-    border: 3px solid rgb(241, 217, 186);
-    border-bottom: 3px solid white;
-    background-color: white;
-}
-.pf3 h2 {
-    border: 3px solid rgb(241, 217, 186);
-    border-bottom: 3px solid white;
-    background-color: white;
 }
 
 .a1 p {margin-bottom: 5px;}

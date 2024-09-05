@@ -23,22 +23,55 @@ document.addEventListener("DOMContentLoaded", () => {
     const btnRight = document.getElementsByClassName("p3")[0];
 
     const arrowSlideArea = document.getElementsByClassName("p2")[0];
-    alert(arrowSlideArea)
-    const arrowSlide = Array.from(document.getElementsByClassName("pSlide"));
 
+    let isAnimating = false; // 애니메이션 진행 상태를 추적하는 변수
+
+    /*왼쪽 화살표*/
     const left = () => {
-        arrowSlideArea.style.left = "-100%"
-        arrowSlideArea.style.transition = "left 0.1s"
+
+        if (isAnimating) return; // 애니메이션 진행 중이면 클릭 무시
+        isAnimating = true; // 애니메이션 시작
+    
+        arrowSlideArea.style.left = "-300px";
+        arrowSlideArea.style.transition = "left 1s";
 
         setTimeout(z, 1001);
         
     };
     const z = () => {
-        arrowSlide.sytle.left = 0;
+        arrowSlideArea.style.left = "0";
+        arrowSlideArea.style.transition = "none";
         arrowSlideArea.append(arrowSlideArea.firstElementChild);
-    }
+
+        setTimeout(() => {
+            isAnimating = false;
+        }, 50); // 애니메이션 완료
+    };
 
     btnLeft.addEventListener("click", left);
+
+    /*오른쪽 화살표*/
+
+    const Right = () => {
+
+        if (isAnimating) return; // 애니메이션 진행 중이면 클릭 무시
+        isAnimating = true; // 애니메이션 시작
+
+        arrowSlideArea.style.left = "0";
+        arrowSlideArea.style.transition = "left 1s";
+        
+        setTimeout(y, 1001);
+    };
+    const y = () => {
+        arrowSlideArea.style.transition = "none";
+        arrowSlideArea.prepend(arrowSlideArea.lastElementChild);
+        arrowSlideArea.style.left = "-300px";
+        
+        setTimeout(() => {
+            isAnimating = false;
+        }, 50); // 애니메이션 완료
+    }
+    btnRight.addEventListener("click", Right);
 
     /* 팝업 */
     const cN_popup = document.querySelector(".cN a");

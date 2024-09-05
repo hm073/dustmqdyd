@@ -8,10 +8,32 @@
         document.addEventListener("DOMContentLoaded", () => {
 
             const slide = document.getElementById("slide");
+            const circle = document.querySelectorAll("#circle div"); /**/
 
+            let red = 0; /**/
             toRight = () => {
+                red++ /**/
+                circle.forEach(i => i.classList.remove("dot")); /**/
+                // if(red < 3) {
+                //     circle[red].classList.add("dot"); /**/
+                // }
+                // else {
+                //     red = 0; /**/
+                //     circle[red].classList.add("dot"); /**/
+                // }
+
+                //삼항연산자 /**/
+                const red_1 = () => circle[red].classList.add("dot");
+                const red_2 = () => {
+                    red = 0;
+                    circle[red].classList.add("dot");
+                }
+
+                (red < 3) ? red_1() : red_2();
+
+
                 slide.style.right = "-900px"
-                slide.style.transition = "right 0.1s"
+                slide.style.transition = "right 1s"
 
                 setTimeout(z , 1001);
             }
@@ -20,7 +42,9 @@
                 slide.style.right = 0;
                 slide.prepend(slide.lastElementChild);
             }
+
             setInterval (toRight, 2500);
+
         }); //end
     </script>
     <style>
@@ -42,6 +66,21 @@
         }
         #slide img {width: 900px;}
 
+        #circle {
+            position: absolute;
+            display: flex;
+            width: 100%;
+            bottom: 20px;
+            justify-content: center;
+        }
+        #circle div {
+            width: 15px; height: 15px;
+            border: 3px solid black;
+            border-radius: 50%;
+            margin: 0 15px;
+        }
+        #circle .dot {background-color: red;}
+
     </style>
 </head>
 <body>
@@ -52,6 +91,11 @@
                 <img src="images/slide3.jpg" alt="슬라이드3">
                 <img src="images/slide2.jpg" alt="슬라이드2">
                 <img src="images/slide1.jpg" alt="슬라이드1">
+            </div>
+            <div id="circle">
+                <div class="dot"></div>
+                <div></div>
+                <div></div>
             </div>
         </section>
     </div>

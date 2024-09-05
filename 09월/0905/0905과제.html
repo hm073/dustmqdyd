@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+
+            const x = document.getElementsByClassName("mainMenu")[1];
+
+            x.parentElement.previousElementSibling.style.background = 'red';
+        });
+    </script>
+</head>
+<body>
+    <ul>
+        <!--(1)(메인메뉴 서브메뉴): 시작-->
+        <li>
+            <!--- 주메뉴 : 시작 -->
+            <a href="#" class="mainMenu">이용안내</a>
+            <!--(주)메뉴: -->
+            <!--서브메뉴시작 -->
+            <nav class="subMenu">
+                <a href="#">이용방법</a>
+                <a href="#">이용시간</a>
+                <a href="#">이용요금</a>
+            </nav>
+            <!--서브메뉴: 끝-->
+        </li>
+        <!-- (1) (메인메뉴+서브메뉴)-->
+        <!--(2) (메인메뉴 서브메뉴):시작-->
+        <li>
+            <!--- 주메뉴 : 시작-->
+            <a href="#" class="mainMenu">이벤트정보</a> <!--주메뉴:꿀-->
+            <!--서브메뉴: 시작-->
+            <nav class="subMenu">
+                <a href="#">현장이벤트</a>
+                <a href="#">온라인이벤트</a>
+                <a href="#">이벤트예약</a>
+            </nav>
+            <!--서브메뉴: 꿀-->
+        </li>
+        <!--(2) (메인메뉴 서브메뉴): 끝-->
+        <!--(3)(메인메뉴+서브메뉴):시작-->
+        <li>
+            <!--주메뉴 : 시작-->
+            <a href="#" class="mainMenu">프로그램</a>
+            <!--주메뉴:꿀-->
+            <!--서브메뉴: 시작-->
+            <nav class="subMenu">
+                <a href="#">프로그램안내</a>
+                <a href="#">온라인예약</a>
+                <a href="#">단체예약</a>
+            </nav>
+            <!--서브메뉴:꿀-->
+        </li>
+        <!--(3) (메인메뉴 서브메뉴)-->
+        <!-- (4) (메인메뉴+서브메뉴): 시작-->
+        <li>
+            <!--주메뉴 : 시작-->
+            <a href="#" class="mainMenu">고객센터</a> <!--주메뉴:끝-->
+            <!--서브메뉴: 시작-->
+            <nav class="subMenu">
+                <a href="#">공지사항</a>
+                <a href="#">자주묻는질문</a>
+                <a href="#" id="last">자료실</a>
+            </nav>
+            <!--서브메뉴 -->
+        </li>
+        <!--(4) (메인메뉴+서브메뉴):끝-->
+    </ul>
+</body>
+</html>
