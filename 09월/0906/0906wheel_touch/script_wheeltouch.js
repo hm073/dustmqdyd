@@ -36,7 +36,7 @@ document.addEventListener("DOMContentLoaded", ()=>{
             if(page < 0) page = 0;
             else if(page > lastpage) page = lastpage;
 
-            layout.style.top = page * (-100) + "vh";
+            layout.style.top = page * (-100) + "dvh";
         }
     }, {passive:false});
 
