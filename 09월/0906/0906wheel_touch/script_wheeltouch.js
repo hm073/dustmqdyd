@@ -29,7 +29,7 @@ document.addEventListener("DOMContentLoaded", ()=>{
         const endY = e.changedTouches[0].clientY;
         const deltaY = startY - endY;
 
-        if(Math.trunc(deltaY) > 50) {
+        if(Math.abs(deltaY) > 50) { //abs 절대값
             if(deltaY > 0) page++;
             else if(deltaY < 0) page--;
 
