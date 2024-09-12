@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>포트폴리오 사이트</title>   
+    <style>  
+	 a {display:inline-block; width:100px;}
+	 img {width:100%;}
+	</style>
+	<script>
+		document.addEventListener("DOMContentLoaded", () => {
+
+			const btn = document.getElementsByTagName("button");
+			const gallery = document.getElementById("gallery");
+
+			const a = [...gallery.children];
+			
+			a.forEach( (item, index) => {
+
+				const show = () => {a[index].style.display = "inline-block";}
+				const hide = () => {a[index].style.display = "none";}
+				btn[0].addEventListener("click", () => {
+
+					( index % 2 == 1 ) ? show() : hide();
+				})
+				btn[1].addEventListener("click", () => {
+					
+					( index % 2 == 0 ) ? show() : hide();
+				})
+				
+			})
+			
+			/*
+			===============================
+			const b = document.querySelectiorAll("nav button");
+			const a = document.querySelectiorAll("#gallery");
+
+			const c = d => {
+				a.forEach((x, y)=> {
+					x.style.display = j % 2 == d ? "inline-block" : "none";
+				});
+			};
+
+			b.forEach((i,j) => {
+				i.addEventListener("click", () => {
+					const d = j % 2; // 답은 1 또는 0
+					c( d );
+				});
+			});
+
+			===============================
+			*/
+
+		}); //end
+	</script>
+</head>
+<body>
+    <div id="layout">
+        <h1>홍길동의 포트폴리오</h1>
+        <nav>
+            <button type="button">짝수 이미지 보이기</button>
+            <button type="button">홀수 이미지 보이기</button>
+        </nav>
+        <div id="gallery">
+			<a href="#" class="event"><img src="images/01-small.jpg" alt="01"></a>
+			<a href="#" class="web"><img src="images/05-small.jpg" alt="05"></a>
+			<a href="#" class="ppt"><img src="images/03-small.jpg" alt="03"></a>
+			<a href="#" class="ppt"><img src="images/09-small.jpg" alt="09"></a>
+			<a href="#" class="ppt"><img src="images/08-small.jpg" alt="08"></a>                
+			<a href="#" class="event"><img src="images/07-small.jpg" alt="07"></a>                
+			<a href="#" class="event"><img src="images/02-small.jpg" alt="02"></a>
+			<a href="#" class="web"><img src="images/12-small.jpg" alt="12"></a>              
+			<a href="#" class="ppt"><img src="images/10-small.jpg" alt="10"></a>
+			<a href="#" class="web"><img src="images/11-small.jpg" alt="11"></a>
+			<a href="#" class="ppt"><img src="images/06-small.jpg" alt="06"></a>
+			<a href="#" class="event"><img src="images/04-small.jpg" alt="04"></a>
+        </div>
+    </div>
+</body>
+</html>
