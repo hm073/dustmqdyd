@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+
+            const event = document.getElementById("event");
+
+            const div = [...event.children[1].children];
+            div.forEach(p => {
+                p.children[1].style.display = "none";
+            });
+
+            //그냥 간단하게 const p = document.querySelectorAll("#event p");라고 하면 끝이었음... 이럴수가
+            
+        }); //end
+    </script>
+</head>
+<body>
+    <div id="event">
+        <h2>이벤트 및 세부 정보</h2>
+        <div>
+            <div>
+                <img src="imges/event-1.jpg" alt="달콤한 할인 혜택">
+                <p>
+                    <i class="fas fa-search"></i>
+                    <b>자세히보기</b>
+                </p>
+            </div>
+            <div>
+                <img src="imges/event-1.jpg" alt="CU 삼성증권통장">
+                <p>
+                    <i class="fas fa-search"></i>
+                    <b>자세히보기</b>
+                </p>
+            </div>
+            <div>
+                <img src="imges/event-1.jpg" alt="베스킨라빈스 이벤트">
+                <p>
+                    <i class="fas fa-search"></i>
+                    <b>자세히보기</b>
+                </p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

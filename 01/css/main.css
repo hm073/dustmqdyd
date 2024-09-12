@@ -219,6 +219,37 @@ header {
 .cN section P:nth-of-type(1) {margin-bottom: 20px;}
 .cN section P:nth-of-type(2) {margin-bottom: 50px;}
 
+/* 팝업 */
+#popup {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.85);
+    top: 0;
+    left: 0;
+    /* transform: translate(-50%, -50%); */
+    display: none;
+    /* scrollbar-width: none; 작동안됨 */
+    text-align: center;
+    padding: 50px;
+}
+#popup h3 {
+    display: inline-block;
+    color: white;
+}
+#popup img {
+    margin: auto;
+    padding: 30px 50px;
+}
+#popup button {
+    padding: 5px 12px;
+    background-color: #ddd;
+    border-radius: 10px;
+    border: none;
+}
+#popup button:hover {background-color: white;}
+
+
  /*실종*/
 .dA {
     width: 900px;
@@ -283,27 +314,10 @@ footer> div {
 }
 
 /*폰트*/
-header, h1, h2, h3, #quick {
+header, h1, h2, h3, #quick, #popup>button {
     font-family: "Jua", sans-serif;
     font-weight: 400;
     font-style: normal;
   } /*동글한 글씨체*/  
 
 
-/* 팝업 */
-#popup {
-    position: fixed;
-    width: 100vw;
-    height: 100vh;
-    background-color: rgba(0, 0, 0, 0.85);
-    top: 0;
-    left: 0;
-    /* transform: translate(-50%, -50%); */
-    display: none;
-    /* scrollbar-width: none; 작동안됨 */
-    text-align: center;
-}
-#popup img {
-    margin: auto;
-    padding: 50px;
-}

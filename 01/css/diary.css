@@ -104,11 +104,22 @@ header {
 
 .a1 p {margin-bottom: 5px;}
 
-/* 프로필 내용 전체 박스(mm)*/
-.mm {
+/* 프로필 내용 전체 박스(pfcontent)*/
+#pfcontent {
     padding: 25px 20px;
+    height: 3000px; width: 100%;
     border: 3px solid rgb(241, 217, 186);
+    position: relative;
 }
+
+#pfcontent .mm {
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    display: none;
+}
+
+#pfcontent .show {display: block;}
 
 .aa {
     max-width: 1000px;
@@ -225,34 +236,7 @@ header {
     justify-content: center;
 }
 
-/* .pf1 {display: none;} */
-.pf2 .mm {display: none;}
-.pf3 .mm {display: none;}
-
 /************************************************************/
-/* 탭2 */
-.pf2 {
-    position: absolute;
-    top: 10px;
-    left: 10px;
-}
-.pf2 h2 {
-    margin-left: 160px;
-    background-color: white;
-    font-size: 1.5rem;
-}
-/************************************************************/
-/* 탭2 */
-.pf3 {
-    position: absolute;
-    top: 10px;
-    left: 10px;
-}
-.pf3 h2 {
-    margin-left: 320px;
-    background-color: white;
-    font-size: 1.5rem;
-}
 
 
 /************************************************************/
