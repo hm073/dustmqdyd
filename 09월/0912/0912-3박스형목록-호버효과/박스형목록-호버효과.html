@@ -1,0 +1,107 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<title>연습하기</title>
+
+<style>
+    * {margin:0; padding:0; box-sizing:border-box;}
+    html, body {font:10pt "나눔고딕"; color:#444;}
+    img {display:block; max-width:100%;}
+
+    #boxList {width:1150px; margin:auto; margin-top:50px; display:flex; justify-content:space-around; background:#eee; padding:20px 0;}
+    #boxList> h2 {display:none;}
+
+    #boxList> section {border:1px solid #aaa; border-radius:10px; overflow:hidden; background:white; line-height:140%; padding-bottom:20px; transition:0.5s; cursor:pointer;}
+
+	#boxList> section:hover .bar {transform: scale(2, 40);}
+	#boxList> section.black {filter: brightness(50%);}
+	
+    #boxList> section> div {display: flex; margin: 20px 0; align-items: center;}
+	#boxList> section h3 {flex: 1; font-size: 1.1rem;}
+	#boxList> section a {border: 1px solid #aaa; border-radius: 15px; text-decoration: none; padding: 2px 10px; color: #aaa; margin-right: 10px;}
+	
+	.bar {margin-right: 15px; transition: all 0.5s;}
+	.bar2 {filter: hue-rotate(140deg) saturate(150%);}
+	.bar3 {filter: hue-rotate(210deg) saturate(150%);}
+	.bar4 {filter: hue-rotate(70deg) saturate(150%);}
+
+
+    #boxList h4 {font-size:1.17rem; font-weight:500; letter-spacing:-1px; padding-bottom:10px; padding-left:10px; color:black;padding-left:15px;}
+    #boxList p  {padding-left:15px;}
+</style>
+<script>
+	document.addEventListener("DOMContentLoaded", () => {
+		const section = document.querySelectorAll("#boxList> section");
+		section.forEach((i,j) => {
+			i.addEventListener("mouseenter", () => {
+				section.forEach((x,y) => {
+					y !== j ? x.classList.add("black") : x.classList.remove("black");
+				})
+			});
+		});
+	}); //end
+</script>
+</head>
+<body>
+
+	<section id="boxList">
+		<h2>박스형 콘텐츠 목록</h2>
+		<section>
+			<img src="images/pic-1.jpg" alt="울릉도 길">
+			<div>
+				<img src="images/bar.jpg" alt="막대" class="bar1 bar">
+				<h3>레저&스포츠</h3>
+				<a href="#">더보기 +</a>
+			</div>
+			<h4>스릴과 모험을 좋아하세요?</h4>
+			<p>
+				등산/트레킹/자전거트레킹<br>
+				바다낚시/스킨스쿠버/생태탐방
+			</p>
+		</section>
+		<section>
+			<img src="images/pic-2.jpg" alt="울릉도 먹거리">
+			<div>
+				<img src="images/bar.jpg" alt="막대" class="bar2 bar">
+				<h3>일반먹거리</h3>
+				<a href="#">더보기 +</a>
+			</div>
+			<h4>울릉도의 풍부한 먹거리 맛보셨나요?</h4>
+			<p>
+				따개비밥/홍합밥<br>
+				오징어내장탕/산채비빔밥
+			</p>
+		</section>
+		<section>
+			<img src="images/pic-3.jpg" alt="울릉도 숙박">
+			<div>
+				<img src="images/bar.jpg" alt="막대" class="bar3 bar">
+				<h3>숙박시설</h3>
+				<a href="#">더보기 +</a>
+			</div>
+			<h4>울릉도의 숙박시설을 소개합니다.</h4>
+			<p>
+				관광호텔/호스텔<br>
+				관광펜션/국민여가캠핑장
+			</p>
+		</section>
+		<section>
+			<img src="images/pic-4.jpg" alt="울릉도 축제">
+			<div>
+				<img src="images/bar.jpg" alt="막대" class="bar4 bar">
+				<h3>문화축제</h3>
+				<a href="#">더보기 +</a>
+			</div>
+			<h4>울릉도 문화와 다양한 축제 안내!</h4>
+			<p>
+				오징어축제/민속그네뛰기<br>
+				우산문화제/울릉해변가요제
+			</p>
+		</section>
+	</section>
+
+</body>
+</html>

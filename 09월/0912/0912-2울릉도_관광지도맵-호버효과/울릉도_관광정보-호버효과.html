@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<title>울릉도 관광정보</title>
+<style>
+* {margin:0; padding:0; box-sizing:border-box;}
+html, body {font-family:"맑은 고딕";}
+img  {max-width:100%; display:block;}
+
+#info   {
+	width:488px; height:166px; margin:100px auto; padding:15px 17px; letter-spacing:-1px;border:2px solid blue;
+	background: url(images/travel_bg.jpg) no-repeat center center ;
+}
+#info  h2  {color: white;  font-size: 1.15rem;}
+#info  h2  b  {display: inline-block; margin-left:20px;  font-size: 0.8rem; transform:translateY(-2px);}
+#info> div  {display: flex; margin-top:32px;  margin-left:16px;}
+
+#info>div >div {flex:1; display:flex; align-items:center; border:2px solid red;}
+#info h3 {font-size:0.95rem; color: #fef3bb;}
+
+#info a {margin-right: 8px; transition: all 0.3s;}
+#info a:hover {transform: translateY(-5px); filter: blur(2px) hue-rotate(300deg);}
+
+#pos02 {margin: -45px 0 0 19px;}
+#pos03 {margin-left: 8px; padding-top: 8px;}
+
+
+</style>
+</head>
+<body>
+<body>
+
+	<section id="info">
+		<h2>
+			울릉도 관광정보
+			<b>푸른바다의 수풀언덕</b>
+		</h2>
+		<div>
+			<div id="pos01">
+				<a href="#"><img src="images/travel_01.png" alt="관광지도"></a>
+				<h3>관광지도</h3>
+			</div>
+			<div id="pos02">
+				<a href="#"><img src="images/travel_04.png" alt="가이드북"></a>
+				<h3>가이드북</h3>
+			</div>
+			<div id="pos03">
+				<a href="#"><img src="images/travel_02.png" alt="울릉해담길"></a>
+				<h3>울릉<br>해담길</h3>
+			</div>
+		</div>
+	</section>
+	
+</body>
+</html>
