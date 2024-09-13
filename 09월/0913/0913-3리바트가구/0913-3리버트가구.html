@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<title>리바트가구</title>
+<script>
+    document.addEventListener("DOMContentLoaded" , ()=> {
+        const header = document.getElementsByTagName("header")[0];
+
+        const multiEvent = ["wheel" , "scroll"];
+        multiEvent.forEach( ev  => {
+            window.addEventListener( ev , () => {
+                (window.scrollY > 300)  ?  header.classList.add("wheel")  :  header.classList.remove("wheel");
+            });
+        });
+    }); //end..............
+</script>
+<style>
+#layout {max-width:1200px; margin:auto; border:1px solid red;}
+
+header  {display:flex; position:sticky; top:0; background:white;  z-index: 1; transition: background 0.3s;}
+header.wheel {background: rgba(187,176,176,  0.8);}
+header.wheel >nav {margin:0 100px;}
+
+header>div {display:flex; padding:30px;}
+header>div>a {margin-right:50px;}
+header   img {width:200px;}
+
+header>nav {flex:1;display:flex; justify-content:space-around; align-items:center; transition: margin 0.3s;}
+header>nav>a {color:black; text-decoration:none; transition: color 0.3s;}
+header.wheel >nav>a {color:white;}
+
+header  hr {width:0; height:2px; background:#ddd; border:none; transition: width 0.3s;}
+header.wheel hr {width:300px;}
+
+#sec1 {height:100vh; background:url("images/furniture04.jpg") no-repeat fixed left -200px / cover;}
+
+/*********************/
+#new {margin-top:100px;}
+#new>div {display:flex; max-width:700px; margin:auto; justify-content:space-around;}
+#new a {width:200px; height:200px; border-radius:10px; overflow:hidden; box-shadow:3px 3px 5px rgba(0,0,0, 0.5); position:relative;}
+
+#new a >img {display:block; width:100%;}
+#new a:hover >img {filter:brightness(50%);}
+
+#new p {position:absolute; top:30%; width:100%; text-align:center; color:white; font-weight:bold; font-size:1.3rem; text-shadow:2px 2px 5px black; }
+
+#new a>p {opacity:0;}
+#new a:hover  >p {opacity:1;}
+</style>
+</head>
+<body>
+
+<div id="layout">
+    <header>
+        <div>
+            <a href="index.html"><img src="images/logo.png" alt="리바트 로고"></a>
+            <hr>
+        </div>
+        <nav>
+            <a href="#">About</a>
+            <a href="#">Brand</a>
+            <a href="#">Recurit</a>
+            <a href="#">Store</a>
+        </nav>
+    </header>
+    <section id="sec1">
+        <h2>고정배경부분</h2>
+    </section>
+    <section id="new">
+        <h2>이미지에 마우스를 대면 가구이름이 나온다.</h2>
+        <div>
+            <a href="#">
+                <img src="images/furniture01.jpg" alt="FG-5324">
+                <p>Dress Room</p>
+            </a>
+            <a href="#">
+                <img src="images/furniture02.jpg" alt="CH-7310">
+                <p>Study Room</p>
+            </a>
+            <a href="#">
+                <img src="images/furniture03.jpg" alt="TP-2075">
+                <p>Living Room</p>
+            </a>
+        </div>
+    </section>
+    <div style="height:1000px; background:gray"></div>
+</div>
+
+</body>
+</html>

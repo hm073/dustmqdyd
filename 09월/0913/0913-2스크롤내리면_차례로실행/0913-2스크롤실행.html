@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width">
+	<title>PORTFOLIO</title>
+	<script>
+		document.addEventListener('DOMContentLoaded', function() {
+			
+			const imgs = document.querySelectorAll("#scrollAni img");
+
+			const multiEvent = ["wheel", "scroll"];
+
+			multiEvent.forEach(i => {
+				window.addEventListener(i, () => {
+					if( window.scrollY > 300) {
+						imgs.forEach((x, y) => {
+							// x.style.transform = "scale(1)";
+							setTimeout(() => {
+								x.style.transform = "scale(1)";
+							} , 200 * y); /* 가장 중요한 부분 */
+						});
+					};
+				});
+			});
+
+		});//end..................
+	</script>
+	<style>	
+		#scrollAni { width: 700px; margin: 100px auto 2000px auto; border: 1px solid red; }
+		#scrollAni div { width: 700px; padding-top: 700px; display: flex; justify-content: space-between; }
+		#scrollAni img { position: relative; transform: scale(0); transition: all 0.5s;}
+
+	</style>
+</head>
+<body>
+	<section id="scrollAni">
+		<h1>스크롤을 내리면 차례로 실행되는 애니메이션 아이콘(아래로 스크롤 하세요)</h1>
+		<div>
+			<img src="images/ico_1.png" alt="facebook">
+			<img src="images/ico_2.png" alt="google+">
+			<img src="images/ico_3.png" alt="instagram">
+		</div>
+		<p>이미지에 마우스를 갖다대어 보세요 (마우스Hover(롤오버) 효과)</p>
+	</section>	
+</body>
+</html>
