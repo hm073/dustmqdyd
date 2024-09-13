@@ -6,7 +6,17 @@ document.addEventListener("DOMContentLoaded", () => {
 
     btns.forEach(btn => {
         btn.addEventListener("click", (e) => {
-            
+            const styles = e.currentTarget.classList;
+            if (styles.contains("decrease")) {
+                count--;
+            }
+            else if (styles.contains("increase")) {
+                conut++;
+            }
+            else {
+                conut = 0;
+            }
+            value.textContent = count;
         })
     })
 }); //end
