@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>양방향 버튼 슬라이드</title>
+    <style>
+        body {
+    font-family: Arial, sans-serif;
+}
+
+.slider-container {
+    position: relative;
+    width: 300px;
+    overflow: hidden;
+}
+
+.slider {
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+.slide {
+    min-width: 300px;
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    color: white;
+}
+
+    </style>
+</head>
+<body>
+    <div class="slider-container">
+        <div class="slider">
+            <div class="slide" style="background-color: lightcoral;">Slide 1</div>
+            <div class="slide" style="background-color: lightblue;">Slide 2</div>
+            <div class="slide" style="background-color: lightgreen;">Slide 3</div>
+        </div>
+        <button id="prev">이전</button>
+        <button id="next">다음</button>
+    </div>
+    
+
+
+
+
+
+
+
+
+
+
+    <script>
+        const slider = document.querySelector('.slider');
+const slides = document.querySelectorAll('.slide');
+const prevButton = document.getElementById('prev');
+const nextButton = document.getElementById('next');
+
+let currentIndex = 0;
+
+function updateSlider() {
+    const offset = -currentIndex * 300; // 슬라이드 너비에 따라 조정
+    slider.style.transform = `translateX(${offset}px)`;
+}
+
+nextButton.addEventListener('click', () => {
+    if (currentIndex < slides.length - 1) {
+        currentIndex++;
+    } else {
+        currentIndex = 0; // 마지막 슬라이드에서 처음으로 돌아감
+    }
+    updateSlider();
+});
+
+prevButton.addEventListener('click', () => {
+    if (currentIndex > 0) {
+        currentIndex--;
+    } else {
+        currentIndex = slides.length - 1; // 첫 번째 슬라이드에서 마지막으로 돌아감
+    }
+    updateSlider();
+});
+
+    </script>
+</body>
+</html>

@@ -19,59 +19,92 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
     /* 공동구매 화살표 */
-    const btnLeft = document.getElementsByClassName("p1")[0];
-    const btnRight = document.getElementsByClassName("p3")[0];
+    const slider = document.querySelector('.p2');
+    const slides = document.querySelectorAll('.p2 div');
+    const prevButton = document.querySelector('.p1');
+    const nextButton = document.querySelector('.p3');
 
-    const arrowSlideArea = document.getElementsByClassName("p2")[0];
+    let currentIndex = 0;
 
-    let isAnimating = false; // 애니메이션 진행 상태를 추적하는 변수
-
-    /*왼쪽 화살표*/
-    const left = () => {
-
-        if (isAnimating) return; // 애니메이션 진행 중이면 클릭 무시
-        isAnimating = true; // 애니메이션 시작
-    
-        arrowSlideArea.style.left = "-300px";
-        arrowSlideArea.style.transition = "left 1s";
-
-        setTimeout(z, 1001);
-        
-    };
-    const z = () => {
-        arrowSlideArea.style.left = "0";
-        arrowSlideArea.style.transition = "none";
-        arrowSlideArea.append(arrowSlideArea.firstElementChild);
-
-        setTimeout(() => {
-            isAnimating = false;
-        }, 50); // 애니메이션 완료
-    };
-
-    btnLeft.addEventListener("click", left);
-
-    /*오른쪽 화살표*/
-
-    const Right = () => {
-
-        if (isAnimating) return; // 애니메이션 진행 중이면 클릭 무시
-        isAnimating = true; // 애니메이션 시작
-
-        arrowSlideArea.style.left = "0";
-        arrowSlideArea.style.transition = "left 1s";
-        
-        setTimeout(y, 1001);
-    };
-    const y = () => {
-        arrowSlideArea.style.transition = "none";
-        arrowSlideArea.prepend(arrowSlideArea.lastElementChild);
-        arrowSlideArea.style.left = "-300px";
-        
-        setTimeout(() => {
-            isAnimating = false;
-        }, 50); // 애니메이션 완료
+    function updateSlider() {
+        const offset = -currentIndex * 300; // 슬라이드 너비에 따라 조정
+        slider.style.transform = `translateX(${offset}px)`;
     }
-    btnRight.addEventListener("click", Right);
+
+    nextButton.addEventListener('click', () => {
+        if (currentIndex < slides.length - 1) {
+            currentIndex++;
+        } else {
+            currentIndex = 0; // 마지막 슬라이드에서 처음으로 돌아감
+        }
+        updateSlider();
+    });
+
+    prevButton.addEventListener('click', () => {
+        if (currentIndex > 0) {
+            currentIndex--;
+        } else {
+            currentIndex = slides.length - 1; // 첫 번째 슬라이드에서 마지막으로 돌아감
+        }
+        updateSlider();
+    });
+
+    // ----------------------------------------------------
+    // const btnLeft = document.getElementsByClassName("p1")[0];
+    // const btnRight = document.getElementsByClassName("p3")[0];
+
+    // const arrowSlideArea = document.getElementsByClassName("p2")[0];
+
+    // let isAnimating = false; // 애니메이션 진행 상태를 추적하는 변수
+
+    // /*왼쪽 화살표*/
+    // const left = () => {
+
+    //     if (isAnimating) return; // 애니메이션 진행 중이면 클릭 무시
+    //     isAnimating = true; // 애니메이션 시작
+    
+    //     arrowSlideArea.style.left = "-300px";
+    //     arrowSlideArea.style.transition = "left 1s";
+
+    //     setTimeout(z, 1001);
+        
+    // };
+    // const z = () => {
+    //     arrowSlideArea.style.left = "0";
+    //     arrowSlideArea.style.transition = "none";
+    //     arrowSlideArea.append(arrowSlideArea.firstElementChild);
+
+    //     setTimeout(() => {
+    //         isAnimating = false;
+    //     }, 50); // 애니메이션 완료
+    // };
+
+    // btnLeft.addEventListener("click", left);
+
+    // /*오른쪽 화살표*/
+
+    // const Right = () => {
+
+    //     if (isAnimating) return; // 애니메이션 진행 중이면 클릭 무시
+    //     isAnimating = true; // 애니메이션 시작
+
+    //     arrowSlideArea.style.left = "0";
+    //     arrowSlideArea.style.transition = "left 1s";
+        
+    //     setTimeout(y, 1001);
+    // };
+    // const y = () => {
+    //     arrowSlideArea.style.transition = "none";
+    //     arrowSlideArea.prepend(arrowSlideArea.lastElementChild);
+    //     arrowSlideArea.style.left = "-300px";
+        
+    //     setTimeout(() => {
+    //         isAnimating = false;
+    //     }, 50); // 애니메이션 완료
+    // }
+    // btnRight.addEventListener("click", Right);
+    // ----------------------------------------------------
+
 
     /* 팝업 */
     const cN_popup = document.querySelector(".cN a");

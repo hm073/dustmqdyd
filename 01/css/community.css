@@ -1,7 +1,6 @@
 @charset "UTF-8";
 
 * {margin: 0; padding: 0; box-sizing: border-box;}
-html::-webkit-scrollbar {display: none;}
 ::-webkit-scrollbar-thumb {
     background-color: #ddd;
     border-radius: 10px;
@@ -9,6 +8,7 @@ html::-webkit-scrollbar {display: none;}
 ::-webkit-scrollbar{
     background-color: transparent;
     height: 5px;
+    width: 0;
 }
 
 h1 {display: none;}

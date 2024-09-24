@@ -26,4 +26,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
     });
 
+    const btn = document.getElementById("plus");
+
+    btn.addEventListener("click", () => {
+        alert("오늘 일정을 추가하시겠습니까?");
+    });
+
 });

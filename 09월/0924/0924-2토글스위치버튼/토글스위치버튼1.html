@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>토글 스위치 버튼(css로 구현)</title>
+    <style>
+        * {margin: 0; padding: 0; box-sizing: border-box;}
+
+        #layout {max-width: 500px; margin: 100px auto; padding: 50px; display: flex; justify-content: center;}
+        label {
+            width: 80px; height: 40px; background-color: #ddd; display: block; border-radius: 50px; box-shadow: inset 1px 1px 3px rgba(0, 0, 0, 0.3); position: relative;
+            margin: 5px;
+        }
+        .move {position: absolute; top: 15px; left: 12px;}
+        b.move {width: 30px; height: 30px; border-radius: 50%; background: radial-gradient(white 50%, #888); top: 5px; left: 8px;}
+
+        input + b {transition: 0.3s;}
+        input {transition: 0.3s;}
+        input:checked + b {left: 42px; background: radial-gradient(white 30%, dodgerblue);}
+        input:checked {left: 45px;}
+    </style>
+</head>
+<body>
+    <div id="layout">
+        <label>
+            <input type="checkbox" class="move">
+            <b class="move"></b>
+        </label>
+        <label>
+            <input type="checkbox" class="move">
+            <b class="move"></b>
+        </label>
+    </div>
+</body>
+</html>

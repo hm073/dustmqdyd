@@ -172,6 +172,7 @@ header {
     /* margin: 0 5px; */
     display: flex;
     position: relative;
+    transition: transform 0.5s ease;
 }
 /* #jpCm .ps .pSlide {left: 0;} */
 #jPCm .jP a {

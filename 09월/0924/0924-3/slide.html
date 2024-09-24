@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {margin: 0; padding: 0; box-sizing: border-box;}
+
+        #layout {max-width: 85vw; margin: auto; border-top: 10px solid red;}
+        #slide_11 {display: flex; width: calc(1250px * 5); position: relative; left: -650px;}
+        #slide_11 img {width: 1250px; border: 5px solid white; opacity: 0.5;}
+        #slide_11 img.act {opacity: 1;}
+
+        #radio {max-width: 300px; margin: 15px auto; text-align: center;}
+        #radio button {width: 20px; height: 20px; border-radius: 50%; background-color: #ddd; border: none;}
+        #radio button.act {background-color: blue;}
+    </style>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+
+            const slide_11 = document.getElementById("slide_11");
+            const radio = document.getElementById("radio");
+
+            const toLeft = () => {
+                slide_11.style.transition = 'left 0.5s';
+                slide_11.style.left = '-1850px';
+
+                setTimeout(left_1, 500);
+            };
+
+            setInterval(toLeft, 2000);
+        });
+    </script>
+</head>
+<body>
+    <div id="layout">
+        <div id="slide_1">
+            <h2>슬라이드1</h2>
+            <div id="slide_11">
+                <img src="images/1.jpg" alt="1">
+                <img src="images/2.jpg" alt="2" class="act">
+                <img src="images/3.jpg" alt="3">
+                <img src="images/4.jpg" alt="4">
+                <img src="images/5.jpg" alt="5">
+            </div>
+        </div>
+        <div id="radio">
+            <button type="button" class="act"></button>
+            <button type="button"></button>
+            <button type="button"></button>
+            <button type="button"></button>
+            <button type="button"></button>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>미로찾기</title>
+</head>
+<body>
+    <canvas id="mazearea"></canvas>
+    <!-- <p></p> -->
+    <p></p>
+    Maze Size :  <input type="text" name="size" id="sizeinput">
+    <p id="text"></p>
+
+    <script>
+        let can_size = 21;
+        let grid_size = 20;
+        let field;
+        let px = py = 1;
+        let xv = yv = 0;
+        let tracker;
+        let stack;
+        let stucked;
+        let cx, cy;
+
+        const canvas = document.getElementById('mazearea');
+        const ctx = canvas.getContext('2d');
+        const sizeinput = document.getElementById('sizeinput');
+        const text = document.getElementById('text');
+        // const numberpattern = /[0-9]/;
+
+        window.addEventListener('load',() => {
+            document.addEventListener('keydown', keypush);
+            initialize();
+        });
+
+        const enterkey  = ( event ) => {
+            if (event.keyCode == 13) {
+                let size_value = sizeinput.value;
+                
+                if (size_value % 2 == 0) {
+                    alert("홀수를 입력해 주십시오.");
+                } else if (size_value <= 0) {
+                    alert("1이상의 수를 입력해 주십시오.");
+                } else {
+                    can_size = parseInt(size_value);
+                    initialize();
+                }
+            }
+        };
+
+        sizeinput.addEventListener('keydown', enterkey);
+
+        const initialize = () => {
+            sizeinput.value = can_size;
+            make2darray();
+            canvas.width=canvas.height = (can_size * grid_size);
+            ctx.fillStyle = '#000000';
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+            makeway( 0, 1 );
+            makeway( can_size - 1 , can_size - 2 );
+
+            px = py = 1;
+            tracker = {x: px , y: py};
+            stack = [];
+            stack.push(tracker);
+            stucked = false;
+            randomMazeGenerator();
+
+            cx = 0; cy = 1;
+            ctx.fillStyle = '#ff0000';
+            ctx.fillRect(cx * grid_size, cy * grid_size, grid_size, grid_size);
+        };
+
+        const makeway = (xx, yy) => {
+            field[yy][xx]++;
+            ctx.fillStyle = '#ffffff';
+            ctx.fillRect( xx * grid_size, yy * grid_size, grid_size, grid_size );
+        };
+
+        const keypush = (event) => {
+            switch (event.keyCode) {
+                case 37:
+                    xv = -1; yv = 0;
+                    break;
+                case 38:
+                    xv = 0; yv = -1;
+                    break;
+                case 39:
+                    xv = 1; yv = 0;
+                    break;
+                case 40:
+                    xv = 0; yv = 1;
+                    break;
+                
+            }
+
+            let newCx = cx + xv;
+            let newCy = cy + yv;
+
+            if (newCx < 0 || newCx >= can_size || newCy < 0 || newCy >= can_size || field[newCy][newCx] == 0) {
+                return; 
+            }
+
+            ctx.fillStyle = '#ff0000';
+            ctx.fillRect(newCx * grid_size, newCy * grid_size, grid_size, grid_size);
+            ctx.fillStyle = '#ffffff';
+            ctx.fillRect(cx * grid_size, cy * grid_size, grid_size, grid_size);
+
+            cx = newCx;
+            cy = newCy;
+            text.textContent = `사용자의 x좌표: ${cx}, 사용자의 y좌표: ${cy}`;
+
+            if (cx == can_size - 1 && cy == can_size - 2) {
+                alert('You Win! Game Clear!');
+                initialize();
+            }
+        };
+
+        const make2darray = () => {
+            field = new Array(can_size).fill().map(() => new Array(can_size).fill(0));
+        };
+
+        const randomMazeGenerator = () => {
+            while (stack.length > 0) {
+                if(stucked){
+                    backtracking();
+                }
+                else{
+                    tracking();
+                }
+            }
+        };
+
+        const tracking = () => {
+            let random_key = Math.floor(Math.random() * 4);
+        
+            switch (random_key) {
+                case 0:
+                    xv = -2; yv = 0;
+                    break;
+                case 1:
+                    xv = 0; yv = -2 ;
+                    break;
+                case 2:
+                    xv = 2; yv = 0;
+                    break;
+                case 3:
+                    xv = 0; yv = 2 ;
+                    break;
+            }
+            px += xv;
+            py += yv;
+
+            if (px < 0 || px >= can_size || py < 0 || py >= can_size) {
+                px -= xv;
+                py -= yv;
+                return;
+            } 
+            
+            if ( field[py][px] < 1 ) {
+                /* [py][px] 순서 상관이 있나 */
+                makeway( px - xv / 2, py - yv / 2 );
+                makeway( px, py );
+                tracker = { x: px , y: py};
+                stack.push(tracker);
+                blockcheck();
+            } else {
+                px -= xv;
+                py -= yv;
+            }
+        };
+
+        const blockcheck = () => {
+            let blockcount = 0;
+
+            if (py + 2 >= can_size || field[py + 2][px] != 0) {
+                blockcount++;
+            }
+            if (py - 2 < 0 || field[py - 2][px] != 0) {
+                blockcount++;
+            }
+            if (px + 2 >= can_size || field[py][px + 2] != 0) {
+                blockcount++;
+            }
+            if (px - 2 < 0 || field[py][px - 2] != 0) {
+                blockcount++;
+            }
+            stucked = (blockcount >= 4);
+        };
+
+        const backtracking = () => {
+            let backtracker = stack.pop();
+            px = backtracker.x;
+            py = backtracker.y;
+            blockcheck();
+        };
+    </script>
+</body>
+</html>
