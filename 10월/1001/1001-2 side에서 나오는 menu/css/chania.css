@@ -1,0 +1,59 @@
+@charset "utf-8";
+
+* {padding:0; margin:0; box-sizing:border-box;}
+html {scroll-behavior:smooth;}
+html,body {font:10pt/180% "나눔고딕","맑은 고딕","돋움";}
+
+/*전체 레이아웃*/
+#layout {padding:10px 10px 0 10px; position:relative;}
+header>button {border:none;}
+a {text-decoration:none; color:black;}
+img {max-width:100%;}
+
+/*상단*/
+header {max-width:500px; margin:auto; background:#5bb4db; color:white; display:flex; padding:15px;}
+header>button {background:transparent; color:white;}
+header>h1 {flex:1; text-align:center;}
+
+/*메뉴*/
+#layout {max-width:500px; margin:auto;}
+#layout>nav {position:absolute; width:100%; left:-110%; top:0; background:white; height:70vh; box-shadow:0 5px 10px rgba(0,0,0, 0.5); /* display:none; */}
+#layout ul	{list-style:none inside url("../images/bullet.png"); }
+#layout ul>li	{border-bottom:1px solid #ddd; padding:20px; padding-left:30px;}
+
+/*메인*/
+main>h2	{padding-top:30px; padding-bottom:10px;}
+main>p	{text-align:justify;}
+main>p::first-letter {font-size:1.5rem; font-weight:bold; color:#5bb5db;}
+
+main>p>img	{width:150px;}
+main>p:first-of-type>img {float:left; margin-right:10px;}
+main>p:last-of-type>img  {float:right; margin-left:10px;}
+
+main>ol	{color:#5bb4db; list-style-position:inside; margin-bottom:10px; background:url("../images/bg.jpg") no-repeat right bottom / contain;}
+
+main>figure {margin-bottom:20px;}
+main>figure>img {width:95%; margin:auto; display:block; border-radius:20px; box-shadow:2px 2px 5px black;}
+main>figure>figcaption {font-size:0.9rem; text-align:center; padding-top:5px;}
+
+/* 부가정보 */
+div+aside	{max-width:500px; margin:auto;padding:15px; background:rgba(91,181,219, 0.3); margin-top:20px;}
+div+aside>h2 {background:url("../images/bullet.png") no-repeat left 5px; padding-left:20px;}
+
+/* 하단 */
+footer {max-width:500px; margin:auto; padding:15px; background:#ddd;}
+footer span {font-size:0.8rem; color:#666;}
+
+/* 위로 */
+body>a	{position:fixed; right:calc(((100% - 500px) / 2 ) + 5px); bottom:10px; background:white; box-shadow:0 0 5px black; border-radius:5px;}
+body>a:hover {background:aqua;}
+
+/***********************************************/
+/*넓이가 500픽셀 이하인 기계장치*/
+@media(max-width:500px) {
+		body>a {right:5px;}
+}
+
+
+
+
