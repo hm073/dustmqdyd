@@ -5,7 +5,7 @@ html {scroll-behavior:smooth;}
 html,body {font:10pt/180% "나눔고딕","맑은 고딕","돋움";}
 
 /*전체 레이아웃*/
-#layout {padding:10px 10px 0 10px; position:relative;}
+#layout {padding:10px 10px 0 10px; position:relative; overflow: hidden;}
 header>button {border:none;}
 a {text-decoration:none; color:black;}
 img {max-width:100%;}

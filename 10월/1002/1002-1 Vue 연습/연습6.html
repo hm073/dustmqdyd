@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>양방향 바인딩</title>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+</head>
+<body>
+
+    <nav>
+        <a v-for="X in Y" :href="X.A" target="_blank" style="display: block;">{{ X.B }}</a>
+    </nav>
+
+    <script>
+        const box = new Vue ({
+            el: 'nav', 
+            data: {  
+                Y: [
+                    {A:"https://adobe.com", B:"어도비"},
+                    {A:"https://apple.com", B:"apple"},
+                    {A:"https://naver.com", B:"naver"}
+                ]
+            }
+        });
+    </script>
+    
+</body>
+</html>

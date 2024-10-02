@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+</head>
+<body>
+
+    <a v-bind:href="A" :target="B">
+        <img :src="C" :alt="D">
+    </a>
+    <!-- <a href="https://naver.com" target="_blank">
+        <img src="paris.jpg" alt="Paris">
+    </a> -->
+
+    <script>
+        const A = new Vue ({
+            el: 'a',
+            data: {
+                A: 'https://naver.com',
+                B: '_blank',
+                C: 'paris.jpg',
+                D: 'Paris'
+            }
+        });
+    </script>
+</body>
+</html>

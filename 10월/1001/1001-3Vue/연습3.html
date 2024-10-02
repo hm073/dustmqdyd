@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+img {
+  border-radius: 8px;
+}
+</style>
+<script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+</head>
+<body>
+
+<div id="insa">
+	<button type="button" v-on:click="hi">인사</button>
+</div>
+
+<script>
+	const div = document.getElementById("insa");
+	const btn = document.querySelector("#insa button")[0];
+
+	const insa = new Vue ({
+    	el: div,
+        methods: {
+        			hi: function(){ alert("좋은아침"); }
+        }
+    });
+</script>
+
+</body>
+</html>
+
+

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>양방향 바인딩</title>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+
+    <style>
+        a {margin: 5px;}
+    </style>
+</head>
+<body>
+
+    <nav>
+        <ul>
+            <li>
+                <a v-for="X in Y1" :href="X.A">{{X.B}}</a>
+            </li>
+            <li>
+                <a v-for="X in Y2" :href="X.A">{{X.B}}</a>
+            </li>
+            <li>
+                <a v-for="X in Y3" :href="X.A">{{X.B}}</a>
+            </li>
+        </ul>
+    </nav>
+
+    <script>
+        const box = new Vue ({
+            el: 'nav', 
+            data: {  
+                Y1: [
+                    {A:"https://adobe.com", B:"어도비"},
+                    {A:"https://apple.com", B:"apple"},
+                    {A:"https://naver.com", B:"naver"}
+                ],
+                Y2: [
+                    {A:"https://adobe.com", B:"어도비"},
+                    {A:"https://apple.com", B:"apple"},
+                    {A:"https://naver.com", B:"naver"}
+                ],
+                Y3: [
+                    {A:"https://adobe.com", B:"어도비"},
+                    {A:"https://apple.com", B:"apple"},
+                    {A:"https://naver.com", B:"naver"}
+                ]
+            }
+        });
+    </script>
+    
+</body>
+</html>

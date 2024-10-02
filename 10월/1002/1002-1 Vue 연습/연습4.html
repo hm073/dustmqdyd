@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>양방향 바인딩</title>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+</head>
+<body>
+
+    <div id="container">
+        <p>{{X}}</p>
+        <p>
+            <input type="text" size="50" v-model="X" v-on:keyup="onClick($event)">
+        </p>
+    </div>
+
+    <script>
+        const box = new Vue ({
+            el: '#container', 
+            data: { X: '' },
+            methods: {
+                onClick:function(e) {
+                    if(e.keyCode == 13) alert(box.X);
+                }
+            }
+        });
+    </script>
+    
+</body>
+</html>

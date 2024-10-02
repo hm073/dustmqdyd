@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+    img {
+    border-radius: 8px;
+    }
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+</head>
+<body>
+
+    <div>{{txt}}</div>
+    <button type="button">저녁인사</button>
+    <!-- Vue : 데이터 자료 표시자, 중괄호 -->
+
+    <script>
+        const btn = document.getElementsByTagName("button")[0];
+        const div = document.getElementsByTagName("div")[0];
+        
+        
+        const insa = new Vue ({
+            el: div,
+            data: {txt : '굿모닝'}
+        })
+
+        btn.addEventListener("click", () => {
+            insa.txt = "굿이브닝";
+        });
+        // btn.addEventListener("click", () => {
+        //     div.textContent = "굿이브닝";
+        // });
+    </script>
+
+</body>
+</html>

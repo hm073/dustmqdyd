@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+img {
+  border-radius: 8px;
+}
+</style>
+<script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+</head>
+<body>
+
+<section>
+<h1>인사하기</h1>
+<button type="button" v-on:click="mo">인사</button>
+<!-- Vue에서는 addEventListener과 ()=>{}보다 onclick과 function을 주로 쓴다고 함 -->
+</section>
+
+<script>
+	// const p = new Vue({
+    // 	el: 'section',
+    //     data: { heading: '인사'}
+    // });
+	const p = new Vue({
+    	el: 'section',
+        methods: { mo: function() {alert("좋은아침!");}}
+    });
+    
+	// const h1 = document.getElementsByTagName("h1")[0];
+    // const btn = document.getElementsByTagName("button")[0];
+    
+    // btn.addEventListener("click", () => {p.heading = '굿모닝';});
+    // btn.addEventListener("click", function(){p.heading = '굿모닝';});
+    
+    
+</script>
+
+</body>
+</html>
+

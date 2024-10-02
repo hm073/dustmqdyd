@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>양방향 바인딩</title>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+</head>
+<body>
+
+    <ul>
+        <li v-for="X in Z">{{ X.Y }}</li>
+    </ul>
+
+    <script>
+        const box = new Vue ({
+            el: 'ul', 
+            data: {  
+                Z: [{Y:"딸기"},{Y:"사과"},{Y:"토마토"}]
+            }
+        });
+    </script>
+    
+</body>
+</html>
