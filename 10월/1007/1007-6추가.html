@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+	 <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+     <style>
+    	a {margin-right: 10px;} 
+     </style>
+</head>
+<body>
+	
+   	<nav>
+        <input type="text" size="20" maxlength="10" v-model="A" @keyup.enter="onClick" placeholder="주문할 과일을 입력하세요.">
+    	<ul>
+        	<li v-for="X in Y">{{X.T}}</li>
+        </ul>
+    </nav>
+
+	<script>
+    	const z = new Vue({
+            el:'nav',
+            data: {
+                A:'' , //초기값
+                Y: [
+                    {T:"딸기"} , {T:"바나나"} , {T:"포도"}
+                ]
+            } ,
+            methods :{
+                onClick: function() {
+                    //글입력안하고 엔터쳤다.
+                    if(this.A ==='') {
+                        alert('주문할 과일을 입력하세요');
+                        return false; //빈 항목에 li에 추가된 것을 방지
+                    }
+                    this.Y.push({T:this.A});//객체.새항목.밀어넣기(텍스트:객체.입력글자)
+                    this.A='';//li 추가후, 글상자는 비어있다.
+                }
+            }
+        });
+    </script>
+</body>
+</html>
+<!-- <!DOCTYPE html>
+<html>
+<head>
+	 <script src="https://cdn.jsdelivr.net/npm/vue@3"></script>
+     <style>
+    	a {margin-right: 10px;} 
+     </style>
+</head>
+<body>
+	
+   	<nav>
+        <input type="text" size="20" maxlength="10" v-model="A" @keyup.enter="onClick" placeholder="주문할 과일을 입력하세요.">
+    	<ul>
+        	<li v-for="X in Y">{{X.T}}</li>
+        </ul>
+    </nav>
+
+	<script>
+    	const z = Vue.createApp({ //버전3          
+            data() {
+                return {
+                    A:'' , //초기값
+                    Y: [
+                        {T:"딸기"} , {T:"바나나"} , {T:"포도"}
+                    ]
+                }
+            } ,
+            methods : {
+                onClick() {
+                    //글입력안하고 엔터쳤다.
+                    if(this.A ==='') {
+                        alert('주문할 과일을 입력하세요');
+                        return false; //빈 항목에 li에 추가된 것을 방지
+                    }
+                    this.Y.push({T:this.A});//객체.새항목.밀어넣기(텍스트:객체.입력글자)
+                    this.A='';//li 추가후, 글상자는 비어있다.
+                }
+            }
+        });
+        z.mount('nav');
+    </script>
+</body> -->
+<!-- </html> -->

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+</head>
+<body>
+    <main>
+        <a v-bind:href="A" :target="B">
+            <img :src="C" :alt="D">
+        </a>
+    </main>
+    <script>
+        const z = new Vue({
+            el: 'main',
+            data: {
+                A:'https://cafe.naver.com/ncsappdesign',
+                B:'_blank',
+                C:'img/logo.jpg',
+                D:'로고'
+            }
+        })
+    </script>
+</body>
+</html>

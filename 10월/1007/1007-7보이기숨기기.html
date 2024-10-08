@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+	 <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+     <style>
+    	
+     </style>
+</head>
+<body>
+	
+   <section id="s1">
+        <h1 v-if="X">라인컴퓨터아트학원</h1>
+        <input type="checkbox" id="Y" v-model="X"><label for="Y">텍스트 보이기/숨기기</label>
+   </section>
+
+	<script>
+    	new Vue({
+            el:'#s1' ,
+            data: {X : true /*초기값:false는 처음에는 보이지 않음*/}
+        });
+    </script>
+</body>
+</html>
+
+<!--
+<!DOCTYPE html>
+<html>
+<head>
+	 <script src="https://cdn.jsdelivr.net/npm/vue@3"></script>
+     <style>
+    	
+     </style>
+</head>
+<body>
+	
+   <section id="s1">
+        <h1 v-if="X">라인컴퓨터아트학원</h1>
+        <input type="checkbox" id="Y" v-model="X"><label for="Y">텍스트 보이기/숨기기</label>
+   </section>
+
+	<script>
+    	const app = Vue.createApp({ //버전3 방식       
+            data() {
+                return {
+                    X : true /*초기값:false는 처음에는 보이지 않음*/
+                }                
+            }
+        });
+        app.mount('#s1');
+    </script>
+</body>
+</html>
+-->

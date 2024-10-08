@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+	 <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+     <style>
+    	
+     </style>
+</head>
+<body>
+	
+    <section id="icons">
+        <h3>당신은 버튼을 {{A}}번 클릭했습니다.</h3>
+        <button type="button" v-on:click="A += 1">1씩 증가</button>
+    </section>
+
+	<script>
+    	const i = new Vue({
+            el:'#icons' ,
+            data: {
+                A: 0
+            }
+        });
+    </script>
+
+</body>
+</html>
+
+<!-- 
+<!DOCTYPE html>
+<html>
+<head>
+	 <script src="https://cdn.jsdelivr.net/npm/vue@3"></script>
+     <style>
+    	#icons {width:300px; margin:auto; border:3px dashed red; text-align: center;}
+        #icons img {width:100px;}
+     </style>
+</head>
+<body>
+	
+    <section id="s_1">
+        <h3>당신은 버튼을 {{ B }}번 클릭했습니다.</h3>
+        <button type="button" @click="add">1씩 증가</button>
+    </section>
+
+	<script>
+    	const app = Vue.createApp({    
+            data() {
+                return {
+                    B : 0 //초기값
+                }
+            } ,
+            methods : {
+                add() {
+                    this.B += 1;
+                }
+            }            
+        });
+        app.mount("#s_1");       
+    </script>
+</body>
+</html>
+ -->

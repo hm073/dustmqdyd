@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+	<script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+    
+    <style>
+        #icons {width: fit-content; display: block; margin: auto;}
+        img {margin: 5px;}
+    </style>
+</head>
+<body>
+	
+    <div id="icons">
+        <img v-for="A in B" :src="A.C" alt="A.D">
+    </div>
+
+	<script>
+    	new Vue({
+            el:'#icons' ,
+            data() {
+                return {
+                    B: [
+                        {
+                            C:'images/sns_1.png',
+                            D:'ex1'
+                        }, 
+                        {
+                            C:'images/sns_2.png',
+                            D:'ex2'
+                        }, 
+                        {
+                            C:'images/sns_3.png',
+                            D:'ex3'
+                        },
+                        {
+                            C:'images/sns_4.png',
+                            D:'ex4'
+                        }
+                    ]
+                }    
+            }
+        });
+    </script>
+</body>
+</html>

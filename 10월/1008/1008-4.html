@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+	<script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+    
+    <style>
+        #icons {width: fit-content; margin: auto; border:3px dashed red;}
+        .yellow   {background: yellow;}
+        img {margin: 20px;}
+    </style>
+</head>
+<body>
+	
+    <div id="icons" :class="ye">
+        <img v-for="item in items" :src="item.src" alt="item.alt">
+    </div>
+
+	<script>
+    	new Vue({
+            el:'#icons' ,
+            data() {
+                return {
+                    ye: 'yellow' ,
+                    items: [
+                        {
+                            src:'images/sns_1.png',
+                            alt:'ex1'
+                        }, 
+                        {
+                            src:'images/sns_2.png',
+                            alt:'ex2'
+                        }, 
+                        {
+                            src:'images/sns_3.png',
+                            alt:'ex3'
+                        },
+                        {
+                            src:'images/sns_4.png',
+                            alt:'ex4'
+                        }
+                    ]
+                }    
+            }
+        });
+    </script>
+</body>
+</html>

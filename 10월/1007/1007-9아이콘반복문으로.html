@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	 <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+     <style>
+    	
+     </style>
+</head>
+<body>
+	
+    <div id="icons">
+        <img v-for="A in B" :src="A.C" alt="A.D">
+        <!-- A는 이미지의 묶음(그룹이름) B,C,D는 각각 -->
+    </div>>
+
+	<script>
+    	new Vue({
+            el:'#icons' ,
+            data() {
+                return {
+                    B: [
+                        {
+                            C:'img/icon1.png',
+                            D:'ex1'
+                        }, 
+                        {
+                            C:'img/icon2.png',
+                            D:'ex2'
+                        }, 
+                        {
+                            C:'img/icon3.png',
+                            D:'ex3'
+                        }
+                        // 저작권자 표기해야되는 로고
+                    ]
+                }    
+            },
+            methods: {
+                toggle() {this.X = !this.X}
+            }
+        });
+    </script>
+</body>
+</html>

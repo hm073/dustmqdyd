@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+	<script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+    
+    <style>
+        #num {width: fit-content; margin: auto; border:3px dashed red; padding:10px 20px;}
+      
+    </style>
+</head>
+<body>
+	
+    <div id="num">
+        <p>{{B}}</p>
+    </div>
+
+	<script>
+        const X = new Vue({
+            el:'#num p',
+            data: {B: 0}
+        });
+        
+    	const s = setInterval( C, 50);
+        let D = 0; //초기값
+
+        function C(){
+            if(D<100) D++;
+            X.B = D;
+        }
+       
+    </script>
+</body>
+</html>
+
+<!-- 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+	<script src="https://cdn.jsdelivr.net/npm/vue@3"></script>
+    
+    <style>
+        #num {width: fit-content; margin: auto; border:3px dashed red; padding:10px 20px;}
+      
+    </style>
+</head>
+<body>
+	
+    <div id="num">
+        <button type="button">{{B}}</button>
+    </div>
+
+	<script>
+       const { createApp, ref, onMounted } = Vue;
+       const app = createApp({
+            setup(){
+                let B = ref( 0 );
+                const startCouting =() => {                   
+                    const interval = setInterval( ()=>{
+                        if(B.value <100) {
+                            B.value++;                           
+                        }
+                        else    clearInterval( interval );
+                    } , 50 );
+                };
+                onMounted(startCouting);
+                return{ B };
+            }
+       });
+       app.mount('#num button');
+    </script>
+</body>
+</html>
+-->

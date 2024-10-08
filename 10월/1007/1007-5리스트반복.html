@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+	 <script src="https://cdn.jsdelivr.net/npm/vue@3"></script>
+     <style>
+    	a {margin-right: 10px;} 
+     </style>
+</head>
+<body>
+	
+   	<nav>
+    	<ul>
+        	<li>
+            	<a v-for="X in Y1"  :href="X.A">{{X.B}}</a>
+            </li>
+            <li>
+            	<a v-for="X in Y2"  :href="X.A">{{X.B}}</a>
+            </li>
+            <li>
+            	<a v-for="X in Y3"  :href="X.A">{{X.B}}</a>
+            </li>
+        </ul>
+    </nav>
+
+	<script>
+    	const subs = Vue.createApp({//버젼 3		
+            data() {
+                return {
+            		Y1: [
+                    		{A:"https://adobe.com" , B:"어도비"},
+                    		{A:"https://apple.com" , B:"애플"},
+                            {A:"https://samsung.com" , B:"삼성"}
+                    ], 
+                    Y2: [
+                    		{A:"https://adobe.com" , B:"어도비"},
+                    		{A:"https://apple.com" , B:"애플"},
+                            {A:"https://samsung.com" , B:"삼성"}
+                    ], 
+                    Y3: [
+                    		{A:"https://adobe.com" , B:"어도비"},
+                    		{A:"https://apple.com" , B:"애플"},
+                            {A:"https://samsung.com" , B:"삼성"}
+                    ]
+                }
+            }            
+        });
+        subs.mount('nav ul');
+    </script>
+</body>
+</html>

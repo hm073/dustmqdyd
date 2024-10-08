@@ -1,0 +1,57 @@
+<!-- <!DOCTYPE html>
+<html>
+<head>
+	 <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+     <style>
+    	
+     </style>
+</head>
+<body>
+	
+    <address>
+        <a href="#" v-if="X"><img src="img/logo.jpg" alt="logo"></a>
+        <button type="button" @click="toggle">보이기/감추기</button>
+    </address>
+
+	<script>
+    	new Vue({
+            el:'address' ,
+            data: {
+                X : true /*초기값:false는 처음에는 보이지 않음*/
+            },
+            methods: {
+                toggle() {this.X = !this.X}
+            }
+        });
+    </script>
+</body>
+</html> -->
+
+
+<!DOCTYPE html>
+<html>
+<head>
+	 <script src="https://cdn.jsdelivr.net/npm/vue@3"></script>
+</head>
+<body>
+	
+    <address>
+        <a href="#" v-if="X"><img src="img/logo.jpg" alt="logo"></a>
+        <button type="button" @click="toggle">보이기/감추기</button>
+    </address>
+
+	<script>
+    	const logo = Vue.createApp({ //버전3 방식       
+            data() {
+                return {
+                    X : true /*초기값:false는 처음에는 보이지 않음*/
+                }                
+            },
+            methods: {
+                toggle() {this.X = !this.X}
+            }
+        });
+        logo.mount('address');
+    </script>
+</body>
+</html>
