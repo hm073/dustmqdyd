@@ -50,5 +50,7 @@ document.addEventListener("DOMContentLoaded", () => {
 		}
 		//클릭한 요소가 menubtn이나 nav안에 포함되어 있지 않으면(두 조건을 모두 충족할 경우) nav를 닫는다(-110%)
 	});
+
+	
 	
 })//end
