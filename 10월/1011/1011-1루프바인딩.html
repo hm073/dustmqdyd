@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>루프 바인딩</title>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+</head>
+<body>
+    <div id="Z">
+        <!-- <ol>
+            <F v-for="A in B" v-bind:todo="A" v-bind:key="A.C"></F>
+        </ol> -->
+        <ol>
+            <F v-for="A in B" :todo="A" :key="A.C"></F>
+        </ol>
+    </div>
+
+    <script>
+        Vue.component('F', {
+            props: ['todo'],
+            template: `<li> {{todo.T}} </li>`
+        });
+        const Z = new Vue({
+            el:"#Z ol",
+            data: {
+                B: [
+                    {C: 0, T:'딸기'},
+                    {C: 1, T:'사과'},
+                    {C: 2, T:'바나나'},
+                    {C: 3, T:'파인애플'}
+                ]
+            }
+        });
+    </script>
+</body>
+</html>

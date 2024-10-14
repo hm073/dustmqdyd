@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>리액트 연습01</title>
+
+    <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+<body>
+    
+    <h2 id="h2">테스트</h2>
+
+    <script type="text/babel">
+        const f = [사과, 바나나, 오렌지];
+        const myChange = f.map(i => <p>{ i }</p>);
+        // 실제적으로는 배열이 됨 ['i', 'i', 'i'] >i안에 f의 배열이 들어감
+
+        const he = document.getElementById('h2');
+        const p = ReactDOM.createRoot(he);
+        p.render(myChange);
+    </script>
+</body>
+</html>
