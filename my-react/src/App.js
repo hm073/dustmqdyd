@@ -17,7 +17,7 @@ function App() {
         >
           Learn React
         </a>
-        <p>오~</p>
+        <p>너무 졸.려</p>
       </header>
     </div>
   );

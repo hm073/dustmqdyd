@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>텍스트 써지는 곳</h2>
+
+    <script>
+        class Tx {
+            constructor(i) {
+                this.type = i;
+            }
+
+            tt() {
+                return this.type + '은 안산중앙역 1번 출구 코스모프라자 6층에 있습니다';
+            }
+        }
+
+       const mytx = new Tx("라인컴퓨터아트학원");
+
+       const h2 = document.getElementsByTagName("h2")[0];
+
+       h2.textContent = mytx.tt();
+    
+    </script>
+</body>
+</html>
