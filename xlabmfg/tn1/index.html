@@ -1,33 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <title>first</title>
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css?family=Amatic+SC"
-    />
-    <link rel="stylesheet" href="style/intro.css" />
-    <script src="script/intro.js" defer></script>
-  </head>
-  <body>
-    <div class="sections">
-      <div class="section section1">
-        <p>김종원</p>
-        <a href="#">바로가기 &gt;</a>
-      </div>
-      <div class="section section2">
-        <p>윤승현</p>
-        <a href="#">바로가기 &gt;</a>
-      </div>
-      <div class="section section3">
-        <p>서효민</p>
-        <a href="#">바로가기 &gt;</a>
-      </div>
-      <div class="section section4">
-        <p>안재경</p>
-        <a href="#">바로가기 &gt;</a>
-      </div>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        * {margin: 0; padding: 0; box-sizing: border-box;}
+
+        #layout {
+            position: relative;
+            background-color: #333;
+            width: 100vw; height: 100vh;
+            margin: auto;
+            display: flex;
+            justify-content: center; align-items: center;
+        }
+
+        iframe {
+            width: calc(100vw - 2rem); height: calc(100vh - 2rem);
+            background-color: black;
+            border-radius: 30px;
+            border: none;
+        }
+    </style>
+</head>
+<body>
+    <div id="layout">
+        <iframe src="in.html"></iframe>
     </div>
-  </body>
+</body>
 </html>
