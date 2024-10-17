@@ -60,10 +60,10 @@
         }
         #content input {
             position: relative;
-            width: 100%;
+            width: 100%; height: 32px;
             border: none;
             border-bottom: 3px solid black;
-            top: 210px;
+            top: 200px;
             /* left: 25px; */
         }
 
@@ -71,6 +71,13 @@
             width: 100%; height: 5%;
             border: none;
             background-color: #ddd;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+        }
+        button:hover {
+            background-color: skyblue;
         }
 
         footer {
@@ -106,7 +113,7 @@
             <p>
                 휴대폰 번호를 입력하세요
             </p>
-            <input type="text">
+            <input type="text" pattern="[A-Za-z]+">
         </section>
         <button type="button" id="ok">
             확인
