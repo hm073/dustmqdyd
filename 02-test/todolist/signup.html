@@ -5,94 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>가입화면</title>
 
-    <style>
-        * {margin: 0; padding: 0; box-sizing: border-box;}
-        img {display: block;}
-
-        #container {
-            width: 393px;
-            height: 852px;
-            margin: auto;
-        }
-
-        header {
-            position: relative;
-            background-color: #ddd;
-            display: flex;
-            justify-items: start;
-            align-items: center;
-            padding: 2% 3%;
-        }
-        header> div {flex: 1;}
-        /* header> div:nth-of-type(2) {flex: 1;} */
-        /* header> div:nth-of-type(3) {float: right;} */
-
-        #camera {
-            width: 24px; height: 24px;
-            background-color: black;
-            border-radius: 50%;
-        }
-        header> .icon {
-            display: flex;
-            justify-content: end;
-        }
-        header> .icon> img{
-            width: 24px; height: 24px;
-            margin-left: 5px;
-        }
-        
-        #content {
-            width: 100%; height: 751px;
-            position: relative;
-            padding: 0 25px;
-        }
-        #content h2 {
-            position: relative;
-            top: 70px;
-            /* left: 25px; */
-        }
-        #content p {
-            position: relative;
-            top: 75px;
-            margin-left: 2%;
-            font-size: 0.8em;
-            color: #999;
-        }
-        #content input {
-            position: relative;
-            width: 100%; height: 32px;
-            border: none;
-            border-bottom: 3px solid black;
-            top: 200px;
-            /* left: 25px; */
-        }
-
-        button {
-            width: 100%; height: 5%;
-            border: none;
-            background-color: #ddd;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: bold;
-        }
-        button:hover {
-            background-color: skyblue;
-        }
-
-        footer {
-            position: relative;
-            background-color: #ddd;
-            display: flex;
-            justify-content: space-around;
-            align-items: center;
-            padding: 2% 3%;
-        }
-        footer> img {
-            width: 24px; height: 24px;
-            /* flex: 1; */
-        }
-    </style>
+    <link rel="stylesheet" href="css/c.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/signupcontent.css">
 </head>
 <body>
     <div id="container">
@@ -108,20 +24,25 @@
         </header>
         <section id="content">
             <h2 id="Q">
-                휴대폰 번호를 입력해주세요
+                이메일을 입력해주세요
             </h2>
             <p>
-                휴대폰 번호를 입력하세요
+                로그인과 회원가입에 필요합니다
             </p>
             <input type="text" pattern="[A-Za-z]+">
+            <div id="quick">
+                <img src="img/google.ico" alt="google icon">
+                <img src="img/kakao.ico" alt="kakao icon">
+                <img src="img/naver.ico" alt="naver icon">
+            </div>
         </section>
-        <button type="button" id="ok">
+        <button type="button" id="ok" onclick="location.href='index.html'">
             확인
         </button>
         <footer>
-            <img src="img/free-icon-font-list-3917040.png" alt="list">
-            <img src="img/free-icon-font-home-3917032.png" alt="home">
-            <img src="img/free-icon-font-arrow-small-left-3916837.png" alt="back-arrow">
+            <a href="#"><img src="img/free-icon-font-list-3917040.png" alt="list"></a>
+            <a href="index.html"><img src="img/free-icon-font-home-3917032.png" alt="home"></a>
+            <a href="#"><img src="img/free-icon-font-arrow-small-left-3916837.png" alt="back-arrow"></a>
         </footer>
     </div>
 </body>

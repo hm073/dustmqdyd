@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>고메이494 마켓 웹페이지 개발</title>
+
+    <link rel="stylesheet" href="css\main.css">
+    <script src="js/main.js"></script>
+</head>
+<body>
+    <div id="layout">
+        <header>
+            <div id="header">
+                <a href="#"><img src="images/logo.jpg" alt="logo"></a>
+                <ul>
+                    <li>
+                        <a href="#" class="mainMenu">FOODCOURT / DELI / HEALTH</a>
+                        <nav class="subMenu">
+                            <a href="#">감촌순두부</a>
+                            <a href="#">땀땀</a>
+                            <a href="#">랍스타바</a>
+                            <a href="#">만두공방</a>
+                        </nav>
+                    </li>
+                    <li>
+                        <a href="#" class="mainMenu">DELI & DESSERT</a>
+                        <nav class="subMenu">
+                            <a href="#">비파티세리</a>
+                        </nav>
+                    </li>
+                    <li>
+                        <a href="#" class="mainMenu">CUSTOMER SERVICES</a>
+                        <nav class="subMenu">
+                            <a href="#">식품관 안내데스크</a>
+                            <a href="#">지스텀</a>
+                        </nav>
+                    </li>
+                </ul>
+            </div>
+            <div id="down"></div>
+        </header>
+        <div id="slidearea">
+            <div id="slide">
+                <img src="images/visual1.jpg" alt="슬라이드1">
+                <img src="images/visual2.jpg" alt="슬라이드2">
+                <img src="images/visual3.jpg" alt="슬라이드3">
+            </div>
+        </div>
+        <main>
+            <section id="notice">
+                <h2 class="h">공지사항</h2>
+                <ol>
+                    <li>
+                        <a href="#">3월 새내기 혜택모아 '봄'</a>
+                        <span>2020.02.18</span>
+                    </li>
+                    <li>
+                        <a href="#">고메이494에서 드리는 신선한 선물</a>
+                        <span>2021.02.07</span>
+                    </li>
+                    <li>
+                        <a href="#">나른해질 땐 상큼함으로 일상 깨우기</a>
+                        <span>2020.01.20</span>
+                    </li>
+                    <li>
+                        <a href="#">발사믹 비니거로 특별한 드레싱 완성</a>
+                        <span>2020.01.15</span>
+                    </li>
+                </ol>
+            </section>
+            <section id="gallery">
+                <h2 class="h">갤러리</h2>
+                <div id="imgs">
+                    <a href="#"><img src="images/gallery1.jpg" alt="갤러리1"></a>
+                    <a href="#"><img src="images/gallery2.jpg" alt="갤러리2"></a>
+                    <a href="#"><img src="images/gallery3.jpg" alt="갤러리3"></a>
+                </div>
+            </section>
+            <div id="quick">
+                <a href="#">
+                    <img src="images/quick_banner.jpg" alt="quick">
+                </a>
+            </div>
+        </main>
+        <footer>
+            <p>
+                <a href="#">업체소개</a>
+                <a href="#">이용약관</a>
+                <a href="#">개인정보취급방침안내</a>
+                <a href="#">계열사안내</a><br>
+
+                <span>서울특별시 영등포구 63로 50 (여의도동) 한화갤러리아 10층 (주)한화갤러리아</span>
+                <span>사업자등록번호 : 219-81-00317</span>
+                <span>Tel: 1588-0121</span>
+                <span>E-mail: <a href="#">hanhwa@galleria.co.kr</a></span><br>
+
+                COPYRIGHT ⓒ HANWHA GALLERIA CO., LTD. ALL RIGHTS RESERVED.
+            </p>
+            <select  onchange="if(this.value) {window.open(this.value);}">
+                <option value="#">패밀리 사이트</option>
+                <option value="#">갤러리아 몰</option>
+                <option value="#">갤러리아백화점</option>
+                <option value="#">갤러리아 뷰티샵</option>
+            </select>
+        </footer>
+    </div>
+
+    <div id="black">
+        <section id="popup">
+          <h3>공지사항</h3>
+          <img src="images/popup.jpg" alt="팝업">
+          <button type="button">닫기</button>
+        </section>
+      </div>
+</body>
+</html>
