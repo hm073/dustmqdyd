@@ -38,7 +38,7 @@
 
     cursor: pointer;
 }
-#quick img:not(:last-of-type) {
+#quick a:not(:last-of-type) {
     margin-right: 25px;
 }
 
