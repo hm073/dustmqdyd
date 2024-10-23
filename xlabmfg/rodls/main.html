@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>개인 소개 페이지</title>
+
+    <style>
+        * {margin: 0; padding: 0; box-sizing: border-box;}
+        .container {
+            width: 100vw;
+            height: 100vh;
+
+            padding: 10%;
+
+            display: grid;
+            grid-template-areas:   
+            "main subone"
+            "main subone"
+            "main subtwo"
+            "maint subtwo"
+            "maint subtre"
+            "maint subtre"
+            ;
+
+            column-gap: 1%;
+        }
+        /* .item {
+            background-color: antiquewhite;
+        } */
+
+        .main {
+            grid-area: main;
+            background-color: aqua;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            /* max-width: 50%; */
+        }
+        .main img {max-width: 100%;}
+        .maint {
+            grid-area: maint;
+            background-color: aquamarine;
+        }
+        .subone {
+            grid-area: subone;
+            background-color: beige;
+        }
+        .subtwo {
+            grid-area: subtwo;
+            background-color: blue;
+        }
+        .subtre {
+            grid-area: subtre;
+            background-color: blueviolet;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="item main">
+            <!-- <img src="../tn1/img/효민.png" alt="프로필 이미지"> -->
+        </div>
+        <div class="item maint">
+            <section>
+                <h2>이름</h2>
+                <p>프로필</p>
+            </section>
+        </div>
+        <div class="item subone">
+            <section>
+                <h2>연역</h2>
+            </section>
+        </div>
+        <div class="item subtwo">
+            <section>
+                <h2>스킬</h2>
+            </section>
+        </div>
+        <div class="item subtre">
+            <section>
+                <h2>연락처</h2>
+            </section>
+        </div>
+        <!-- <div class="item">F</div>
+        <div class="item">G</div>
+        <div class="item">H</div>
+        <div class="item">I</div>
+        <div class="item">J</div>
+        <div class="item">K</div>
+        <div class="item">L</div> -->
+    </div>
+</body>
+</html>
