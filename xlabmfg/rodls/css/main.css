@@ -1,0 +1,83 @@
+* {margin: 0; padding: 0; box-sizing: border-box;}
+        .container {
+            width: 100vw;
+            height: 100vh;
+
+            padding: 10%;
+
+            display: grid;
+
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: 1fr 1fr 1fr;
+            grid-template-areas:   
+            "main subone"
+            "main subtwo"
+            "main subtre"
+            ;
+
+            column-gap: 1%;
+        }
+        /* .item {
+            background-color: antiquewhite;
+        } */
+
+        .main {
+            grid-area: main;
+            background-color: aqua;
+
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+
+            /* max-width: 50%; */
+        }
+        .main> img {max-width: 100%;}
+        .main> section {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        /* .maint {
+            grid-area: maint;
+            background-color: aquamarine;
+        } */
+        .subone {
+            grid-area: subone;
+            background-color: beige;
+        }
+        .subtwo {
+            grid-area: subtwo;
+            background-color: blue;
+        }
+        .subtre {
+            grid-area: subtre;
+            background-color: blueviolet;
+        }
+
+        #skill label {
+            color: black;
+        }
+        #skill progress {
+            float: right;
+        }
+
+        .subtwo img {
+            width: 15%;
+        }
+
+        /* 들여쓰기, 내어쓰기 : inside | outside
+        .s5{list-style-position: inside;}
+        .s6{list-style-position: outside;}
+
+         리스트와 목록에 색깔
+        .color{
+            background-color: goldenrod;
+            padding: 10px 10px 10px 50px;
+        }
+        .col2{
+            background-color: aquamarine;
+            margin-bottom: 5px;
+        }*/

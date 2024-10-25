@@ -5,84 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>개인 소개 페이지</title>
 
-    <style>
-        * {margin: 0; padding: 0; box-sizing: border-box;}
-        .container {
-            width: 100vw;
-            height: 100vh;
+    <script src="js/main.js"></script>
+    <link rel="stylesheet" href="css/main.css">
 
-            padding: 10%;
-
-            display: grid;
-
-            grid-template-columns: 1fr 1fr;
-            grid-template-rows: 1fr 1fr 1fr;
-            grid-template-areas:   
-            "main subone"
-            "main subtwo"
-            "main subtre"
-            ;
-
-            column-gap: 1%;
-        }
-        /* .item {
-            background-color: antiquewhite;
-        } */
-
-        .main {
-            grid-area: main;
-            background-color: aqua;
-
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-
-            /* max-width: 50%; */
-        }
-        .main> img {max-width: 100%;}
-        .main> section {
-            flex: 1;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
-        }
-        /* .maint {
-            grid-area: maint;
-            background-color: aquamarine;
-        } */
-        .subone {
-            grid-area: subone;
-            background-color: beige;
-        }
-        .subtwo {
-            grid-area: subtwo;
-            background-color: blue;
-        }
-        .subtre {
-            grid-area: subtre;
-            background-color: blueviolet;
-        }
-
-        /* 들여쓰기, 내어쓰기 : inside | outside */
-.s5{list-style-position: inside;}
-.s6{list-style-position: outside;}
-
-/* 리스트와 목록에 색깔 */
-.color{
-	background-color: goldenrod;
-	padding: 10px 10px 10px 50px; /*위에서부터 시계방향 순서*/
-	}
-.col2{
-	background-color: aquamarine;
-	margin-bottom: 5px;
-	}
-
-    .subtwo img {
-        width: 15%;
-    }
-    </style>
 </head>
 <body>
     <div class="container">
@@ -120,13 +45,25 @@
         </div>
         <div class="item subtwo">
             <section>
-                <h2>스킬</h2>
-                <ul class="s5 color" >
+                <section id="skill">
+                    <h2>스킬</h2>
+                    <label for="photoshop">포토샵</label>
+                    <progress id="photoshop" value="0" max="100">90%</progress><br>
+                    <label for="illust">일러스트</label>
+                    <progress id="illust" value="0" max="100">95%</progress><br>
+                    <label for="css">HTML/CSS</label>
+                    <progress id="css" value="0" max="100">90%</progress><br>
+                    <label for="jquery">jQuery</label>
+                    <progress id="jquery" value="0" max="100">85%</progress><br>
+                    <label for="vue">Vue.js</label>
+                    <progress id="vue" value="0" max="100">70%</progress><br>
+                </section>
+                <!-- <ul class="s5 color" >
                     <li class="col2">html</li>
                     <li class="col2">css</li>
                     <li class="col2">js</li>
                     <li class="col2">피그마</li>
-                </ul>
+                </ul> -->
                 <div id="imgs">
                     <img src="img/free-icon-html-5-174854.png" alt="html">
                     <img src="img/free-icon-css-3-732190.png" alt="css">
