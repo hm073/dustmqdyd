@@ -1,13 +1,17 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import App from './App';
+// import App from './App'; //카운트1
+// import App_usestate from './App_usestate' //카운트2
+import App from './AppUseMeno'; //제곱근 구하기
+import Api from './AppUseEffect'; 
 import reportWebVitals from './reportWebVitals';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <App />
+    <Api />
   </React.StrictMode>
 );
 
