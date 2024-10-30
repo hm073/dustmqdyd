@@ -1,0 +1,241 @@
+@charset "utf-8";
+
+/* 전체 */
+* {margin: 0; padding: 0; box-sizing: border-box;}
+a {
+    font-family: "Nanum Gothic Coding", monospace;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 10pt;
+    line-height: 180%;
+    color: #222328;
+
+    text-decoration: none;
+}
+img {
+    display: block;
+    max-width: 100%;
+}
+
+#layout {
+    max-width: 1200px;
+    width: 1200px;
+    height:650px;
+    display: flex;
+    flex-direction: column;
+}
+
+/* ***************** */
+
+/* 위쪽 */
+#up {
+    display: flex;
+    margin-bottom: 5%;
+}
+
+
+/* 메뉴 */
+#menu {
+    /* flex: 1; */
+    flex-basis: 20%;
+}
+#logo {
+    display: block;
+    padding: 20px 0;
+    margin-bottom: 10%;
+}
+#logo img {
+    width: 70%;
+    margin: auto;
+}
+ul li {
+	margin-bottom:1px;	
+}
+
+
+/* 메인메뉴 */
+.mainMenu {
+    display:block;
+    background-color: #e08a9b;
+    color: white;
+    font-size: 1rem;
+    font-weight: bold;
+    padding: 8px 30px;
+}
+
+/* 메인메뉴 호버 */
+#menu li:hover .mainMenu {background:#db3d84;}
+#menu li:hover  .subMenu {height: 120px;}
+
+/* 서브메뉴 */
+.subMenu {
+    /* display: block; */
+    background-color: #e9f2c1;
+    transition: 0.3s;
+    height: 0;
+    overflow: hidden;
+}
+.subMenu a {
+    display: block;
+    padding: 8px 30px;
+}
+
+/* 서브메뉴 호버 */
+.subMenu a:hover {
+    background-color: #a0c322;
+}
+
+/* ***************** */
+
+/* 메인 */
+main {
+    flex-basis: 80%;
+    display: flex;
+    flex-direction: column;
+}
+
+/* 슬라이드 */
+#slidearea {
+    position: relative;
+    height: 350px;
+    /* margin-bottom: 5%; */
+    overflow: hidden;
+    /* flex: 2; */
+}
+#slide {
+    position: absolute;
+    display: flex;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+#slide img {
+    width: 100%;
+}
+
+
+/* 콘텐츠 */
+#content {
+    display: flex;
+    height: 200px;
+    flex: 1;
+    padding: 2% 2% 0;
+}
+
+#content h2 {
+    font-size: 1rem;
+    font-weight: 400;
+    display: inline-block;
+    background-color: #a0c322;
+    border: 1px solid #232b06;
+    padding:4px 6px 5px 6px;
+    border-top-left-radius:6px;
+	border-top-right-radius:6px;
+    transform: translateY(1px);
+}
+
+/* 공지사항 */
+#notice {
+    position: relative;
+    margin-right: 20px;
+    flex: 1.2;
+}
+#notice ul {
+    border-top: 1px solid #a0c322;
+    list-style: inside;
+    padding-top: 10px;
+    padding-left: 5px;
+}
+#notice li span {
+    float: right;
+}
+#notice a:hover {
+    text-decoration: underline;
+    color: #e08a9b;
+}
+
+/* 팝업 */
+#popup {
+	position:fixed;
+    z-index:1;
+	background:white;
+	box-shadow:3px 3px 6px rgba(0,0,0, 0.7);
+	width:500px;
+	top:100px; left:300px;
+	border-radius:10px;
+	padding:30px;
+    display:none;
+}
+#popup button {
+	float:right; margin-top:5%;
+}
+
+/* 갤러리 */
+#gallery {
+    position: relative;
+    margin-right: 20px;
+    flex: 1.1;
+}
+#gallery div {
+    display: flex;
+    max-width: 100%;
+    border-top: 1px solid #a0c322;
+}
+#gallery div img {
+    margin: 5px;
+}
+
+/* 배너 */
+#banner {
+    flex: 1;
+    padding-top:20px;
+}
+
+
+/* ***************** */
+
+/* 아래 */
+footer {
+    height: 100px;
+    display: flex;
+    border: 2px solid #ccc;
+}
+
+footer> a {
+    display: block;
+    max-width: 100%;
+    flex-basis:240px;
+    /* flex: 1; */
+    align-self: center;
+    padding: 3%;
+}
+footer> a> img {
+    width: 70%;
+    /* max-width: 300px; */
+    margin: auto;
+}
+
+footer> div {
+    flex: 2;
+    border-left: 2px dashed #ccc;
+}
+footer> div a {
+    padding: 7px;
+}
+footer> div a:hover {
+	text-decoration: underline;
+    color: black;
+}
+footer nav {
+	height: 50px; 
+	padding-left: 20px;
+    padding-top: 12px;
+}
+footer p  {
+	border-top: 2px dashed #ccc; 
+	height: 50px; 
+	padding-left: 20px;
+
+    display: flex;
+    align-items: center;
+}
