@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>쿼리 하이드</title>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script>
+        $(document).ready( () => {  //시작
+        
+            $('#show').click( () => {
+                $('#popup').show();
+            });
+
+            $('#popup button').click( () => { 
+                $('#popup').hide(function() {
+                    alert("팝업 닫힘")
+                });
+            });
+            
+        });//끝부분
+    </script>
+</head>
+<body>
+    <button type="button" id="show">팝업 보이기</button>
+    <section id='popup' style="position:absolute; top: 100px; left:100px; background:#eee; border:5px solid gray; padding:50px; border-radius:30px; display:none;">
+	<h2>공지사항</h2>
+    <button type='button'>닫기</button>
+</section>
+</body>
+</html>

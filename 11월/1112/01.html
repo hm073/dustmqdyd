@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title></title>
+
+    <script
+      src="https://code.jquery.com/jquery-3.7.1.min.js"
+      integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+      crossorigin="anonymous"
+    ></script>
+
+    <script>
+        $(document).ready( function() {
+            $('#sample').css('display', 'inline-block');
+            $('#sample').hover(
+                function() {
+                    $(this).css({
+                        'background' : 'yellow',
+                        'border' : '10px dashed red'
+                    });
+                },
+                function() {
+                    $(this).css({
+                        'background' : 'initial',
+                        'border' : 'none'
+                    });
+                }
+            )
+        });
+    </script>
+  </head>
+  <body>
+    <section id="sample">
+      <h2>샘플</h2>
+      <p>제이쿼리를 이용하여 호버효과 적용하기</p>
+    </section>
+  </body>
+</html>
