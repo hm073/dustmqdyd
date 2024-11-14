@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>한 장씩 넘어가는 스크롤</title>
+    <link rel="stylesheet" href="styles.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Nanum+Gothic+Coding&family=Righteous&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <div class="container">
+      <div class="fixed-side">고정된 영역</div>
+      <div class="draggable-side" id="draggable">
+        <div class="scrollable-content">
+          <div class="slide slide1">
+            <span class="left">ABOUT</span>
+            <span class="right">ABOUT</span>
+            <span class="top">ABOUT</span>
+            <span class="bottom">ABOUT</span>
+            <span class="center">ABOUT</span>
+          </div>
+          <div class="slide">두 번째 슬라이드</div>
+          <div class="slide">세 번째 슬라이드</div>
+          <div class="slide">네 번째 슬라이드</div>
+          <div class="slide">다섯 번째 슬라이드</div>
+        </div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
