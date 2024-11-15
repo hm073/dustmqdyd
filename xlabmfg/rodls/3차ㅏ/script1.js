@@ -37,21 +37,18 @@ function scrollToSlide(slideIndex) {
     });
 }
 
-// 각 a 태그 클릭 시 해당 슬라이드로 부드럽게 이동하는 이벤트 추가
-document.querySelectorAll("a").forEach(anchor => {
-    anchor.addEventListener("click", function (e) {
-        e.preventDefault(); // 기본 클릭 동작을 방지 (페이지 이동을 막기 위해)
+// Array.from(document.querySelector(".slide1").children).forEach(anchor => {
+//     anchor.addEventListener('click', function(e) {
+//         e.preventDefault();
+//         // alert(anchor)
 
-        // 클릭된 a 태그의 href 값에서 id를 추출
-        const targetId = this.getAttribute("href").substring(1); // #about -> about
+//         const targetId = this.getAttribute("href").substring(1);
+//         const targetElement = document.getElementById(targetId);
+//         // alert(targetElement)
 
-        // 해당 id를 가진 슬라이드 요소 찾기
-        const targetSlide = document.getElementById(targetId);
-
-        if (targetSlide) {
-            // 슬라이드의 index를 계산하여 스크롤
-            const slideIndex = Array.from(document.querySelectorAll(".slide")).indexOf(targetSlide);
-            scrollToSlide(slideIndex);
-        }
-    });
-});
+//         window.scrollTo({
+//             top: targetElement.offsetTop,
+//             behavior: 'smooth'
+//         });
+//     });
+// });
