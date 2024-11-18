@@ -32,20 +32,26 @@ html {
 }
 
 .fixed-side {
-  width: 40%; /* 고정된 영역이 화면의 50% 차지 */
-  height: 80vh; /* 고정된 영역의 높이를 화면의 80% 차지 */
-  background: url("images/효민.png") center center;
-  background-size: auto;
-  background-repeat: no-repeat;
-  filter: brightness(70%);
-  transition: all 0.3s;
-  color: white;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: relative;
-  z-index: 10; /* 고정된 영역이 draggable 영역 위에 오도록 */
+    width: 40%; /* 고정된 영역 */
+    height: 80vh; /* 고정된 영역의 높이 */
+    background: url("images/효민.png") center center;
+    background-size: auto;
+    background-repeat: no-repeat;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    z-index: 10;
+    transition: all 0.3s;
+    padding: 20px;
+    font-size: 1.5rem;
+  }
+  
+.fixed-side h3 {
+font-size: 2rem;
 }
+
 .fixed-side:hover {
   filter: none;
   /* transform: scale(60%); */
@@ -133,5 +139,5 @@ html {
 
 
 .slide2 {
-  
+  display: flex;
 }
