@@ -15,7 +15,7 @@ function scrollToSlide(slideIndex) {
     });
 
     // 슬라이드에 맞는 고정 영역 내용 업데이트
-    updateFixedSideContent(slideIndex);
+    // updateFixedSideContent(slideIndex);
 }
 
 // 슬라이드에 맞는 고정 영역 내용 업데이트 함수

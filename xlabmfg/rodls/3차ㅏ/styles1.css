@@ -61,9 +61,9 @@ html {
 
 .fixed-side h1 {
   transition: all 0.3s;
-  font-size: 3.5rem;
+  font-size: 5rem;
   color: #ddd;
-  transform: rotate(90deg) translateX(calc(100vh - 115vh)) translateY(calc(100vw - 87.5vw));
+  transform: rotate(90deg) translateX(calc(100vh - 120vh)) translateY(calc(100vw - 82vw));
 }
 
 .fixed-side:hover {
