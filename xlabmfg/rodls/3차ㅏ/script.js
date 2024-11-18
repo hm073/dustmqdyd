@@ -19,39 +19,39 @@ function scrollToSlide(slideIndex) {
 }
 
 // 슬라이드에 맞는 고정 영역 내용 업데이트 함수
-function updateFixedSideContent(slideIndex) {
-    const slides = document.querySelectorAll(".slide");
-    const currentSlideElement = slides[slideIndex];
+// function updateFixedSideContent(slideIndex) {
+//     const slides = document.querySelectorAll(".slide");
+//     const currentSlideElement = slides[slideIndex];
 
-    // 고정 영역에 내용을 업데이트
-    if (currentSlideElement.classList.contains("slide1")) {
-        fixedSideContent.innerHTML = `<h3>메뉴</h3><p>ABOUT, INFORMATION, SKILL, EMAIL 메뉴가 있습니다.</p>`;
-    } else if (currentSlideElement.classList.contains("slide2")) {
-        // #about 슬라이드의 내용을 고정 영역에 추가
-        const aboutContent = document.createElement("div");
-        aboutContent.classList.add("about-content");
-        aboutContent.innerHTML = `
-            <h3>ABOUT</h3>
-            <p>이름: 홍길동 (Hong Gil Dong)<br>나이: 00세 (2001.02.03)<br>주소: 경기도 고양시 일산동구 중앙로</p>
-        `;
-        fixedSideContent.appendChild(aboutContent); // about 내용을 고정 영역에 추가
-    } else if (currentSlideElement.classList.contains("slide3")) {
-        fixedSideContent.innerHTML = `
-            <h3>ABOUT</h3>
-            <p>이름: 홍길동 (Hong Gil Dong)<br>나이: 00세 (2001.02.03)<br>주소: 경기도 고양시 일산동구 중앙로</p>
-        `;
-    } else if (currentSlideElement.classList.contains("slide4")) {
-        fixedSideContent.innerHTML = `
-            <h3>ABOUT</h3>
-            <p>이름: 홍길동 (Hong Gil Dong)<br>나이: 00세 (2001.02.03)<br>주소: 경기도 고양시 일산동구 중앙로</p>
-        `;
-    } else if (currentSlideElement.classList.contains("slide5")) {
-        fixedSideContent.innerHTML = `
-            <h3>ABOUT</h3>
-            <p>이름: 홍길동 (Hong Gil Dong)<br>나이: 00세 (2001.02.03)<br>주소: 경기도 고양시 일산동구 중앙로</p>
-        `;
-    }
-}
+//     // 고정 영역에 내용을 업데이트
+//     if (currentSlideElement.classList.contains("slide1")) {
+//         fixedSideContent.innerHTML = `<h3>메뉴</h3><p>ABOUT, INFORMATION, SKILL, EMAIL 메뉴가 있습니다.</p>`;
+//     } else if (currentSlideElement.classList.contains("slide2")) {
+//         // #about 슬라이드의 내용을 고정 영역에 추가
+//         const aboutContent = document.createElement("div");
+//         aboutContent.classList.add("about-content");
+//         aboutContent.innerHTML = `
+//             <h3>ABOUT</h3>
+//             <p>이름: 홍길동 (Hong Gil Dong)<br>나이: 00세 (2001.02.03)<br>주소: 경기도 고양시 일산동구 중앙로</p>
+//         `;
+//         fixedSideContent.appendChild(aboutContent); // about 내용을 고정 영역에 추가
+//     } else if (currentSlideElement.classList.contains("slide3")) {
+//         fixedSideContent.innerHTML = `
+//             <h3>ABOUT</h3>
+//             <p>이름: 홍길동 (Hong Gil Dong)<br>나이: 00세 (2001.02.03)<br>주소: 경기도 고양시 일산동구 중앙로</p>
+//         `;
+//     } else if (currentSlideElement.classList.contains("slide4")) {
+//         fixedSideContent.innerHTML = `
+//             <h3>ABOUT</h3>
+//             <p>이름: 홍길동 (Hong Gil Dong)<br>나이: 00세 (2001.02.03)<br>주소: 경기도 고양시 일산동구 중앙로</p>
+//         `;
+//     } else if (currentSlideElement.classList.contains("slide5")) {
+//         fixedSideContent.innerHTML = `
+//             <h3>ABOUT</h3>
+//             <p>이름: 홍길동 (Hong Gil Dong)<br>나이: 00세 (2001.02.03)<br>주소: 경기도 고양시 일산동구 중앙로</p>
+//         `;
+//     }
+// }
 
 // 스크롤 이벤트 리스너
 window.addEventListener("wheel", function (e) {
