@@ -61,19 +61,19 @@ html {
 
 .fixed-side h1 {
   transition: all 0.3s;
-  font-size: 5rem;
+  font-size: 7rem;
   color: #ddd;
-  transform: rotate(90deg) translateX(calc(100vh - 120vh)) translateY(calc(100vw - 82vw));
+  transform: rotate(-90deg) translateX(calc(100vh - 73vh)) translateY(calc(100vw - 125vw));
 }
 
-.fixed-side:hover {
-  /* filter: none; */
+.fixed-side:hover::after {
+  filter: none;
   /* transform: scale(60%); */
   background-repeat: no-repeat;
 }
 
 .fixed-side:hover h1 {
-  display: none;
+  opacity: 0;
 }
 
 .draggable-side {
