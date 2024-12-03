@@ -1,0 +1,138 @@
+@charset "utf-8";
+
+* {
+    margin:0; padding:0; box-sizing: border-box;
+}
+html,body {
+    color:#444;
+}
+
+a {
+    text-decoration: none;
+    color:#444;
+}
+img {
+    display: block; max-width: 100%;
+}
+
+#layout {
+    max-width: 1890px; margin:auto;
+    border:0px solid red;
+}
+
+header {
+    display: flex; 
+    justify-content: space-between;
+    align-items: center;
+    border-top:2px solid #b31b27;
+}
+header> a {
+    margin:10px 30px;
+}
+header nav a {    
+    font-size:1.05rem; font-weight:600;
+    padding:5px 10px;
+    display: inline-block;
+    transition: 0.5s;
+}
+header nav a:hover {    
+    transform:scale(1.2);
+    color:black; font-weight:800;
+}
+header div a {
+    border:1px solid #555;
+    padding:6px 15px; border-radius:30px;
+    margin-left: 5px;
+    display: inline-block;
+    transition:0.5s;
+}
+header div a.active {
+    border-color:#b21c27;
+    color:#b21c27;
+}
+header div a:hover {
+    background-color: #f8d4bc;
+    font-weight:700;
+    transform:translateY(-5px);
+}
+
+#visual {    
+    min-height: 600px;
+    background: url('../images/visual_bg.jpg') no-repeat center top /cover;
+    padding-bottom:100px;
+}
+#visual div {   
+    padding-top:175px; 
+    color:#e1b5aa; 
+    border:2px solid red;
+    max-width:1200px; margin:auto;
+}
+#visual h1 span {
+    display: block;
+    font-size:1.6rem;
+    font-weight:300;
+    letter-spacing: -1.3pt;
+}
+#visual h1 b {
+    font-size:3.7rem;
+    display: block;
+    max-width:450px;
+}
+#visual div> a {
+    display: block;
+    margin:97px 0;
+    color:#e1b5aa;
+    border-bottom:1.4pt solid #e1b5aa;
+    width:fit-content;
+    padding-bottom:5px;
+}
+#visual p span {
+    display: block;
+    line-height:180%;
+    font-weight: 300;
+}
+#visual p span:nth-child(1){
+    max-width:320px;
+}
+#visual p span:nth-child(2){
+    max-width:310px;
+    padding-top:20px;
+}
+#visual p span b {
+    font-size:1.1rem;
+}
+
+@media(max-width:1200px){
+    #visual div {
+        padding-top:90px; 
+        padding-left:10px;
+    }
+    #visual h1 b {
+        line-height:100%;
+    }
+    #visual div> a {
+        margin:50px 0;
+    }
+    #viaual p {
+        text-shadow:0 0 2px #6a1019;
+    }
+}
+@media(max-width:905px){
+    header {
+        flex-direction: column;
+    }
+    header nav {
+        padding:15px 0;
+    }
+    header nav a {
+        letter-spacing: -2px;
+        padding:6px 3px; 
+    }
+    header div {
+        padding:10px 0 20px;       
+    }
+    #visual div {
+        max-width:80%;
+        margin:initial;
+    }
+}

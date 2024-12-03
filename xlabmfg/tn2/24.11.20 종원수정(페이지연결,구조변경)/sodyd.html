@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        #layout {
+            position: relative;
+            background-color: #333;
+            width: 100vw;
+            height: 100vh;
+            margin: auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        iframe {
+            width: calc(100vw - 2rem);
+            height: calc(100vh - 2rem);
+            background-color: black;
+            border-radius: 30px;
+            border: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="layout">
+        <iframe src="index.html"></iframe>
+    </div>
+</body>
+
+</html>
