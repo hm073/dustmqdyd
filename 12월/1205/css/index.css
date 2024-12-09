@@ -1,0 +1,145 @@
+@charset "utf-8";
+
+* {
+    margin:0; padding:0; box-sizing: border-box;
+}
+html,body {   
+    font:10.5pt/160% "Gothic A1", sans-serif;
+    color:#333; letter-spacing: -0.3pt;
+}
+a {
+    text-decoration: none;
+    color:#333;
+}
+img {
+    display: block; max-width:100%;
+}
+
+#layout {
+    max-width: 1920px; margin:auto;
+    border:1px solid red;
+}
+#sale h3 {
+    padding-top:53px;
+    text-align: center;
+    font-size:2rem;
+}
+#sale h3+ p {
+    text-align: center;
+    padding: 20px 0 45px;
+}
+#sale ul {
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;    
+    max-width: 1200px; margin:auto;
+}
+#sale li {
+    width:588px;
+    border:1px solid #ddd;
+    display: flex; /*가로방향진열*/
+    margin-bottom: 25px;
+}
+#sale li> div {
+    padding:15px 20px 0 24px;
+    flex:1;    
+}
+#sale .tlt {
+    text-align: right;
+    
+}
+#sale .tlt b {    
+    padding:3px 7px 2px;
+    border-radius:5px;
+    font-size:0.8rem;
+    text-transform: capitalize;
+}
+#sale .new {
+    border:1px solid #a5bf6e;
+    color:#a5bf6e;
+}
+#sale .sale {
+    border:1px solid #cf8e43;
+    color:#cf8e43;
+}
+#sale .best {
+    border:1px solid #b5416c;
+    color:#b5416c;
+}
+#sale li:nth-child(2) .new,
+#sale li:nth-child(2) .best,
+#sale li:nth-child(3) .best,
+#sale li:nth-child(4) .new    {display:none;}
+
+#sale h4 {
+    padding:25px 0 22px;
+    font-size:1.15rem;
+}
+#sale h4+ p {
+    color:#777;
+    padding-bottom:22px;
+}
+#sale p+ div {
+    display: flex;
+    align-items: flex-end;
+}
+#sale strong {
+    font-size:2.8rem;
+    color:#f87400;
+    padding-right:10px;
+}
+#sale strong i {
+    font-size:1.5rem; 
+    font-style: normal;
+}
+#sale del {
+    display: block;
+    line-height: 120%;
+}
+#sale ins {
+    text-decoration: none;
+    font-size:1.3rem;
+    font-weight: 800;
+}
+#sale ins i {
+    font-style: normal;
+    font-size:1rem;
+    font-weight:normal;
+}
+
+#sale button {
+    display: block;
+    width:fit-content;
+    margin:20px auto;
+    padding:12px 55px;
+    background: none;
+    border:1px solid #333;
+    font-size:1.2rem;
+    color:#555;
+    font-weight:600;
+    display: flex; align-items: center;
+}
+#sale button span {
+    font-weight: 100;
+    font-size:2rem;
+    color:#888;
+    padding-right: 10px;
+}
+
+
+/********************************************/
+@media(max-width:1177px) {
+    #sale ul {
+        justify-content: center;
+    }
+}
+@media(max-width:500px) {
+    #sale li {
+        flex-direction: column;
+        padding-bottom: 20px;
+    }
+    #sale li:nth-child(3) h4+ p {
+        display: none;
+    }
+}
