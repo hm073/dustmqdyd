@@ -1,0 +1,313 @@
+@charset "utf-8";
+
+* {margin: 0; padding: 0; box-sizing: border-box;}
+
+        #layout{
+            max-width: 1120px;
+            margin: 2rem auto 0;
+            display: flex;
+            gap: 3%;
+        }
+        a {
+            display: block;
+            text-decoration: none;
+            color: #333;
+        }
+        h1 {
+            font-size: 1.3rem;
+        }
+        h2 {
+            font-size: 1rem;
+        }
+        p {
+            font-size: 0.8rem;
+        }
+
+        /* 왼쪽 */
+        #left {
+            flex: 0.9;
+
+            display: flex;
+            flex-direction: column;
+            gap: 3%;
+        }
+
+        #left-up {
+            background-color: rgb(49, 152, 221);
+            background-image: url("../images/bg1.png");
+            background-position: right bottom;
+            background-repeat: no-repeat;
+            background-size: 40%;
+            border-radius: 10px;
+
+            flex: 1;
+
+            padding: 2.5rem;
+            color: white;
+            width: 100%;
+        }
+
+        #left-down {
+            background-color: rgb(237, 240, 243);
+            border-radius: 10px;
+
+            flex: 1;
+
+            padding: 2.5rem;
+
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+
+            width: 100%;
+        }
+
+
+        /* 민원실 이용안내 */
+        
+        #left-up div {
+            display: flex;
+            gap: 1rem;
+
+            margin-top: 1.5rem;
+        }
+        #left-up h2 {
+            background-color: rgb(0, 72, 167);
+            flex: 1;
+            padding: 0 5px;
+
+            display: flex;
+            justify-content: center;
+            align-items: start;
+            border-radius: 5px;
+        }
+        #left-up div p {
+            flex: 4;
+        }
+
+        /* 안내 */
+        #left-down .a {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10%;
+
+            text-align: center;
+        }
+        #left-down .a img {
+            margin-bottom: 0.5rem;
+        }
+        #left-down .a a:hover {
+            filter: brightness(80%) saturate(4);
+            font-weight: bold;
+        }
+
+        #left-down .aa {
+            display: flex;
+        }
+        #left-down .aa ul {
+            flex: 1;
+            list-style-position: inside;
+        }
+        #left-down .aa li {
+            margin: 0.5rem 0;
+        }
+        #left-down .aa a {
+            font-size: 0.8rem;
+            display: inline-block;
+        }
+        #left-down .aa a:hover {
+            color: rgb(0, 72, 167);
+            font-weight: bold;
+        }
+
+        /* 오른쪽 */
+        #right {
+            flex: 1.1;
+
+            display: flex;
+            flex-direction: column;
+            gap: 3%;
+        }
+
+        #right-up {
+            flex: 1;
+
+            /* display: flex;
+            flex-direction: column;
+            gap: 1.5rem; */
+
+        }
+
+        #right-down {
+            flex: 4;
+        }
+
+        /* 민원 검색 */
+        #right-up .s {
+            background-color: rgb(237, 240, 243);
+            border-radius: 10px;
+
+            display: flex;
+            justify-content: start;
+            align-items: center;
+
+            padding: 1rem 2.5rem;
+        }
+        #right-up .s h2 {
+            font-size: 1.2rem;
+            margin-right: 1.5rem;
+            /* flex: 1; */
+        }
+        #right-up h2 span {
+            color: rgb(0, 72, 167);
+        }
+        #right-up .s input {
+            /* flex: 4; */
+            width: 65%;
+            margin-right: 1.5rem;
+            padding: 5px;
+
+            border: none;
+            background-color: rgb(237, 240, 243);
+        }
+        #right-up  .s input:focus {
+            border: 2px solid yellow; 
+          }
+        #right-up .s img {
+            float: right;
+        }
+
+        /* 인기검색어 */
+        #right-up .ss {
+            display: flex;
+            align-items: center;
+            padding: 1rem 2rem;
+        }
+        #right-up .ss> div {
+            display: flex;
+        }
+        #right-up .ss h3 {
+            font-size: 1.1rem;
+            margin-right: 1.5rem;
+        }
+        #right-up .ss span {
+            font-size: 0.8rem;
+            padding: 5px 10px;
+            border: 1px dotted rgb(229, 231, 235);
+            margin-right: 0.2rem;
+        }
+        #right-up .ss span:hover {
+            border: 1px solid rgb(0, 72, 167);
+        }
+        #right-up .ss span:hover a {
+            color: rgb(0, 72, 167);
+            font-weight: bold;
+        }
+
+        
+        /* 자주찾는 민원 */
+        #right-down h2 {
+            margin-bottom: 1.5rem;
+        }
+        #right-down h2 span {
+            color: rgb(0, 72, 167);
+        }
+        #right-down .c {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            gap: 5px;
+            width: 100%;
+            margin-bottom: 1.5rem;
+        }
+        #right-down .c a {
+            background-color: rgb(237, 240, 243);
+            border: 1px solid rgb(229, 231, 235);
+            border-radius: 5px;
+
+            display: flex;
+            flex-direction: column;
+            width: 18%;
+
+            padding: 1.5rem 2rem;
+
+            font-size: 0.8rem;
+        }
+        #right-down .c a:hover {
+            filter: brightness(80%) saturate(4);
+            font-weight: bold;
+        }
+
+        /* 민원 단축키 */
+        #right-down .cc {
+            border: 1px solid rgb(229, 231, 235);
+            border-radius: 10px;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 15px;
+
+            padding: 15px;
+        }
+        #right-down .cc a {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            
+            font-size: 0.8rem;
+            margin-right: 1rem;
+        }
+        #right-down .cc img {
+            margin-right: 0.5rem;
+        }
+        #right-down .cc a:hover {
+            filter: brightness(80%) saturate(4);
+            color: rgb(0, 72, 167);
+            font-weight: bold;
+        }
+
+
+        @media screen and (max-width: 768px) {
+            #layout {
+              flex-direction: column;  /* 세로 방향으로 정렬 */
+              align-items: center;  /* 아이템들을 중앙 정렬 */
+            }
+
+            #left {
+                gap: 1.5rem;
+                margin-bottom: 1.5rem;
+            }
+            #left-up {
+                width: 100%;
+                padding: 1rem;
+            }
+            #left-down {
+                width: 100%;
+                padding: 1rem;
+
+            }
+            
+            #right {
+                gap: 1.5rem;
+                margin-bottom: 1.5rem;
+            }
+
+            #right-up .s {
+                padding: 1rem 1rem;
+            }
+            #right-up .ss {
+                padding: 1rem 1rem;
+                display: flex;
+                flex-direction: column;
+                justify-content: start;
+            }
+            #right-down .c a {
+                width: 30%;
+            }
+            #right-down .cc a {
+                flex-direction: column;
+            }
+          }
