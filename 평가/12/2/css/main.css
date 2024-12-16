@@ -270,10 +270,10 @@
         }
 
 
-        @media screen and (max-width: 768px) {
+        @media (max-width: 768px) {
             #layout {
               flex-direction: column;  /* 세로 방향으로 정렬 */
-              align-items: center;  /* 아이템들을 중앙 정렬 */
+              /* align-items: center; */
             }
 
             #left {
